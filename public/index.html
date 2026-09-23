@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Bach Sy — Développeur full-stack, IA &amp; chef de projet digital à Dakar</title>
+    <meta name="theme-color" content="#F7F0E5" />
+    <meta name="description" content="Mamadou Bachir Sy : développeur full-stack, data scientist et chef de projet digital à Dakar. Chatbots IA en wolof, plateformes web et mobiles." />
+    <meta property="og:title" content="Bach Sy — Full-stack, IA &amp; chef de projet digital" />
+    <meta property="og:description" content="Je construis des technologies qui parlent wolof. Chatbots IA, plateformes web et mobiles, pilotage de projets à Dakar." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.svg" type="image/svg+xml" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <script>
+      // Appliqué avant le rendu pour éviter un flash de thème / de langue.
+      (function () {
+        var r = document.documentElement;
+        r.classList.add('js');
+        try {
+          var th = localStorage.getItem('bs-theme');
+          if (th === 'light' || th === 'dark') r.setAttribute('data-theme', th);
+          var l = localStorage.getItem('bs-lang');
+          if (l === 'fr' || l === 'en') r.setAttribute('lang', l);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body>
+    <noscript>Activez JavaScript pour voir ce site. / Please enable JavaScript.</noscript>
+    <div id="root"></div>
+  </body>
+</html>

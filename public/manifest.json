@@ -1,0 +1,9 @@
+{
+  "short_name": "Bach Sy",
+  "name": "Bach Sy — Portfolio",
+  "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#C4552B",
+  "background_color": "#F7F0E5"
+}
