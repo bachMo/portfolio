@@ -72,7 +72,7 @@ export default function Signature() {
           {s.steps.map((p, i) => (
             <div key={sig + i} className={'step' + (p.hot ? ' hot' : '') + (lit.has(i) ? ' lit' : '')}>
               <span className="n">0{i + 1}</span>
-              <h3>{p.title}</h3>
+              <h3 style={{ overflowWrap: 'break-word' }}>{p.title}</h3>
               <p>{p.desc}</p>
               <code>{p.tech}</code>
             </div>
