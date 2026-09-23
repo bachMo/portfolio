@@ -16,7 +16,7 @@ export default function Footer() {
           </a>
         </div>
         <div className="wordmark" aria-hidden="true">
-          Bach Sy
+          Bachir Sy
           <em>
             .
           </em>

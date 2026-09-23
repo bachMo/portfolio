@@ -4,8 +4,8 @@ import en from './en';
 
 const DICTS = { fr, en };
 const TITLES = {
-  fr: 'Bach Sy — Développeur full-stack, IA & chef de projet digital à Dakar',
-  en: 'Bach Sy — Full-stack developer, AI & digital project manager in Dakar',
+  fr: 'Bachir Sy — Développeur full-stack, IA & chef de projet digital à Dakar',
+  en: 'Bachir Sy — Full-stack developer, AI & digital project manager in Dakar',
 };
 
 export function store(key, value) {

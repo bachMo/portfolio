@@ -1,6 +1,6 @@
 {
-  "short_name": "Bach Sy",
-  "name": "Bach Sy — Portfolio",
+  "short_name": "Bachir Sy",
+  "name": "Bachir Sy — Portfolio",
   "icons": [{ "src": "favicon.svg", "sizes": "any", "type": "image/svg+xml" }],
   "start_url": ".",
   "display": "standalone",

@@ -1,4 +1,4 @@
-# Portfolio — Bach Sy
+# Portfolio — Bachir Sy
 
 Site portfolio de Mamadou Bachir Sy (React, `react-scripts` / Create React App).
 Thème clair et sombre, français et anglais, formulaire de contact relié à EmailJS.

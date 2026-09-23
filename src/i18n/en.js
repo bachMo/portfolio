@@ -1,6 +1,6 @@
 // English texts. Keys must match fr.js.
 const en = {
-  "aria.home": "Bach Sy, home",
+  "aria.home": "Bachir Sy, home",
   "aria.mainnav": "Main navigation",
   "aria.lang": "Language",
   "aria.theme": "Switch theme",
@@ -15,7 +15,7 @@ const en = {
   "nav.contact": "Contact",
   "nav.cta": "Start a project",
   "hero.open": "AVAILABLE FOR PROJECTS",
-  "hero.title": "I build technology that <em>speaks Wolof.</em>",
+  "hero.title": "I build technology that <em>speaks to you.</em>",
   "hero.sub": "Mamadou Bachir Sy, full-stack developer, data scientist and digital project manager. 4 years designing, shipping and leading web, mobile and AI platforms, from a health chatbot in Wolof to a website that converts.",
   "hero.cta1": "See the work",
   "hero.cta2": "Get in touch",

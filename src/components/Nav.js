@@ -65,7 +65,7 @@ export default function Nav({ page }) {
       <header className="nav">
         <div className="wrap">
           <a className="brand" href="#top" aria-label={t('aria.home')}>
-            <b>Bach Sy</b>
+            <b>Bachir Sy</b>
             <span>/ DKR</span>
           </a>
           <nav className="links" aria-label={t('aria.mainnav')}>
