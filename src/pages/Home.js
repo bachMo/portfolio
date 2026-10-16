@@ -319,7 +319,7 @@ export default function Home() {
             <article>
               <span className="mono acc" dangerouslySetInnerHTML={{__html:t('lab.2.tag')}} />
               <h3>
-                HOPE
+                VERIFA
               </h3>
               <p dangerouslySetInnerHTML={{__html:t('lab.2.desc')}} />
             </article>
