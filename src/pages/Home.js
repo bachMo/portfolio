@@ -309,6 +309,14 @@ export default function Home() {
             <span className="muted" dangerouslySetInnerHTML={{__html:t('lab.sub')}} />
           </div>
           <div className="lab">
+            <a className="lab-own" href="#/leeral">
+              <span className="mono acc" dangerouslySetInnerHTML={{__html:t('lab.0.tag')}} />
+              <h3>
+                Leeral
+              </h3>
+              <p dangerouslySetInnerHTML={{__html:t('lab.0.desc')}} />
+              <span className="lab-go" dangerouslySetInnerHTML={{__html:t('case.read') + ' →'}} />
+            </a>
             <article>
               <span className="mono acc" dangerouslySetInnerHTML={{__html:t('lab.1.tag')}} />
               <h3>

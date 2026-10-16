@@ -2,9 +2,9 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { prefersReducedMotion } from './motion';
 
-// Routage par hash : #/contact, #/sunuchat, #/saaytu, #/waluma — et ancres (#travaux…) sur l'accueil.
+// Routage par hash : #/contact, #/leeral, #/sunuchat, #/saaytu, #/waluma — et ancres (#travaux…) sur l'accueil.
 // Fonctionne sur n'importe quel hébergement statique, sans configuration de réécriture.
-export const PAGES = ['sunuchat', 'saaytu', 'waluma', 'contact'];
+export const PAGES = ['leeral', 'sunuchat', 'saaytu', 'waluma', 'contact'];
 
 function parse(hash) {
   const m = (hash || '').match(/^#\/([a-z]+)$/);

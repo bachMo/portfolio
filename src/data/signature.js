@@ -1,6 +1,53 @@
-// Projets signature (onglets SunuChat / Saaytu Mbay) — FR et EN
+// Projets signature (onglets Leeral / SunuChat / Saaytu Mbay) — FR et EN
 const signature = {
   "fr": {
+    "docs": {
+      "name": "Leeral — documents du quotidien",
+      "h1": "Un papier en français ?",
+      "h2": "Leeral l'explique à voix haute, en wolof et en pulaar.",
+      "href": "#/leeral",
+      "role": "Initiateur, chef de projet et développeur principal : architecture, application, API, intégration WhatsApp.",
+      "ctx": "Mon propre produit, présenté au Kiriku Voice Inclusive & Creative Challenge 2026 (AI Hub Sénégal).",
+      "done": "En ligne sur WhatsApp (+221 76 611 10 21), en application Android et sur leeral.expo.app.",
+      "steps": [
+        {
+          "title": "Photo",
+          "desc": "Une ou plusieurs pages, un PDF ou un Word, envoyés sur WhatsApp ou dans l'app.",
+          "tech": "WhatsApp · Expo",
+          "hot": false
+        },
+        {
+          "title": "Lecture",
+          "desc": "Photo contrôlée, texte extrait, type de document reconnu par deux modèles.",
+          "tech": "Vision · double avis",
+          "hot": false
+        },
+        {
+          "title": "Explication",
+          "desc": "Résumé, montants, dates, ce qu'il faut faire. Ordonnances relues deux fois.",
+          "tech": "LLM · garde-fous",
+          "hot": true
+        },
+        {
+          "title": "Traduction",
+          "desc": "Tout le texte en wolof ou en pulaar, noms et nombres protégés.",
+          "tech": "Traduction pour l'oral",
+          "hot": false
+        },
+        {
+          "title": "Voix",
+          "desc": "Les nombres écrits en toutes lettres, puis l'explication lue à voix haute.",
+          "tech": "KIRIKU TTS",
+          "hot": false
+        },
+        {
+          "title": "Questions",
+          "desc": "On pose ses questions à la voix, Leeral répond à partir du document.",
+          "tech": "KIRIKU ASR",
+          "hot": false
+        }
+      ]
+    },
     "sante": {
       "name": "SunuChat — santé publique",
       "h1": "Une question sur le paludisme ?",
@@ -97,6 +144,53 @@ const signature = {
     }
   },
   "en": {
+    "docs": {
+      "name": "Leeral — everyday paperwork",
+      "h1": "A document in French?",
+      "h2": "Leeral explains it out loud, in Wolof and Pulaar.",
+      "href": "#/leeral",
+      "role": "Founder, project lead and lead developer: architecture, app, API, WhatsApp integration.",
+      "ctx": "My own product, presented at the Kiriku Voice Inclusive & Creative Challenge 2026 (AI Hub Senegal).",
+      "done": "Live on WhatsApp (+221 76 611 10 21), as an Android app and at leeral.expo.app.",
+      "steps": [
+        {
+          "title": "Photo",
+          "desc": "One or more pages, a PDF or a Word file, sent on WhatsApp or in the app.",
+          "tech": "WhatsApp · Expo",
+          "hot": false
+        },
+        {
+          "title": "Reading",
+          "desc": "Photo checked, text extracted, document type identified by two models.",
+          "tech": "Vision · two opinions",
+          "hot": false
+        },
+        {
+          "title": "Explanation",
+          "desc": "Summary, amounts, dates, what to do. Prescriptions are read twice.",
+          "tech": "LLM · safeguards",
+          "hot": true
+        },
+        {
+          "title": "Translation",
+          "desc": "The whole text in Wolof or Pulaar, with names and numbers protected.",
+          "tech": "Translation for speech",
+          "hot": false
+        },
+        {
+          "title": "Voice",
+          "desc": "Numbers written out in words, then the explanation read aloud.",
+          "tech": "KIRIKU TTS",
+          "hot": false
+        },
+        {
+          "title": "Questions",
+          "desc": "Ask questions by voice; Leeral answers from the document.",
+          "tech": "KIRIKU ASR",
+          "hot": false
+        }
+      ]
+    },
     "sante": {
       "name": "SunuChat — public health",
       "h1": "A question about malaria?",
