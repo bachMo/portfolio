@@ -103,12 +103,7 @@ export default function Home() {
             <span dangerouslySetInnerHTML={{__html:t('m.4')}} />
           </div>
           <div>
-            <strong>
-              17
-              <small>
-                /20
-              </small>
-            </strong>
+            <strong className="metric-word" dangerouslySetInnerHTML={{__html:t('m.5.big')}} />
             <span dangerouslySetInnerHTML={{__html:t('m.5')}} />
           </div>
         </div>
