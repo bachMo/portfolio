@@ -4,6 +4,7 @@ import Interactions from './components/Interactions';
 import useHashRoute from './hooks/useHashRoute';
 import { usePrefs } from './i18n/PrefsContext';
 import Home from './pages/Home';
+import CaseLeeral from './pages/CaseLeeral';
 import CaseSunuChat from './pages/CaseSunuChat';
 import CaseSaaytu from './pages/CaseSaaytu';
 import CaseWaluma from './pages/CaseWaluma';
@@ -11,6 +12,7 @@ import Contact from './pages/Contact';
 
 const PAGES = {
   home: Home,
+  leeral: CaseLeeral,
   sunuchat: CaseSunuChat,
   saaytu: CaseSaaytu,
   waluma: CaseWaluma,

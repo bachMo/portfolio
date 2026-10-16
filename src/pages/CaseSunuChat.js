@@ -16,7 +16,7 @@ export default function CaseSunuChat() {
           </a>
           <span className="mono muted">
             <span dangerouslySetInnerHTML={{__html:t('case.label')}} />
-            {" 01 / 03"}
+            {" 02 / 04"}
           </span>
         </div>
         <section className="case-hero">

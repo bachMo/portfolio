@@ -28,7 +28,7 @@ export default function CaseSaaytu() {
           </a>
           <span className="mono muted">
             <span dangerouslySetInnerHTML={{__html:t('case.label')}} />
-            {" 02 / 03"}
+            {" 03 / 04"}
           </span>
         </div>
         <section className="case-hero">

@@ -3,12 +3,12 @@ import { usePrefs } from '../i18n/PrefsContext';
 import { prefersReducedMotion } from '../hooks/motion';
 import signature from '../data/signature';
 
-const TABS = [['sante', 'sig.tab1'], ['agri', 'sig.tab2']];
+const TABS = [['docs', 'sig.tab0'], ['sante', 'sig.tab1'], ['agri', 'sig.tab2']];
 
 /** Projets signature : onglets + pipeline où un signal traverse les 6 étapes. */
 export default function Signature() {
   const { lang, t } = usePrefs();
-  const [sig, setSig] = useState('sante');
+  const [sig, setSig] = useState('docs');
   const [fading, setFading] = useState(false);
   const [lit, setLit] = useState(() => new Set());
   const pipeRef = useRef(null);
@@ -53,7 +53,7 @@ export default function Signature() {
         <div className="tabs" role="tablist" aria-label={t('aria.pick')}>
           {TABS.map(([key, label]) => (
             <button key={key} type="button" role="tab" aria-selected={sig === key} onClick={() => pick(key)}
-                    dangerouslySetInnerHTML={{ __html: t(label) }} />
+                    dangerouslySetInnerHTML={{ __html: t(label).replace(' · ', '<span class="tab-sub"> · ') + (t(label).includes(' · ') ? '</span>' : '') }} />
           ))}
         </div>
       </div>
