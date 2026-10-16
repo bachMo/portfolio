@@ -76,6 +76,7 @@ em{font-style:italic}
 .metrics div{padding:36px 24px 36px;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
 .metrics div:first-child{border-left:0;padding-left:0}
 .metrics strong{font-family:var(--serif);font-weight:400;font-size:clamp(48px,5vw,72px);line-height:1}
+.metrics strong.metric-word{font-style:italic;font-size:clamp(40px,3.9vw,56px);line-height:1.1;white-space:nowrap}
 .metrics strong small{font-size:.5em;color:var(--muted)}
 .metrics span{font-size:14px;color:var(--muted);line-height:1.4}
 
@@ -473,6 +474,7 @@ html,body{overflow-x:clip}
 .bars i{background:linear-gradient(to top,var(--bar),var(--bar2))}
 .bars i.hot{background:var(--accent)}
 .metrics strong{color:var(--num)}
+@media (max-width:760px){.metrics strong.metric-word{font-size:40px}}
 .metrics strong small{color:var(--faint)}
 .h2 em,.sig-head h2 em,.solo+* .h2 em{color:var(--em2)}
 .kicker,.sig-top>.mono{color:var(--kick)}
