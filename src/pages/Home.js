@@ -258,7 +258,7 @@ export default function Home() {
             </div>
           </article>
           <article className="card">
-            <a className="shot" href="https://spotenergies.com" target="_blank" rel="noopener noreferrer" tabIndex="-1" aria-hidden="true">
+            <a className="shot" href="https://spot-sc46.vercel.app" target="_blank" rel="noopener noreferrer" tabIndex="-1" aria-hidden="true">
               <img src={img.spot} alt="" loading="lazy" />
             </a>
             <div className="card-body">
@@ -272,8 +272,8 @@ export default function Home() {
                 SPOT Énergie
               </h3>
               <p dangerouslySetInnerHTML={{__html:t('solo.3.desc')}} />
-              <a className="visit" href="https://spotenergies.com" target="_blank" rel="noopener noreferrer">
-                {"spotenergies.com "}
+              <a className="visit" href="https://spot-sc46.vercel.app" target="_blank" rel="noopener noreferrer">
+                {"spot-sc46.vercel.app "}
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M7 17L17 7M8 7h9v9" />
                 </svg>
