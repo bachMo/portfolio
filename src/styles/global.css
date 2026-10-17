@@ -519,6 +519,29 @@ html,body{overflow-x:clip}
 .contact-band .pill.solid{background:var(--cband-acc);border-color:var(--cband-acc);color:#1F1510}
 .contact-band [data-tx] .caret{background:var(--cband-acc)}
 
+/* goorgoorlu : mascotte + CV */
+.goor{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:center}
+.goor-art{position:relative;margin:0;display:flex;justify-content:center;align-items:flex-end;min-height:420px}
+.goor-sun{position:absolute;width:min(100%,460px);aspect-ratio:1;left:50%;top:22%;transform:translateX(-50%);border-radius:50%;background:#E9A54B}
+.goor-art img{position:relative;width:auto;height:clamp(440px,52vw,640px);max-width:100%;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(42,27,18,.18))}
+.goor-text .h2 em{color:var(--accent)}
+.goor-text p{font-size:18px;line-height:1.65;color:var(--muted);font-weight:300;max-width:34em;margin-top:20px}
+.goor-text p.goor-lede{font-size:clamp(20px,1.8vw,24px);color:var(--text-2);margin-top:28px}
+.goor-text p b{font-weight:600;color:var(--text)}
+.goor-cv{display:flex;flex-wrap:wrap;align-items:center;gap:18px 28px;margin-top:36px;padding-top:28px;border-top:1px solid var(--line)}
+.goor-cv .pill{height:56px;padding:0 28px;font-size:16px}
+.goor-cv-other{display:flex;flex-direction:column;gap:8px}
+.cv-all{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:14px}
+.cv-all a{border-bottom:1px solid var(--line-2);padding-bottom:1px}
+.cv-all a:hover{border-color:var(--accent)}
+@media (max-width:900px){
+  .goor{grid-template-columns:1fr}
+  .goor-art{min-height:0}
+  .goor-art img{height:min(460px,110vw)}
+  .goor-sun{width:min(84%,380px)}
+}
+@media (max-width:760px){.goor-cv .pill{width:100%;justify-content:center}}
+
 /* scrollspy */
 .links a{position:relative;padding-block:6px}
 .links a:not(.pill)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.8,.2,1)}

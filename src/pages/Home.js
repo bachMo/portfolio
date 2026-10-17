@@ -7,6 +7,8 @@ import Waveform from '../components/Waveform';
 import Signature from '../components/Signature';
 import TeamRail from '../components/TeamRail';
 import OptionalLink from '../components/OptionalLink';
+import Goorgoorlu from '../components/Goorgoorlu';
+import CvLink from '../components/CvLink';
 import { prefersReducedMotion } from '../hooks/motion';
 import img from '../assets';
 
@@ -179,6 +181,7 @@ export default function Home() {
           </span>
         </div>
       </div>
+      <Goorgoorlu />
       <Signature />
       <section className="block wrap" id="travaux">
         <div className="intro">
@@ -508,7 +511,7 @@ export default function Home() {
                 LinkedIn
               </a>
               <OptionalLink kind="github" label="GitHub" />
-              <OptionalLink kind="cv" label={t("contact.cv")} />
+              <CvLink />
             </div>
           </div>
         </div>

@@ -3,6 +3,7 @@ import { CONFIG } from '../config';
 import Tx from '../components/Tx';
 import Clock from '../components/Clock';
 import ContactForm from '../components/ContactForm';
+import { CvAll } from '../components/CvLink';
 
 export default function Contact() {
   const { t } = usePrefs();
@@ -52,6 +53,14 @@ export default function Contact() {
               <div>
                 <dt dangerouslySetInnerHTML={{__html:t('cp.base')}} />
                 <dd dangerouslySetInnerHTML={{__html:t('cp.base.v')}} />
+              </div>
+              <div>
+                <dt>
+                  CV
+                </dt>
+                <dd>
+                  <CvAll className="cv-all cv-inline" />
+                </dd>
               </div>
               <div>
                 <dt dangerouslySetInnerHTML={{__html:t('cp.langs')}} />
