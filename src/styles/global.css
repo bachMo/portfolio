@@ -522,7 +522,7 @@ html,body{overflow-x:clip}
 /* goorgoorlu : mascotte + CV */
 .goor{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(32px,6vw,96px);align-items:center}
 .goor-art{position:relative;margin:0;display:flex;justify-content:center;align-items:flex-end;min-height:420px}
-.goor-sun{position:absolute;width:min(100%,460px);aspect-ratio:1;left:50%;top:22%;transform:translateX(-50%);border-radius:50%;background:#E9A54B}
+.goor-sun{position:absolute;width:min(100%,460px);aspect-ratio:1;left:50%;top:7%;transform:translateX(-50%);border-radius:50%;background:#E9A54B}
 .goor-art img{position:relative;width:auto;height:clamp(440px,52vw,640px);max-width:100%;object-fit:contain;filter:drop-shadow(0 30px 40px rgba(42,27,18,.18))}
 .goor-text .h2 em{color:var(--accent)}
 .goor-text p{font-size:18px;line-height:1.65;color:var(--muted);font-weight:300;max-width:34em;margin-top:20px}
