@@ -416,6 +416,13 @@ export default function Home() {
           <div>
             <h3 dangerouslySetInnerHTML={{__html:t('path.exp')}} />
             <div className="row">
+              <time dangerouslySetInnerHTML={{__html:t('j0.d')}} />
+              <div>
+                <b dangerouslySetInnerHTML={{__html:t('j0.t')}} />
+                <span dangerouslySetInnerHTML={{__html:t('j0.s')}} />
+              </div>
+            </div>
+            <div className="row">
               <time dangerouslySetInnerHTML={{__html:t('j1.d')}} />
               <div>
                 <b dangerouslySetInnerHTML={{__html:t('j1.t')}} />
