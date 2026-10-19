@@ -19,7 +19,7 @@ Le site s'ouvre sur http://localhost:3000.
 Le fichier `.env` est déjà présent. Il ne manque que deux valeurs.
 
 1. **Créer le modèle** sur https://dashboard.emailjs.com : *Email Templates → Create New Template*
-   - **To Email** : `bachirsy26@gmail.com`
+   - **To Email** : `contact.bachirsy@gmail.com`
    - **From Name** : `{{name}}`
    - **Reply To** : `{{reply_to}}`
    - **Subject** : `{{title}}`
