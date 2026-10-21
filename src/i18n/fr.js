@@ -24,7 +24,7 @@ const fr = {
   "marq.label": "ILS M'ONT FAIT CONFIANCE",
   "goor.kicker": "LE GOORGOORLU DU DIGITAL",
   "goor.title": "Ni juste dev, ni juste data scientist. <em>Goorgoorlu.</em>",
-  "goor.p1": "En wolof, le <b>goorgoorlu</b>, c'est celui qui se débrouille et trouve toujours une solution. C'est exactement ma façon de travailler.",
+  "goor.p1": "En wolof, le <b>goorgoorlu</b>, c'est celui qui trouve toujours une solution. C'est exactement ma façon de travailler.",
   "goor.p2": "Vous m'apportez un problème, pas un cahier des charges technique. Je comprends votre terrain, puis j'assemble le bon outil : site, application, tableau de bord, chatbot IA sur WhatsApp. Utile d'abord, beau ensuite, jamais l'un sans l'autre.",
   "goor.cv": "Télécharger mon CV",
   "goor.cv.other": "AUTRES VERSIONS",
