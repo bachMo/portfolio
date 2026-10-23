@@ -9,6 +9,7 @@ import CaseSunuChat from './pages/CaseSunuChat';
 import CaseSaaytu from './pages/CaseSaaytu';
 import CaseWaluma from './pages/CaseWaluma';
 import Contact from './pages/Contact';
+import { Analytics } from '@vercel/analytics/react';
 
 const PAGES = {
   home: Home,
@@ -33,6 +34,7 @@ export default function App() {
       </div>
       <Footer />
       <Interactions />
+      <Analytics />
     </>
   );
 }
