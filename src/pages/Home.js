@@ -502,6 +502,21 @@ export default function Home() {
           <span className="mono band-k">
             CONTACT
           </span>
+          <a className="round-badge" href="#/contact" aria-hidden="true" tabIndex="-1">
+            <svg viewBox="0 0 200 200">
+              <defs>
+                <path id="badgeCircle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
+              </defs>
+              <text>
+                <textPath href="#badgeCircle" textLength="486" lengthAdjust="spacing">{t('badge')}</textPath>
+              </text>
+            </svg>
+            <span className="rb-arrow">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M7 17L17 7M8 7h9v9" />
+              </svg>
+            </span>
+          </a>
           <Tx as="h2" html={t('contact.title')} id="contactTitle" mode="inview" />
           <div className="contact-row">
             <a className="pill solid magnetic big-cta" href="#/contact">

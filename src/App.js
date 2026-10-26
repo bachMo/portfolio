@@ -1,6 +1,7 @@
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Interactions from './components/Interactions';
+import Creative from './components/Creative';
 import useHashRoute from './hooks/useHashRoute';
 import { usePrefs } from './i18n/PrefsContext';
 import Home from './pages/Home';
@@ -34,6 +35,8 @@ export default function App() {
       </div>
       <Footer />
       <Interactions />
+      <Creative page={page} />
+      <div className="grain" aria-hidden="true" />
       <Analytics />
     </>
   );

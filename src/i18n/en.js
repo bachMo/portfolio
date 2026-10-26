@@ -120,6 +120,7 @@ const en = {
   "e4.s": "Excellent · fluent · professional",
   "contact.title": "A product that has to <em>speak to people here</em>?",
   "contact.cta": "Write me a message",
+  "badge": "OPEN FOR NEW PROJECTS · DAKAR · ",
   "contact.cv": "Résumé (PDF)",
   "case.back": "Back to the work",
   "case.label": "CASE STUDY",

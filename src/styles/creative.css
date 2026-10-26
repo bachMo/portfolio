@@ -1,0 +1,109 @@
+/* ===== v5 : couche créative =====
+   Tout ce fichier peut être retiré sans casser le site (voir src/components/Creative.js). */
+
+/* grain papier, comme sur les visuels de la marque */
+.grain{position:fixed;inset:-50%;z-index:90;pointer-events:none;opacity:.07;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .16 0 0 0 0 .11 0 0 0 0 .07 0 0 0 1.2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1.2s steps(5) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,-1%)}80%{transform:translate(3%,3%)}100%{transform:translate(0,0)}}
+:root[data-theme="dark"] .grain{mix-blend-mode:soft-light;opacity:.12}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .grain{mix-blend-mode:soft-light;opacity:.12}}
+
+/* curseur */
+.has-cursor body, .has-cursor a, .has-cursor button, .has-cursor label, .has-cursor [role="tab"]{cursor:none}
+.has-cursor input, .has-cursor textarea, .has-cursor select{cursor:auto}
+.cur-dot,.cur-ring{position:fixed;left:0;top:0;z-index:200;pointer-events:none;will-change:transform}
+.cur-dot{width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:var(--accent);transition:opacity .2s,width .2s,height .2s}
+.cur-ring{width:38px;height:38px;margin:-19px 0 0 -19px;display:flex;align-items:center;justify-content:center}
+.cur-ring::before{content:"";position:absolute;inset:0;border-radius:50%;border:1.5px solid color-mix(in srgb,var(--accent) 70%,transparent);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1),background .3s,border-color .3s}
+.cur-ring span{position:relative;font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-ink);opacity:0;transform:scale(.6);transition:opacity .25s,transform .35s cubic-bezier(.2,.8,.2,1)}
+.cur-ring.is-hot::before{transform:scale(1.55);background:color-mix(in srgb,var(--accent) 10%,transparent)}
+.cur-ring.is-label::before{transform:scale(2.3);background:var(--accent);border-color:var(--accent)}
+.cur-ring.is-label span{opacity:1;transform:scale(1)}
+.cur-ring.is-down::before{transform:scale(.8)}
+.cur-ring.is-label.is-down::before{transform:scale(2)}
+.cur-ring.is-field,.cur-dot.is-field{opacity:0}
+.cur-out .cur-dot,.cur-out .cur-ring{opacity:0}
+
+/* apparitions au défilement */
+.js .rv{opacity:0;transform:translateY(34px);transition:opacity .8s ease var(--rv-d,0ms),transform 1s cubic-bezier(.16,.84,.24,1) var(--rv-d,0ms)}
+.js .rv.in{opacity:1;transform:none}
+.js .rv.rv-mask{opacity:1;transform:none;clip-path:inset(0 0 100% 0);translate:0 .35em;transition:clip-path 1.1s cubic-bezier(.16,.84,.24,1) var(--rv-d,0ms),translate 1.1s cubic-bezier(.16,.84,.24,1) var(--rv-d,0ms)}
+.js .rv.rv-mask.in{clip-path:inset(0 0 -10% 0);translate:0 0}
+.js .card.rv .shot img{clip-path:inset(0 100% 0 0);scale:1.15;transition:clip-path 1.2s cubic-bezier(.16,.84,.24,1) calc(var(--rv-d,0ms) + 150ms),scale 1.6s cubic-bezier(.16,.84,.24,1) calc(var(--rv-d,0ms) + 150ms)}
+.js .card.rv.in .shot img{clip-path:inset(0 0 0 0);scale:1}
+
+/* cartes 3D */
+.card,a.tcard,.lab .lab-own{transform-style:preserve-3d}
+.tilting{transition:transform .14s linear,border-color .3s,box-shadow .4s!important;box-shadow:0 34px 60px -34px color-mix(in srgb,var(--accent) 55%,transparent)!important}
+.card .shot img{transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.tilting .shot img{transition:transform .14s linear}
+
+/* titre du hero : mots « jouables » */
+#heroTitle.settled .w{transition:transform .45s cubic-bezier(.2,.8,.2,1),color .3s;transition-delay:0s}
+#heroTitle.settled .w:hover{transform:translateY(-.07em) rotate(-1.5deg);color:var(--accent)}
+#heroTitle.settled em .w:hover{color:var(--em2)}
+
+/* halo qui suit la souris dans le hero */
+.hero::after{content:"";position:absolute;z-index:-1;pointer-events:none;width:520px;height:520px;left:var(--gx,50%);top:var(--gy,40%);translate:-50% -50%;border-radius:50%;
+  background:radial-gradient(circle,color-mix(in srgb,var(--accent) 18%,transparent),transparent 62%);opacity:0;transition:opacity .6s,left .9s cubic-bezier(.2,.8,.2,1),top .9s cubic-bezier(.2,.8,.2,1)}
+.hero.glow-on::after{opacity:1}
+
+/* bandeau : inclinaison selon la vitesse */
+.marquee .track span{transform:skewX(var(--sk,0deg));transition:transform .2s ease-out}
+.marquee .track span:hover{color:var(--accent)}
+
+/* mascotte : soleil, orbite et parallaxe */
+.goor-sun{translate:0 var(--py,0)}
+.goor-art img{translate:0 var(--py,0)}
+.goor-orbit{position:absolute;width:min(116%,560px);aspect-ratio:1;left:50%;top:calc(7% - min(8%,40px));translate:-50% var(--py,0);border-radius:50%;
+  border:1.5px dashed color-mix(in srgb,var(--accent) 45%,transparent);animation:orbit 38s linear infinite;pointer-events:none}
+.goor-orbit i{position:absolute;inset:0;transform:rotate(var(--a))}
+.goor-orbit b{position:absolute;left:50%;top:0;font-style:normal;translate:-50% -50%;display:inline-block;padding:7px 14px;border-radius:999px;background:var(--surface);border:1px solid var(--line-2);
+  font-family:var(--mono);font-weight:500;font-size:12px;letter-spacing:.08em;color:var(--text-2);white-space:nowrap;box-shadow:0 10px 24px -14px rgba(42,27,18,.35);
+  animation:orbit-up 38s linear infinite;transform:rotate(calc(-1 * var(--a)))}
+.goor-orbit i:nth-child(3n+1) b{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+@keyframes orbit{to{rotate:360deg}}
+@keyframes orbit-up{to{rotate:-360deg}}
+.goor-art:hover .goor-orbit,.goor-art:hover .goor-orbit b{animation-play-state:paused}
+
+/* badge rotatif dans le bandeau contact */
+.contact-band{position:relative}
+.round-badge{position:absolute;top:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);width:150px;height:150px;display:flex;align-items:center;justify-content:center;color:var(--cband-ink)}
+.round-badge>svg{position:absolute;inset:0;width:100%;height:100%;animation:orbit 22s linear infinite;font-family:var(--mono);font-size:14px;fill:currentColor}
+.round-badge .rb-arrow{width:64px;height:64px;border-radius:50%;background:var(--cband-acc);color:#1F1510;display:flex;align-items:center;justify-content:center;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.round-badge:hover{color:var(--cband-ink)}
+.round-badge:hover .rb-arrow{transform:rotate(45deg) scale(1.12)}
+.round-badge:hover>svg{animation-duration:6s}
+
+/* signature du pied de page */
+.wordmark .wl{display:inline-block;background:inherit;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  transform:translateY(var(--lift,0));transition:transform .5s cubic-bezier(.2,.8,.2,1)}
+.wordmark em .wl{-webkit-text-fill-color:var(--em2);background:none}
+.js .wordmark.wm-ready .wl{opacity:0;translate:0 .5em;transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .7s ease calc(var(--i) * 60ms),translate 1s cubic-bezier(.16,.84,.24,1) calc(var(--i) * 60ms)}
+.js .wordmark.wm-ready.in .wl{opacity:1;translate:0 0}
+
+/* boutons : remplissage qui monte au survol */
+.pill:not(.solid){position:relative;overflow:hidden;isolation:isolate}
+.pill:not(.solid)::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--text);border-radius:inherit;transform:translateY(101%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.pill:not(.solid):hover{color:var(--bg);border-color:var(--text)}
+.pill:not(.solid):hover::before{transform:none}
+.contact-band .pill:not(.solid)::before{background:var(--cband-ink)}
+.contact-band .pill:not(.solid):hover{color:var(--cband)}
+.lang.pill::before,.lang::before{display:none}
+
+@media (max-width:900px){
+  .goor-orbit{width:min(104%,440px)}
+}
+@media (max-width:760px){
+  .round-badge{position:relative;top:auto;right:auto;width:118px;height:118px;margin-top:8px}
+  .round-badge .rb-arrow{width:52px;height:52px}
+  .goor-orbit{width:84%;top:calc(7% + 2%)}
+  .goor-orbit b{font-size:11px;padding:6px 11px}
+  .contact-band .socials .pill{flex:1 1 auto;min-width:max-content}
+}
+@media (prefers-reduced-motion:reduce){
+  .grain{animation:none}
+  .js .rv,.js .rv.rv-mask,.js .card.rv .shot img,.js .wordmark.wm-ready .wl{opacity:1;transform:none;clip-path:none;translate:none;scale:1}
+}

@@ -2,14 +2,21 @@ import { usePrefs } from '../i18n/PrefsContext';
 import CvLink, { CvAll } from './CvLink';
 import img from '../assets';
 
+const ORBIT = ['Web', 'Mobile', 'WhatsApp', 'Data', 'Wolof', 'LLM'];
+
 /** Section de marque : la mascotte « goorgoorlu du digital » + téléchargement du CV. */
 export default function Goorgoorlu() {
   const { t } = usePrefs();
   return (
     <section className="block wrap goor" id="goorgoorlu" aria-labelledby="goor-title">
       <figure className="goor-art">
-        <span className="goor-sun" aria-hidden="true" />
-        <img src={img.mascotte} alt={t('goor.alt')} loading="lazy" width="620" height="1658" />
+        <span className="goor-sun" aria-hidden="true" data-par="-0.06" />
+        <span className="goor-orbit" aria-hidden="true">
+          {ORBIT.map((w, i) => (
+            <i key={w} style={{ '--a': `${(360 / ORBIT.length) * i}deg` }}><b>{w}</b></i>
+          ))}
+        </span>
+        <img data-par="0.04" src={img.mascotte} alt={t('goor.alt')} loading="lazy" width="620" height="1658" />
       </figure>
       <div className="goor-text">
         <span className="mono kicker" dangerouslySetInnerHTML={{ __html: t('goor.kicker') }} />

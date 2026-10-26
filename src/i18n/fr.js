@@ -112,6 +112,7 @@ const fr = {
   "e4.s": "Excellent · courant · professionnel",
   "contact.title": "Un produit qui doit <em>parler aux gens d'ici</em> ?",
   "contact.cta": "Écrire un message",
+  "badge": "DISPONIBLE POUR VOS PROJETS · DAKAR · ",
   "contact.cv": "CV (PDF)",
   "case.back": "Retour aux travaux",
   "case.label": "ÉTUDE DE CAS",

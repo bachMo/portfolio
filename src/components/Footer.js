@@ -16,9 +16,11 @@ export default function Footer() {
           </a>
         </div>
         <div className="wordmark" aria-hidden="true">
-          Bachir Sy
+          {'Bachir Sy'.split('').map((c, i) => (
+            <span key={i} className="wl" style={{ '--i': i }}>{c === ' ' ? '\u00a0' : c}</span>
+          ))}
           <em>
-            .
+            <span className="wl" style={{ '--i': 9 }}>.</span>
           </em>
         </div>
         <div className="row2 mono">

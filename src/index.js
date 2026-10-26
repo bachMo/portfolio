@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './styles/global.css';
+import './styles/creative.css';
 import App from './App';
 import { PrefsProvider } from './i18n/PrefsContext';
 
