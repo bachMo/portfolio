@@ -9,8 +9,11 @@ import TeamRail from '../components/TeamRail';
 import OptionalLink from '../components/OptionalLink';
 import Goorgoorlu from '../components/Goorgoorlu';
 import CvLink from '../components/CvLink';
+import VoiceToggle from '../components/VoiceToggle';
 import { prefersReducedMotion } from '../hooks/motion';
 import img from '../assets';
+
+const WHISPER = ['Salaam aleekum', 'Nanga def ?', 'Mangi fi rekk', 'Jërëjëf', 'Dégg naa la', 'Teranga', 'Waaw', 'Ba beneen yoon', 'Ñoo ko bokk', 'Jàmm rekk', 'Salaam aleekum', 'Nanga def ?', 'Jërëjëf', 'Dégg naa la', 'Teranga', 'Ba beneen yoon'];
 
 export default function Home() {
   const { t } = usePrefs();
@@ -73,6 +76,7 @@ export default function Home() {
             <span dangerouslySetInnerHTML={{__html:t('wave.reply')}} />
           </div>
         </div>
+        <VoiceToggle />
       </section>
       <div className="wrap">
         <div className="metrics">
@@ -502,6 +506,9 @@ export default function Home() {
           <span className="mono band-k">
             CONTACT
           </span>
+          <div className="whisper" aria-hidden="true">
+            {[...WHISPER, ...WHISPER, ...WHISPER].map((w, i) => <span key={i}>{w}</span>)}
+          </div>
           <a className="round-badge" href="#/contact" aria-hidden="true" tabIndex="-1">
             <svg viewBox="0 0 200 200">
               <defs>

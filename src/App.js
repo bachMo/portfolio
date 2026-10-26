@@ -2,6 +2,9 @@ import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Interactions from './components/Interactions';
 import Creative from './components/Creative';
+import CommandPalette from './components/CommandPalette';
+import ChapterRail from './components/ChapterRail';
+import EasterEgg from './components/EasterEgg';
 import useHashRoute from './hooks/useHashRoute';
 import { usePrefs } from './i18n/PrefsContext';
 import Home from './pages/Home';
@@ -36,6 +39,9 @@ export default function App() {
       <Footer />
       <Interactions />
       <Creative page={page} />
+      <ChapterRail page={page} />
+      <CommandPalette />
+      <EasterEgg />
       <div className="grain" aria-hidden="true" />
       <Analytics />
     </>

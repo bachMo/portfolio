@@ -229,6 +229,7 @@ const en = {
   "cp.again": "Send another message",
   "foot.made": "DESIGNED AND CODED IN DAKAR",
   "foot.top": "Back to top",
+  "foot.kbd": "The whole site, by keyboard",
   "hero.loc": "DAKAR, SENEGAL",
   "arch.in": "INPUT",
   "arch.out": "OUTPUT",

@@ -224,6 +224,7 @@ const fr = {
   "cp.again": "Envoyer un autre message",
   "foot.made": "CONÇU ET CODÉ À DAKAR",
   "foot.top": "Haut de page",
+  "foot.kbd": "Tout le site au clavier",
   "aria.home": "Bachir Sy, accueil",
   "aria.mainnav": "Navigation principale",
   "aria.lang": "Langue",

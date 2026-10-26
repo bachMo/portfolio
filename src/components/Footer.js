@@ -27,6 +27,9 @@ export default function Footer() {
           <span>
             © 2026 Mamadou Bachir Sy
           </span>
+          <button type="button" className="kbd-hint" onClick={() => window.dispatchEvent(new Event('open-palette'))}>
+            <kbd>⌘K</kbd> <span dangerouslySetInnerHTML={{__html:t('foot.kbd')}} />
+          </button>
           <span>
             {"Dakar · "}
             <Clock />

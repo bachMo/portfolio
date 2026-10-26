@@ -254,6 +254,14 @@ export default function Creative({ page }) {
         hero.classList.add('glow-on');
       }
 
+      // mots en wolof révélés à la lampe dans le bandeau contact
+      const band = t.closest('.contact-band');
+      if (band) {
+        const r = band.getBoundingClientRect();
+        band.style.setProperty('--wx', e.clientX - r.left + 'px');
+        band.style.setProperty('--wy', e.clientY - r.top + 'px');
+      }
+
       // signature du pied de page
       const wm = t.closest('.wordmark');
       document.querySelectorAll('.wordmark .wl').forEach((l) => {
@@ -290,6 +298,40 @@ export default function Creative({ page }) {
       document.removeEventListener('pointerup', onUp);
       document.removeEventListener('pointerleave', onLeaveHero, true);
     };
+  }, []);
+
+  // Rideau de transition vers les études de cas et la page contact.
+  useEffect(() => {
+    if (prefersReducedMotion()) return undefined;
+    const NAMES = { leeral: 'Leeral', sunuchat: 'SunuChat', saaytu: 'Saaytu Mbay', waluma: 'Waluma', contact: 'Contact' };
+    const cur = document.createElement('div');
+    cur.className = 'curtain';
+    cur.setAttribute('aria-hidden', 'true');
+    cur.innerHTML = '<span class="curtain-k"></span><b class="curtain-t"></b>';
+    document.body.appendChild(cur);
+    let busy = false;
+    const onClick = (e) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || busy) return;
+      const a = e.target.closest && e.target.closest('a[href^="#/"]');
+      if (!a) return;
+      const target = a.getAttribute('href').slice(2);
+      if (!NAMES[target] || window.location.hash === '#/' + target) return;
+      e.preventDefault();
+      busy = true;
+      const en = document.documentElement.lang === 'en';
+      cur.querySelector('.curtain-k').textContent = target === 'contact' ? (en ? 'Let’s talk' : 'On en parle') : (en ? 'Case study' : 'Étude de cas');
+      cur.querySelector('.curtain-t').textContent = NAMES[target];
+      cur.className = 'curtain in';
+      setTimeout(() => {
+        window.location.hash = '#/' + target;
+        setTimeout(() => {
+          cur.className = 'curtain out';
+          setTimeout(() => { cur.className = 'curtain'; busy = false; }, 800);
+        }, 260);
+      }, 620);
+    };
+    document.addEventListener('click', onClick);
+    return () => { document.removeEventListener('click', onClick); cur.remove(); };
   }, []);
 
   // Le titre du hero devient « jouable » une fois sa transcription terminée.
