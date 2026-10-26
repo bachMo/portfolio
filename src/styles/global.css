@@ -238,7 +238,7 @@ footer{margin-top:120px;padding-block:28px;border-top:1px solid var(--line);disp
 
 /* waveform driven by JS */
 .bars i{transform:scaleY(.02);transition:none;will-change:transform}
-.wave{cursor:crosshair}
+
 
 /* pipeline signal */
 .step{transition:border-color .35s,box-shadow .35s,transform .35s}

@@ -3,7 +3,6 @@ import { hasFinePointer, prefersReducedMotion } from '../hooks/motion';
 
 /**
  * Couche « créative » (v5) — tout est ici, pour pouvoir l'activer ou la retirer d'un coup.
- * - curseur personnalisé avec étiquette « Voir » sur les projets (souris uniquement)
  * - apparition des blocs au défilement, titres qui montent depuis un masque
  * - petits titres en monospace qui se « décodent » (clin d'œil à la transcription vocale)
  * - chiffres clés qui défilent jusqu'à leur valeur
@@ -22,10 +21,7 @@ const REVEAL = [
 ].join(',');
 const SCRAMBLE = '.kicker, .band-k, .sig-top > .mono, .marquee-label, .facts4 small, .lab-head .muted, .path h3';
 const TILT = '.card, a.tcard, .lab-own';
-const LABELLED = '.shot, .lab-own, a.tcard, .next a, .case-link';
 const GLYPHS = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789#/_·';
-
-const label = () => (document.documentElement.lang === 'en' ? 'View' : 'Voir');
 
 export default function Creative({ page }) {
   // Révélations, décodage, compteurs, parallaxe : rescannés à chaque changement de page.
@@ -185,27 +181,10 @@ export default function Creative({ page }) {
     return () => cancelAnimationFrame(raf);
   }, []);
 
-  // Curseur, cartes 3D, halo du hero, signature réactive : souris uniquement.
+  // Cartes 3D, halo du hero, signature réactive : souris uniquement (curseur natif conservé).
   useEffect(() => {
     if (!hasFinePointer() || prefersReducedMotion()) return undefined;
-    const dot = document.createElement('div');
-    const ring = document.createElement('div');
-    const txt = document.createElement('span');
-    dot.className = 'cur-dot';
-    ring.className = 'cur-ring';
-    ring.appendChild(txt);
-    document.body.append(dot, ring);
-    document.documentElement.classList.add('has-cursor');
-
-    let mx = -100, my = -100, rx = -100, ry = -100, raf = 0;
     let tilted = null;
-    const loop = () => {
-      rx += (mx - rx) * 0.18;
-      ry += (my - ry) * 0.18;
-      ring.style.transform = `translate(${rx}px,${ry}px)`;
-      raf = requestAnimationFrame(loop);
-    };
-    raf = requestAnimationFrame(loop);
 
     const untilt = () => {
       if (!tilted) return;
@@ -217,19 +196,8 @@ export default function Creative({ page }) {
     };
 
     const onMove = (e) => {
-      mx = e.clientX; my = e.clientY;
-      dot.style.transform = `translate(${mx}px,${my}px)`;
-      document.documentElement.classList.remove('cur-out');
       const t = e.target;
       if (!t.closest) return;
-      const lab = t.closest(LABELLED);
-      const hot = t.closest('a, button, [role="tab"], label, summary');
-      const field = t.closest('input, textarea, select');
-      ring.classList.toggle('is-label', !!lab);
-      ring.classList.toggle('is-hot', !!hot && !lab);
-      ring.classList.toggle('is-field', !!field);
-      dot.classList.toggle('is-field', !!field);
-      if (lab) txt.textContent = label();
 
       // cartes 3D
       const card = t.closest(TILT);
@@ -273,10 +241,8 @@ export default function Creative({ page }) {
       });
     };
     const onOut = (e) => {
-      if (!e.relatedTarget) { document.documentElement.classList.add('cur-out'); untilt(); }
+      if (!e.relatedTarget) untilt();
     };
-    const onDown = () => ring.classList.add('is-down');
-    const onUp = () => ring.classList.remove('is-down');
     const onLeaveHero = (e) => {
       const hero = document.querySelector('.hero');
       if (hero && e.target === hero) hero.classList.remove('glow-on');
@@ -284,18 +250,11 @@ export default function Creative({ page }) {
 
     document.addEventListener('pointermove', onMove, { passive: true });
     document.addEventListener('pointerout', onOut);
-    document.addEventListener('pointerdown', onDown);
-    document.addEventListener('pointerup', onUp);
     document.addEventListener('pointerleave', onLeaveHero, true);
     return () => {
-      cancelAnimationFrame(raf);
       untilt();
-      dot.remove(); ring.remove();
-      document.documentElement.classList.remove('has-cursor', 'cur-out');
       document.removeEventListener('pointermove', onMove);
       document.removeEventListener('pointerout', onOut);
-      document.removeEventListener('pointerdown', onDown);
-      document.removeEventListener('pointerup', onUp);
       document.removeEventListener('pointerleave', onLeaveHero, true);
     };
   }, []);

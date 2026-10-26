@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
 import { hasFinePointer, prefersReducedMotion } from '../hooks/motion';
-import { voice } from '../hooks/voice';
+import VoiceWaves from './VoiceWaves';
 
-/** Onde du hero : se lève au chargement, respire, et réagit au curseur. */
+/** Onde du hero : se lève au chargement, respire, réagit au curseur, et laisse place aux vagues vocales en mode voix. */
 export default function Waveform() {
   const barsRef = useRef(null);
 
@@ -39,8 +39,6 @@ export default function Waveform() {
 
     const frame = (now) => {
       const t = (now - t0) / 1000;
-      const lv = voice.active ? voice.levels(N) : null;
-      let sum = 0;
       for (let i = 0; i < N; i++) {
         let rise = Math.min(1, Math.max(0, (t * 1000 - i * 7) / 900));
         rise = 1 - Math.pow(1 - rise, 3);
@@ -50,12 +48,10 @@ export default function Waveform() {
           const d = i / (N - 1) - pointerX;
           target += Math.exp(-(d * d) / (2 * 0.035 * 0.035)) * 0.55 * rise;
         }
-        if (lv) { target = Math.max(base[i] * 0.12, lv[i]) * rise; sum += lv[i]; }
         target = Math.min(1, Math.max(0.02, target));
-        cur[i] += (target - cur[i]) * (lv ? 0.35 : 0.18);
+        cur[i] += (target - cur[i]) * 0.18;
         bars[i].style.transform = `scaleY(${cur[i].toFixed(3)})`;
       }
-      if (lv) document.documentElement.style.setProperty('--amp', (sum / N).toFixed(3));
       if (visible && !document.hidden) raf = requestAnimationFrame(frame);
       else looping = false;
     };
@@ -89,5 +85,10 @@ export default function Waveform() {
     };
   }, []);
 
-  return <div className="bars" ref={barsRef} />;
+  return (
+    <div className="bars-wrap">
+      <div className="bars" ref={barsRef} />
+      <VoiceWaves />
+    </div>
+  );
 }
