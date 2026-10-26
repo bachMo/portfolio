@@ -10,6 +10,7 @@ import OptionalLink from '../components/OptionalLink';
 import Goorgoorlu from '../components/Goorgoorlu';
 import CvLink from '../components/CvLink';
 import VoiceToggle from '../components/VoiceToggle';
+import Services from '../components/Services';
 import { prefersReducedMotion } from '../hooks/motion';
 import img from '../assets';
 
@@ -50,7 +51,7 @@ export default function Home() {
         <div className={'hero-row hero-after' + (heroReady ? ' on' : '')}>
           <p dangerouslySetInnerHTML={{__html:t('hero.sub')}} />
           <div className="ctas">
-            <a className="pill solid magnetic" href="#travaux">
+            <a className="pill solid magnetic" href="#services">
               <span dangerouslySetInnerHTML={{__html:t('hero.cta1')}} />
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M12 5v14M5 12l7 7 7-7" />
@@ -63,16 +64,10 @@ export default function Home() {
           <Waveform />
           <div className="wave-legend mono">
             <span dangerouslySetInnerHTML={{__html:t('wave.voice')}} />
-            <span>
-              ASR
-            </span>
+            <span dangerouslySetInnerHTML={{__html:t('wave.a')}} />
             <span dangerouslySetInnerHTML={{__html:t('wave.tr')}} />
-            <span className="acc">
-              LLM · RAG
-            </span>
-            <span>
-              TTS
-            </span>
+            <span className="acc" dangerouslySetInnerHTML={{__html:t('wave.b')}} />
+            <span dangerouslySetInnerHTML={{__html:t('wave.c')}} />
             <span dangerouslySetInnerHTML={{__html:t('wave.reply')}} />
           </div>
         </div>
@@ -95,7 +90,7 @@ export default function Home() {
           </div>
           <div>
             <strong>
-              2
+              3
             </strong>
             <span dangerouslySetInnerHTML={{__html:t('m.3')}} />
           </div>
@@ -185,6 +180,7 @@ export default function Home() {
           </span>
         </div>
       </div>
+      <Services />
       <Goorgoorlu />
       <Signature />
       <section className="block wrap" id="travaux">

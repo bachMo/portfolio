@@ -6,13 +6,13 @@ import { CV } from '../data/cv';
 const TXT = {
   fr: {
     ph: 'Où voulez-vous aller ?', go: 'Aller', act: 'Actions', cases: 'Études de cas', none: 'Aucun résultat',
-    home: 'Accueil', work: 'Travaux', exp: 'Expertise', path: 'Parcours', contact: 'Écrire un message',
+    home: 'Accueil', svc: 'Services', work: 'Travaux', exp: 'Expertise', path: 'Parcours', contact: 'Écrire un message',
     mail: 'Copier mon adresse e-mail', copied: 'Adresse copiée !', cv: 'Télécharger mon CV', theme: 'Changer de thème',
     lang: 'Switch to English', li: 'Mon LinkedIn', hint: 'naviguer', enter: 'ouvrir', esc: 'fermer',
   },
   en: {
     ph: 'Where do you want to go?', go: 'Go to', act: 'Actions', cases: 'Case studies', none: 'No results',
-    home: 'Home', work: 'Work', exp: 'Expertise', path: 'Background', contact: 'Write me a message',
+    home: 'Home', svc: 'Services', work: 'Work', exp: 'Expertise', path: 'Background', contact: 'Write me a message',
     mail: 'Copy my email address', copied: 'Address copied!', cv: 'Download my résumé', theme: 'Toggle theme',
     lang: 'Passer en français', li: 'My LinkedIn', hint: 'navigate', enter: 'open', esc: 'close',
   },
@@ -34,9 +34,10 @@ export default function CommandPalette() {
   const go = (hash) => () => { window.location.hash = hash; };
   const items = useMemo(() => [
     { g: tx.go, label: tx.home, k: '↖', run: () => { window.location.hash = ''; window.scrollTo({ top: 0, behavior: 'smooth' }); } },
-    { g: tx.go, label: tx.work, k: '01', run: go('#travaux') },
-    { g: tx.go, label: tx.exp, k: '02', run: go('#expertise') },
-    { g: tx.go, label: tx.path, k: '03', run: go('#parcours') },
+    { g: tx.go, label: tx.svc, k: '01', run: go('#services') },
+    { g: tx.go, label: tx.work, k: '02', run: go('#travaux') },
+    { g: tx.go, label: tx.exp, k: '03', run: go('#expertise') },
+    { g: tx.go, label: tx.path, k: '04', run: go('#parcours') },
     { g: tx.cases, label: 'Leeral', k: 'IA', run: go('#/leeral') },
     { g: tx.cases, label: 'SunuChat', k: 'IA', run: go('#/sunuchat') },
     { g: tx.cases, label: 'Saaytu Mbay', k: 'IA', run: go('#/saaytu') },

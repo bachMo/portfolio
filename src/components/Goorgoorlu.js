@@ -2,7 +2,7 @@ import { usePrefs } from '../i18n/PrefsContext';
 import CvLink, { CvAll } from './CvLink';
 import img from '../assets';
 
-const ORBIT = ['Web', 'Mobile', 'WhatsApp', 'Data', 'Wolof', 'LLM'];
+const ORBIT = ['Web', 'Mobile', 'WhatsApp', 'Data', 'Agents IA', 'Automatisation'];
 
 /** Section de marque : la mascotte « goorgoorlu du digital » + téléchargement du CV. */
 export default function Goorgoorlu() {

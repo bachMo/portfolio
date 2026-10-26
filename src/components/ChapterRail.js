@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { usePrefs } from '../i18n/PrefsContext';
 
 const CH = {
-  fr: ['Goorgoorlu', 'Signature', 'Travaux', 'Équipes', 'Expertise', 'Parcours', 'Contact'],
-  en: ['Goorgoorlu', 'Signature', 'Work', 'Teams', 'Expertise', 'Background', 'Contact'],
+  fr: ['Services', 'Goorgoorlu', 'Signature', 'Travaux', 'Équipes', 'Expertise', 'Parcours', 'Contact'],
+  en: ['Services', 'Goorgoorlu', 'Signature', 'Work', 'Teams', 'Expertise', 'Background', 'Contact'],
 };
-const SEL = ['#goorgoorlu', '[aria-labelledby="sig-title"]', '#travaux', '[aria-labelledby="team-title"]', '#expertise', '#parcours', '#contact'];
+const SEL = ['#services', '#goorgoorlu', '[aria-labelledby="sig-title"]', '#travaux', '[aria-labelledby="team-title"]', '#expertise', '#parcours', '#contact'];
 
 /** Sommaire vertical sur le côté (grands écrans, page d'accueil) : chapitre en cours + accès direct. */
 export default function ChapterRail({ page }) {

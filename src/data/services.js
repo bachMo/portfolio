@@ -1,0 +1,93 @@
+// Offre de services (section « Comment je peux vous aider ») — FR et EN
+const services = {
+  fr: {
+    kicker: 'SERVICES · ORGANISATIONS ET PARTICULIERS',
+    title: 'Comment je peux <em>vous aider.</em>',
+    sub: 'Trois façons de faire avancer votre activité. Vous m’apportez un problème, je reviens avec la solution adaptée, construite et mise en ligne.',
+    for: 'POUR',
+    get: 'CE QUE VOUS OBTENEZ',
+    seen: 'DÉJÀ RÉALISÉ',
+    cta: 'Démarrer ce projet',
+    outro: 'Pas sûr de ce qu’il vous faut ? <em>Décrivez votre problème,</em> je trouve la solution.',
+    outroCta: 'En parler ensemble',
+    items: [
+      {
+        id: 'site', n: '01', short: 'Visibilité',
+        title: 'Vous rendre <em>visible en ligne</em>',
+        lede: 'Un site vitrine ou une boutique en ligne qui attire vos clients, inspire confiance et transforme les visites en demandes.',
+        who: ['Entreprises', 'Commerces', 'Associations', 'Indépendants'],
+        get: ['Un site rapide, beau et bien référencé sur Google', 'Prise de rendez-vous, devis ou paiement en ligne (Wave, Orange Money)', 'Un lien qui s’affiche bien quand on le partage sur WhatsApp'],
+        seen: [['SPOT Énergie', 'https://spot-sc46.vercel.app/'], ['Meli Micro', 'https://melimicro.com'], ['Waluma', '#/waluma']],
+      },
+      {
+        id: 'platform', n: '02', short: 'Gestion',
+        title: 'Simplifier <em>votre gestion</em>',
+        lede: 'Une plateforme sur mesure pour piloter votre activité au quotidien : clients, commandes, stocks, équipes, tout au même endroit.',
+        who: ['PME', 'ONG et projets', 'Cliniques', 'Écoles'],
+        get: ['Un back-office et des applications web ou mobiles taillés pour votre métier', 'Fini les fichiers Excel éparpillés et les informations perdues', 'Votre équipe formée, une documentation claire'],
+        seen: [['Fidelia CRM', null], ['FlowAgri', null], ['P3AFR', null]],
+      },
+      {
+        id: 'ai', n: '03', short: 'Données & IA',
+        title: 'Faire parler vos données <em>et automatiser</em>',
+        lede: 'Des tableaux de bord pour décider, des chatbots et agents IA qui répondent à vos clients et travaillent pour vous, même la nuit.',
+        who: ['Services clients', 'Santé', 'Agriculture', 'Particuliers'],
+        get: ['Un assistant sur WhatsApp ou sur votre site, qui répond 24 h/24', 'Les tâches répétitives qui se font toutes seules', 'Vos chiffres clés en un coup d’œil, et même en wolof si besoin'],
+        seen: [['SunuChat', '#/sunuchat'], ['Saaytu Mbay', '#/saaytu'], ['Leeral', '#/leeral']],
+      },
+    ],
+    mock: {
+      url: 'votre-entreprise.sn', heroA: 'Votre savoir-faire,', heroB: 'enfin visible.', btn: 'Prendre rendez-vous',
+      toast: 'Nouvelle demande de devis', toastSub: 'il y a 2 min · depuis Google',
+      dash: 'Tableau de bord', k1: 'Commandes', k2: 'Encaissé', k3: 'Clients', week: ['L', 'M', 'M', 'J', 'V', 'S'],
+      todo: 'À faire', doing: 'En cours', done: 'Fait', task: 'Livraison Fatou D.',
+      chatName: 'Votre assistant', online: 'en ligne', q: 'Bonsoir, vous livrez à Pikine ce soir ?', a: 'Oui ! Livraison entre 19 h et 21 h. Je vous réserve un créneau ?', auto1: 'Commande enregistrée', auto2: 'Facture envoyée', auto3: 'Relance programmée', night: '23:42',
+    },
+  },
+  en: {
+    kicker: 'SERVICES · ORGANISATIONS AND INDIVIDUALS',
+    title: 'How I can <em>help you.</em>',
+    sub: 'Three ways to move your business forward. You bring me a problem, I come back with the right solution, built and live.',
+    for: 'FOR',
+    get: 'WHAT YOU GET',
+    seen: 'ALREADY BUILT',
+    cta: 'Start this project',
+    outro: 'Not sure what you need? <em>Describe your problem,</em> I’ll find the solution.',
+    outroCta: 'Let’s talk',
+    items: [
+      {
+        id: 'site', n: '01', short: 'Visibility',
+        title: 'Make you <em>visible online</em>',
+        lede: 'A business website or an online shop that attracts customers, builds trust and turns visits into requests.',
+        who: ['Companies', 'Shops', 'Associations', 'Freelancers'],
+        get: ['A fast, beautiful website that ranks on Google', 'Online booking, quotes or payment (Wave, Orange Money)', 'A link that looks great when shared on WhatsApp'],
+        seen: [['SPOT Énergie', 'https://spot-sc46.vercel.app/'], ['Meli Micro', 'https://melimicro.com'], ['Waluma', '#/waluma']],
+      },
+      {
+        id: 'platform', n: '02', short: 'Operations',
+        title: 'Simplify <em>your operations</em>',
+        lede: 'A custom platform to run your business day to day: customers, orders, stock, teams, all in one place.',
+        who: ['SMEs', 'NGOs and projects', 'Clinics', 'Schools'],
+        get: ['A back office and web or mobile apps built around your trade', 'No more scattered spreadsheets and lost information', 'Your team trained, clear documentation'],
+        seen: [['Fidelia CRM', null], ['FlowAgri', null], ['P3AFR', null]],
+      },
+      {
+        id: 'ai', n: '03', short: 'Data & AI',
+        title: 'Make your data talk <em>and automate</em>',
+        lede: 'Dashboards to decide, chatbots and AI agents that answer your customers and work for you, even at night.',
+        who: ['Customer service', 'Health', 'Farming', 'Individuals'],
+        get: ['An assistant on WhatsApp or your website that answers 24/7', 'Repetitive tasks that run on their own', 'Your key figures at a glance, even in Wolof if needed'],
+        seen: [['SunuChat', '#/sunuchat'], ['Saaytu Mbay', '#/saaytu'], ['Leeral', '#/leeral']],
+      },
+    ],
+    mock: {
+      url: 'your-business.com', heroA: 'Your expertise,', heroB: 'finally visible.', btn: 'Book a meeting',
+      toast: 'New quote request', toastSub: '2 min ago · from Google',
+      dash: 'Dashboard', k1: 'Orders', k2: 'Collected', k3: 'Customers', week: ['M', 'T', 'W', 'T', 'F', 'S'],
+      todo: 'To do', doing: 'Doing', done: 'Done', task: 'Delivery for Fatou D.',
+      chatName: 'Your assistant', online: 'online', q: 'Hi, do you deliver to Pikine tonight?', a: 'Yes! Delivery between 7 and 9 pm. Shall I book you a slot?', auto1: 'Order saved', auto2: 'Invoice sent', auto3: 'Follow-up scheduled', night: '11:42 pm',
+    },
+  },
+};
+
+export default services;

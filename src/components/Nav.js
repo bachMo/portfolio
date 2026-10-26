@@ -4,7 +4,7 @@ import { CONFIG } from '../config';
 import LangSwitch from './LangSwitch';
 import ThemeToggle from './ThemeToggle';
 
-const SECTIONS = ['travaux', 'expertise', 'parcours'];
+const SECTIONS = ['services', 'travaux', 'expertise', 'parcours'];
 
 /** En-tête collant + barre de progression + menu mobile plein écran + scrollspy. */
 export default function Nav({ page }) {
@@ -69,6 +69,7 @@ export default function Nav({ page }) {
             <span>/ DKR</span>
           </a>
           <nav className="links" aria-label={t('aria.mainnav')}>
+            {link('services', 'nav.services')}
             {link('travaux', 'nav.work')}
             {link('expertise', 'nav.expertise')}
             {link('parcours', 'nav.path')}
@@ -90,10 +91,11 @@ export default function Nav({ page }) {
       </header>
       <nav className="drawer" id="drawer" hidden={!open} aria-label={t('aria.mobilenav')}>
         <div className="dlinks">
-          {dlink('#travaux', 'nav.work', '01')}
-          {dlink('#expertise', 'nav.expertise', '02')}
-          {dlink('#parcours', 'nav.path', '03')}
-          {dlink('#/contact', 'nav.contact', '04')}
+          {dlink('#services', 'nav.services', '01')}
+          {dlink('#travaux', 'nav.work', '02')}
+          {dlink('#expertise', 'nav.expertise', '03')}
+          {dlink('#parcours', 'nav.path', '04')}
+          {dlink('#/contact', 'nav.contact', '05')}
         </div>
         <div className="dfoot">
           <LangSwitch />

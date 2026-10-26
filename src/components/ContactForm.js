@@ -73,6 +73,13 @@ export default function ContactForm() {
   // changement de langue : on efface les messages d'erreur (ils seraient dans l'autre langue)
   useEffect(() => { setErrors({}); setStatus(''); }, [lang]);
   useEffect(() => () => clearTimeout(idleTimer.current), []);
+  // type de projet choisi depuis la section Services
+  useEffect(() => {
+    let v = null;
+    try { v = sessionStorage.getItem('svc-type'); sessionStorage.removeItem('svc-type'); } catch (e) { /* indisponible */ }
+    const el = v && formRef.current && formRef.current.querySelector('input[name="type"][value="' + v + '"]');
+    if (el) el.checked = true;
+  }, []);
   useEffect(() => {
     if (sent && sentRef.current) sentRef.current.focus();
   }, [sent]);
