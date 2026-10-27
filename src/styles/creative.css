@@ -55,11 +55,10 @@
 /* badge rotatif dans le bandeau contact */
 .contact-band{position:relative}
 .round-badge{position:absolute;top:clamp(20px,4vw,56px);right:clamp(20px,4vw,56px);width:150px;height:150px;display:flex;align-items:center;justify-content:center;color:var(--cband-ink)}
-.round-badge>svg{position:absolute;inset:0;width:100%;height:100%;animation:orbit 22s linear infinite;font-family:var(--mono);font-size:14px;fill:currentColor}
+.round-badge>svg{position:absolute;inset:0;width:100%;height:100%;font-family:var(--mono);font-size:14px;fill:currentColor}
 .round-badge .rb-arrow{width:64px;height:64px;border-radius:50%;background:var(--cband-acc);color:#1F1510;display:flex;align-items:center;justify-content:center;transition:transform .5s cubic-bezier(.2,.8,.2,1)}
 .round-badge:hover{color:var(--cband-ink)}
 .round-badge:hover .rb-arrow{transform:rotate(45deg) scale(1.12)}
-.round-badge:hover>svg{animation-duration:6s}
 
 /* signature du pied de page */
 .wordmark .wl{display:inline-block;background:inherit;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
@@ -87,6 +86,7 @@
   .goor-orbit b{font-size:11px;padding:6px 11px}
   /* mobile : orbite fixe, libellés sur les côtés (ceux du haut et du bas passaient derrière la mascotte) */
   .goor-orbit,.goor-orbit b{animation:none}
+  .goor-orbit{border:0}
   .goor-orbit i:nth-child(1),.goor-orbit i:nth-child(4){display:none}
   .contact-band .socials .pill{flex:1 1 auto;min-width:max-content}
 }

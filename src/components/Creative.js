@@ -222,14 +222,6 @@ export default function Creative({ page }) {
         hero.classList.add('glow-on');
       }
 
-      // mots en wolof révélés à la lampe dans le bandeau contact
-      const band = t.closest('.contact-band');
-      if (band) {
-        const r = band.getBoundingClientRect();
-        band.style.setProperty('--wx', e.clientX - r.left + 'px');
-        band.style.setProperty('--wy', e.clientY - r.top + 'px');
-      }
-
       // signature du pied de page
       const wm = t.closest('.wordmark');
       document.querySelectorAll('.wordmark .wl').forEach((l) => {
