@@ -155,6 +155,7 @@
   .svm{transform-origin:center;zoom:.86}
 }
 @media (max-width:960px){
+  .svc-visual{display:none}
   .svc-card{position:relative;top:auto;grid-template-columns:1fr;min-height:0;border-radius:28px}
   .svc-visual{min-height:0;padding:10px 6px 36px;order:-1}
   .svc-meta{grid-template-columns:1fr}

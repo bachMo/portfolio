@@ -85,6 +85,9 @@
   .round-badge .rb-arrow{width:52px;height:52px}
   .goor-orbit{width:84%;top:calc(7% + 2%)}
   .goor-orbit b{font-size:11px;padding:6px 11px}
+  /* mobile : orbite fixe, libellés sur les côtés (ceux du haut et du bas passaient derrière la mascotte) */
+  .goor-orbit,.goor-orbit b{animation:none}
+  .goor-orbit i:nth-child(1),.goor-orbit i:nth-child(4){display:none}
   .contact-band .socials .pill{flex:1 1 auto;min-width:max-content}
 }
 @media (prefers-reduced-motion:reduce){
@@ -144,8 +147,9 @@
   -webkit-mask-image:radial-gradient(240px circle at var(--wx,-400px) var(--wy,-400px),#000 0%,rgba(0,0,0,.4) 45%,transparent 72%);
   mask-image:radial-gradient(240px circle at var(--wx,-400px) var(--wy,-400px),#000 0%,rgba(0,0,0,.4) 45%,transparent 72%)}
 .whisper span{white-space:nowrap}
-@media (pointer:coarse){
-  .whisper{animation:lamp 14s ease-in-out infinite alternate;opacity:.45}
+/* mobile et écrans tactiles : pas de mots en arrière-plan (ils scintillaient sans cesse) */
+@media (pointer:coarse),(max-width:760px){
+  .whisper{display:none}
 }
 @keyframes lamp{0%{--wx:10%;--wy:30%}50%{--wx:80%;--wy:60%}100%{--wx:40%;--wy:85%}}
 @property --wx{syntax:'<length-percentage>';inherits:true;initial-value:-400px}
