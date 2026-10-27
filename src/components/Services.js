@@ -89,17 +89,23 @@ export default function Services() {
     if (!('IntersectionObserver' in window)) { cards.forEach((c) => c.classList.add('is-on')); return undefined; }
     const io = new IntersectionObserver((es) => es.forEach((e) => { if (e.isIntersecting) e.target.classList.add('is-on'); }), { threshold: 0.35 });
     cards.forEach((c) => io.observe(c));
-    // les cartes ne s'empilent que si chacune se lit en entier dans la fenêtre
+    // Empilement : chaque carte se fige seulement quand elle est entièrement visible.
+    // Si elle est plus haute que l'écran, elle défile d'abord jusqu'à montrer son bas, puis se fige.
     const fit = () => {
       const sec = root.current; if (!sec) return;
-      sec.classList.remove('is-sticky');
-      const room = window.innerHeight - 92 - 22 * (cards.length - 1) - 16;
-      const ok = window.innerWidth > 960 && Array.from(cards).every((c) => c.offsetHeight <= room);
-      sec.classList.toggle('is-sticky', ok);
+      sec.classList.add('is-sticky');
+      const nav = window.innerWidth > 960 ? 92 : 80;
+      Array.from(cards).forEach((c, i) => {
+        const pref = nav + i * 18;
+        c.style.top = Math.min(pref, window.innerHeight - c.offsetHeight - 16) + 'px';
+      });
     };
     fit();
     window.addEventListener('resize', fit);
-    return () => { io.disconnect(); window.removeEventListener('resize', fit); };
+    const ro = 'ResizeObserver' in window ? new ResizeObserver(fit) : null;
+    if (ro) cards.forEach((c) => ro.observe(c));
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+    return () => { io.disconnect(); window.removeEventListener('resize', fit); if (ro) ro.disconnect(); };
   }, []);
 
   return (

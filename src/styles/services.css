@@ -136,8 +136,24 @@
 .svc-outro em{color:var(--accent)}
 
 /* Empilement au défilement seulement si chaque carte tient entière à l'écran (classe posée en JS) */
-.svc.is-sticky .svc-card{position:sticky;top:calc(92px + var(--i) * 22px)}
-.svc.is-sticky .svc-stack{gap:40px}
+.svc.is-sticky .svc-card{position:sticky}
+/* un temps de lecture : la carte reste entière à l'écran avant que la suivante n'arrive */
+.svc.is-sticky .svc-stack{gap:32vh}
+/* écrans peu hauts (portables) : cartes plus compactes pour tenir entières sous le menu */
+@media (min-width:961px) and (max-height:820px){
+  .svc-card{padding:26px 40px;gap:36px;border-radius:30px}
+  .svc-text{gap:12px}
+  .svc-num{font-size:44px}
+  .svc-card h3{font-size:clamp(34px,3.2vw,46px)}
+  .svc-lede{font-size:16px;line-height:1.5}
+  .svc-meta{padding-top:14px;gap:22px}
+  .svc-meta ul{gap:6px;font-size:14px}
+  .svc-meta .mono{margin-bottom:8px}
+  .svc-seen-k{margin-top:12px}
+  .svc-chips span,.svc-seen a,.svc-seen > span{font-size:12.5px;padding:4px 10px}
+  .svc-visual{min-height:0}
+  .svm{transform-origin:center;zoom:.86}
+}
 @media (max-width:960px){
   .svc-card{position:relative;top:auto;grid-template-columns:1fr;min-height:0;border-radius:28px}
   .svc-visual{min-height:0;padding:10px 6px 36px;order:-1}
