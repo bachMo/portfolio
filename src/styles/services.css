@@ -12,7 +12,7 @@
 .svc-index a:hover{border-color:var(--accent);color:var(--accent)}
 
 .svc-stack{display:flex;flex-direction:column;gap:28px}
-.svc-card{position:sticky;top:calc(96px + var(--i) * 26px);display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(28px,4vw,64px);align-items:center;min-height:min(680px,calc(100vh - 140px));padding:clamp(28px,4vw,56px);border-radius:36px;background:var(--surface);border:1px solid var(--line);box-shadow:0 -1px 0 var(--line),0 50px 90px -60px rgba(60,35,15,.45);overflow:hidden;scroll-margin-top:110px}
+.svc-card{position:relative;display:grid;grid-template-columns:1fr 1.05fr;gap:clamp(28px,4vw,64px);align-items:center;padding:clamp(28px,3.4vw,48px) clamp(28px,4vw,56px);border-radius:36px;background:var(--surface);border:1px solid var(--line);box-shadow:0 -1px 0 var(--line),0 50px 90px -60px rgba(60,35,15,.45);overflow:hidden;scroll-margin-top:110px}
 .svc-platform{background:var(--surface-2)}
 .svc-ai{background:#B4522A;border-color:#B4522A;color:#FBF4EA;--muted:rgba(251,244,234,.72);--line-2:rgba(251,244,234,.35)}
 .svc-card.svc-ai .svc-num,.svc-card.svc-ai h3 em{color:#F6C38E}
@@ -22,9 +22,9 @@
 .svc-ai .svc-seen a{color:#FBF4EA;border-color:rgba(251,244,234,.4)}
 
 .svc-text,.svc-visual{min-width:0}
-.svc-text{display:flex;flex-direction:column;gap:20px;position:relative;z-index:1}
-.svc-num{font-size:clamp(64px,7vw,110px);line-height:.8;color:var(--accent);letter-spacing:-.04em}
-.svc-card h3{font-size:clamp(40px,4.6vw,68px);line-height:.95;letter-spacing:-.03em;font-weight:400}
+.svc-text{display:flex;flex-direction:column;gap:16px;position:relative;z-index:1}
+.svc-num{font-size:clamp(52px,5vw,80px);line-height:.8;color:var(--accent);letter-spacing:-.04em}
+.svc-card h3{font-size:clamp(38px,3.8vw,58px);line-height:.95;letter-spacing:-.03em;font-weight:400}
 .svc-card h3 em{color:var(--accent)}
 .svc-lede{font-size:18px;line-height:1.55;max-width:520px;opacity:.92}
 .svc-meta{display:grid;grid-template-columns:1.15fr 1fr;gap:28px;padding-top:20px;border-top:1px solid var(--line-2)}
@@ -39,7 +39,7 @@
 .svc-seen a,.svc-seen > span{font-size:14px;padding:5px 12px;border-radius:999px;border:1px solid var(--line-2);display:inline-flex;gap:6px}
 .svc-seen a:hover{border-color:var(--accent)}
 .svc-cta{align-self:flex-start;margin-top:6px}
-.svc-visual{position:relative;height:100%;min-height:440px;display:grid;place-items:center}
+.svc-visual{position:relative;height:100%;min-height:380px;display:grid;place-items:center}
 
 /* mockups — palette fixe, lisible dans les deux thèmes */
 .svm{--k:#1A1612;--s:#FFFFFF;--p:#F5EFE6;--a:#B4522A;--g:#1FA463;position:relative;width:100%;max-width:560px;color:var(--k);font-family:var(--sans)}
@@ -135,6 +135,9 @@
 .svc-outro p{font-size:clamp(30px,3.6vw,52px);line-height:1.02;letter-spacing:-.02em;max-width:22ch}
 .svc-outro em{color:var(--accent)}
 
+/* Empilement au défilement seulement si chaque carte tient entière à l'écran (classe posée en JS) */
+.svc.is-sticky .svc-card{position:sticky;top:calc(92px + var(--i) * 22px)}
+.svc.is-sticky .svc-stack{gap:40px}
 @media (max-width:960px){
   .svc-card{position:relative;top:auto;grid-template-columns:1fr;min-height:0;border-radius:28px}
   .svc-visual{min-height:0;padding:10px 6px 36px;order:-1}
