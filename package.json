@@ -2,7 +2,7 @@
     "name":  "portfolio-bach-sy",
     "version":  "1.0.0",
     "private":  true,
-    "homepage":  ".",
+    "homepage":  "/",
     "dependencies":  {
                          "@emailjs/browser":  "^4.4.1",
                          "@vercel/analytics":  "^2.0.1",

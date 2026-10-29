@@ -4,6 +4,7 @@ import './styles/global.css';
 import './styles/creative.css';
 import './styles/services.css';
 import './styles/pages.css';
+import './styles/showcase.css';
 import App from './App';
 import { PrefsProvider } from './i18n/PrefsContext';
 

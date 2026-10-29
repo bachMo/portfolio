@@ -19,7 +19,16 @@
    "read": "Voir l’étude de cas",
    "visit": "Voir le site",
    "start": "Démarrer ce projet",
-   "talk": "Voir les réalisations"
+   "talk": "Voir les réalisations",
+   "before": "Avant",
+   "after": "Après",
+   "scroll": "Faites défiler",
+   "ask": "Une autre question ?",
+   "askd": "Chaque projet est différent. Décrivez-moi le vôtre, je vous réponds rapidement.",
+   "askcta": "Me poser la question",
+   "badge": "PARLONS DE VOTRE PROJET · BACHIR SY · DAKAR · ",
+   "case": "Cas",
+   "step": "Étape"
   },
   "en": {
    "back": "All services",
@@ -40,7 +49,16 @@
    "read": "Read the case study",
    "visit": "Visit the site",
    "start": "Start this project",
-   "talk": "See past work"
+   "talk": "See past work",
+   "before": "Before",
+   "after": "After",
+   "scroll": "Keep scrolling",
+   "ask": "Another question?",
+   "askd": "Every project is different. Tell me about yours and I will get back to you quickly.",
+   "askcta": "Ask me",
+   "badge": "LET’S TALK ABOUT YOUR PROJECT · BACHIR SY · DAKAR · ",
+   "case": "Case",
+   "step": "Step"
   }
  },
  "process": {

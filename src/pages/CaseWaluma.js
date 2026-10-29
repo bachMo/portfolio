@@ -2,12 +2,14 @@ import { usePrefs } from '../i18n/PrefsContext';
 import useLink from '../hooks/useLink';
 import Tx from '../components/Tx';
 import img from '../assets';
+import { ScrollFX, Band, NextCase } from '../components/Showcase';
 
 export default function CaseWaluma() {
   const { t } = usePrefs();
   const L = useLink();
   return (
-    <main id="case-waluma">
+    <main id="case-waluma" className="sx-case">
+      <ScrollFX page="waluma" />
       <div className="wrap">
         <div className="case-nav">
           <a className="pill" href={L('home', 'travaux')}>
@@ -22,6 +24,7 @@ export default function CaseWaluma() {
           </span>
         </div>
         <section className="case-hero">
+          <span className="sx-casenum" data-par="0.12" aria-hidden="true">04</span>
           <span className="mono acc" dangerouslySetInnerHTML={{__html:t('wl.k')}} />
           <Tx as="h1" html={"Walu<em>ma</em>"} delay={250} />
           <p className="lede" dangerouslySetInnerHTML={{__html:t('wl.lede')}} />
@@ -48,7 +51,8 @@ export default function CaseWaluma() {
             </div>
           </div>
         </section>
-        <div className="browser">
+        <Band items={[...t('wl.k').split('·'), 'Expo', 'Next.js', 'Express', 'Prisma'].map((w) => w.trim())} caps />
+        <div className="browser" data-scrub="">
           <div className="frame">
             <div className="bar">
               <i />
@@ -102,15 +106,7 @@ export default function CaseWaluma() {
             </div>
           </div>
         </section>
-        <div className="next">
-          <span className="mono muted" dangerouslySetInnerHTML={{__html:t('case.next')}} />
-          <a href={L('leeral')}>
-            {"Leeral "}
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
+        <NextCase href={L('leeral')} name="Leeral" label={t('case.next')} kicker={t('le.k')} img={img.leeralExplication} />
       </div>
     </main>
   );

@@ -2,12 +2,14 @@ import { usePrefs } from '../i18n/PrefsContext';
 import useLink from '../hooks/useLink';
 import Tx from '../components/Tx';
 import img from '../assets';
+import { ScrollFX, Band, NextCase } from '../components/Showcase';
 
 export default function CaseSunuChat() {
   const { t } = usePrefs();
   const L = useLink();
   return (
-    <main id="case-sunuchat">
+    <main id="case-sunuchat" className="sx-case">
+      <ScrollFX page="sunuchat" />
       <div className="wrap">
         <div className="case-nav">
           <a className="pill" href={L('home', 'travaux')}>
@@ -22,6 +24,7 @@ export default function CaseSunuChat() {
           </span>
         </div>
         <section className="case-hero">
+          <span className="sx-casenum" data-par="0.12" aria-hidden="true">02</span>
           <span className="mono acc" dangerouslySetInnerHTML={{__html:t('sc.k')}} />
           <Tx as="h1" html={"Sunu<em>Chat</em>"} delay={250} />
           <p className="lede" dangerouslySetInnerHTML={{__html:t('sc.lede')}} />
@@ -46,7 +49,8 @@ export default function CaseSunuChat() {
             </div>
           </div>
         </section>
-        <div className="browser">
+        <Band items={[...t('sc.k').split('·'), ...t('sc.org').split('×'), 'Grand Challenges Canada'].map((w) => w.trim())} caps />
+        <div className="browser" data-scrub="">
           <div className="frame">
             <div className="bar">
               <i />
@@ -136,15 +140,7 @@ export default function CaseSunuChat() {
             <p className="muted" dangerouslySetInnerHTML={{__html:t('sc.team.d')}} />
           </div>
         </section>
-        <div className="next">
-          <span className="mono muted" dangerouslySetInnerHTML={{__html:t('case.next')}} />
-          <a href={L('saaytu')}>
-            {"Saaytu Mbay "}
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
+        <NextCase href={L('saaytu')} name="Saaytu Mbay" label={t('case.next')} kicker={t('sm.k')} img={null} />
       </div>
     </main>
   );

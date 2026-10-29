@@ -3,6 +3,8 @@ import useLink from '../hooks/useLink';
 import Tx from '../components/Tx';
 import { useEffect, useRef, useState } from 'react';
 import MiniWave from '../components/MiniWave';
+import { ScrollFX, Band, NextCase } from '../components/Showcase';
+import img from '../assets';
 
 export default function CaseSaaytu() {
   const { t } = usePrefs();
@@ -19,7 +21,8 @@ export default function CaseSaaytu() {
   useEffect(() => () => clearTimeout(timer.current), []);
 
   return (
-    <main id="case-saaytu">
+    <main id="case-saaytu" className="sx-case">
+      <ScrollFX page="saaytu" />
       <div className="wrap">
         <div className="case-nav">
           <a className="pill" href={L('home', 'travaux')}>
@@ -34,6 +37,7 @@ export default function CaseSaaytu() {
           </span>
         </div>
         <section className="case-hero">
+          <span className="sx-casenum" data-par="0.12" aria-hidden="true">03</span>
           <span className="mono acc" dangerouslySetInnerHTML={{__html:t('sm.k')}} />
           <Tx as="h1" html={"Saaytu <em>Mbay</em>"} delay={250} />
           <p className="lede" dangerouslySetInnerHTML={{__html:t('sm.lede')}} />
@@ -64,7 +68,8 @@ export default function CaseSaaytu() {
             </div>
           </div>
         </section>
-        <div className="phone-stage">
+        <Band items={[...t('sm.k').split('·'), 'WhatsApp', 'Whisper', 'RAG', 'FastAPI', 'React'].map((w) => w.trim())} caps />
+        <div className="phone-stage" data-scrub="">
           <div className="phone">
             <div className="chat-head">
               <span className="avatar">
@@ -248,15 +253,7 @@ export default function CaseSaaytu() {
             <p className="muted" dangerouslySetInnerHTML={{__html:t('sm.learn.d')}} />
           </div>
         </section>
-        <div className="next">
-          <span className="mono muted" dangerouslySetInnerHTML={{__html:t('case.next')}} />
-          <a href={L('waluma')}>
-            {"Waluma "}
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
+        <NextCase href={L('waluma')} name="Waluma" label={t('case.next')} kicker={t('wl.k')} img={img.waluma} />
       </div>
     </main>
   );

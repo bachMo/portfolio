@@ -2,6 +2,7 @@ import { usePrefs } from '../i18n/PrefsContext';
 import useLink from '../hooks/useLink';
 import Tx from '../components/Tx';
 import img from '../assets';
+import { ScrollFX, Band, NextCase } from '../components/Showcase';
 
 const html = (s) => ({ __html: s });
 const ITEMS = ['01', '02', '03', '04'];
@@ -16,7 +17,8 @@ export default function CaseLeeral() {
   const { t } = usePrefs();
   const L = useLink();
   return (
-    <main id="case-leeral">
+    <main id="case-leeral" className="sx-case">
+      <ScrollFX page="leeral" />
       <div className="wrap">
         <div className="case-nav">
           <a className="pill" href={L('home', 'travaux')}>
@@ -32,6 +34,7 @@ export default function CaseLeeral() {
         </div>
 
         <section className="case-hero">
+          <span className="sx-casenum" data-par="0.12" aria-hidden="true">01</span>
           <span className="mono acc" dangerouslySetInnerHTML={html(t('le.k'))} />
           <Tx as="h1" html={'Lee<em>ral</em>'} delay={250} />
           <p className="lede" dangerouslySetInnerHTML={html(t('le.lede'))} />
@@ -54,8 +57,9 @@ export default function CaseLeeral() {
             </div>
           </div>
         </section>
+        <Band items={[...t('le.k').split('·'), 'WhatsApp Cloud API', 'FastAPI', 'PostgreSQL', 'Redis', 'Expo'].map((w) => w.trim())} caps />
 
-        <div className="phone-stage">
+        <div className="phone-stage" data-scrub="">
           <div className="app-shots">
             <figure>
               <img src={img.leeralExplication} alt={t('le.cap1')} loading="lazy" />
@@ -117,15 +121,7 @@ export default function CaseLeeral() {
           </div>
         </section>
 
-        <div className="next">
-          <span className="mono muted" dangerouslySetInnerHTML={html(t('case.next'))} />
-          <a href={L('sunuchat')}>
-            {'SunuChat '}
-            <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M5 12h14M12 5l7 7-7 7" />
-            </svg>
-          </a>
-        </div>
+        <NextCase href={L('sunuchat')} name="SunuChat" label={t('case.next')} kicker={t('sc.k')} img={img.sunuchat} />
       </div>
     </main>
   );
