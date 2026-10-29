@@ -67,19 +67,18 @@
 .is-on .sx-chip.c1{animation-delay:-2.3s}
 .is-on .sx-chip.c2{animation-delay:-4.6s}
 
-/* ——— Bandeaux croisés ——— */
-.sx-band{position:relative;height:clamp(150px,15vw,210px);margin-block:clamp(64px,8vw,112px);overflow:hidden}
-.sx-band-row{position:absolute;left:-4%;right:-4%;top:50%;padding-block:clamp(12px,1.4vw,18px);white-space:nowrap;overflow:hidden}
-.sx-band-row.a{background:var(--proj,var(--accent));color:var(--proj-ink,var(--accent-ink));transform:translateY(-50%) rotate(-2.6deg);z-index:2;box-shadow:0 20px 40px -26px rgba(34,22,15,.5)}
-.sx-band-row.b{background:var(--text);color:var(--bg);transform:translateY(-50%) rotate(2.2deg)}
-.sx-band-track{display:flex;width:max-content;animation:sxMarq 42s linear infinite}
-.sx-band-row.b .sx-band-track{animation-direction:reverse;animation-duration:52s}
+/* ——— Bandeau de mots-clés (sobre) ——— */
+.sx-band{position:relative;margin-block:clamp(56px,7vw,96px);padding-block:clamp(18px,2vw,26px);border-block:1px solid var(--line);overflow:hidden;white-space:nowrap;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent);mask-image:linear-gradient(90deg,transparent,#000 12%,#000 88%,transparent)}
+.wrap .sx-band{margin-inline:0}
+.sx-band-track{display:flex;width:max-content;animation:sxMarq 70s linear infinite}
 .sx-band-track>span{display:flex}
-.sx-band-item{display:inline-flex;align-items:center;gap:clamp(18px,2vw,30px);padding-right:clamp(18px,2vw,30px);font-family:var(--serif);font-size:clamp(26px,3.2vw,46px);line-height:1.05}
-.sx-band-item i{font-style:normal;font-size:.48em;opacity:.75}
+.sx-band-item{display:inline-flex;align-items:center;gap:clamp(22px,2.6vw,40px);padding-right:clamp(22px,2.6vw,40px);font-family:var(--serif);font-style:italic;font-size:clamp(24px,2.6vw,38px);line-height:1.1;color:var(--text-2);transition:color .3s}
+.sx-band-item:hover{color:var(--proj,var(--accent))}
+.sx-band-item i{width:7px;height:7px;border-radius:50%;border:1.5px solid var(--proj,var(--accent))}
 .sx-band:hover .sx-band-track{animation-play-state:paused}
-.wrap .sx-band{margin-inline:calc(50% - 50vw)}
-.sx-band.caps .sx-band-item{font-family:var(--sans);font-weight:600;text-transform:uppercase;letter-spacing:.02em;font-size:clamp(19px,2.2vw,32px)}
+.sx-band.caps .sx-band-item{font-family:var(--mono);font-style:normal;text-transform:uppercase;letter-spacing:.12em;font-size:clamp(12px,1vw,14px);color:var(--muted)}
+.sx-band.caps .sx-band-item i{width:5px;height:5px;border:0;background:var(--proj,var(--accent))}
 
 /* ——— Avant / Après ——— */
 .sx-ba-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;margin-bottom:32px}

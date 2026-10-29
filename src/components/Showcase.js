@@ -49,11 +49,12 @@ export function ScrollFX({ page }) {
           const vp = track.parentElement;
           const last = track.lastElementChild;
           const pad = parseFloat(getComputedStyle(vp).paddingRight) || 0;
-          const prev = parseFloat(el.dataset.tx) || 0;
+          const prev = parseFloat(el.dataset.sxTx) || 0;
           const end = last ? last.getBoundingClientRect().right - prev : 0;
           const over = Math.max(0, end - (vp.getBoundingClientRect().right - pad));
           const tx = -over * p;
-          el.dataset.tx = tx;
+          // (attribut data-sx-tx : « data-tx » est réservé aux titres animés)
+          el.dataset.sxTx = tx;
           el.style.setProperty('--tx', tx.toFixed(1) + 'px');
         }
       });
@@ -73,25 +74,19 @@ export function ScrollFX({ page }) {
   return <div className="sx-progress" aria-hidden="true"><i ref={bar} /></div>;
 }
 
-/** Deux bandes de mots-clés croisées qui défilent en sens inverse. */
-export function Band({ items, alt, caps }) {
-  const row = (list, k) => (
-    <div className={'sx-band-row ' + k}>
+/** Bandeau de mots-clés sobre : une ligne fine qui défile lentement. */
+export function Band({ items, caps }) {
+  return (
+    <div className={'sx-band' + (caps ? ' caps' : '')}>
       <div className="sx-band-track">
         {[0, 1].map((copy) => (
           <span key={copy} aria-hidden={copy === 1 ? 'true' : undefined}>
-            {list.map((w, i) => (
-              <span key={i} className="sx-band-item">{w}<i>✦</i></span>
+            {items.map((w, i) => (
+              <span key={i} className="sx-band-item">{w}<i aria-hidden="true" /></span>
             ))}
           </span>
         ))}
       </div>
-    </div>
-  );
-  return (
-    <div className={'sx-band' + (caps ? ' caps' : '')}>
-      {row(items, 'a')}
-      {row(alt || [...items].reverse(), 'b')}
     </div>
   );
 }
