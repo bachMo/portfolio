@@ -1,24 +1,44 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { prefersReducedMotion } from './motion';
-
-// Routage par URL propre : /, /leeral, /sunuchat, /saaytu, /waluma et /contact.
-// Les anciennes URL #/page restent prises en charge et sont converties en chemins propres.
 export const PAGES = ['leeral', 'sunuchat', 'saaytu', 'waluma', 'contact'];
+
 
 function parseLocation() {
   const legacy = (window.location.hash || '').match(/^#\/([a-z]+)$/);
+
   if (legacy && PAGES.includes(legacy[1])) {
-    window.history.replaceState({}, '', `/${legacy[1]}`);
+    const prefix = window.location.pathname.startsWith('/en') ? '/en' : '';
+    window.history.replaceState(
+      {},
+      '',
+      `${prefix}/${legacy[1]}`
+    );
     return { page: legacy[1], anchor: null };
   }
-  const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+
+ 
+  const rawPathname =
+    window.location.pathname.replace(/\/+$/, '') || '/';
+
+  const pathname =
+    rawPathname.replace(/^\/en(?=\/|$)/, '') || '/';
+
   const segment = pathname === '/' ? '' : pathname.slice(1);
-  if (PAGES.includes(segment)) return { page: segment, anchor: null };
+
+  if (PAGES.includes(segment)) {
+    return { page: segment, anchor: null };
+  }
+
   const hash = window.location.hash || '';
-  const anchor = hash.length > 1 && !hash.startsWith('#/') ? hash.slice(1) : null;
+  const anchor =
+    hash.length > 1 && !hash.startsWith('#/')
+      ? hash.slice(1)
+      : null;
+
   return { page: 'home', anchor };
 }
+
 
 export function navigate(path, options = {}) {
   const target = path.startsWith('#/') ? path.slice(1) : path;

@@ -16,10 +16,15 @@ export function store(key, value) {
 }
 
 function initialLang() {
-  const saved = store('bs-lang');
-  if (saved === 'fr' || saved === 'en') return saved;
-  const nav = (navigator.language || 'fr').toLowerCase();
-  return nav.startsWith('en') ? 'en' : 'fr';
+  const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+
+
+  if (pathname === '/en' || pathname.startsWith('/en/')) {
+    return 'en';
+  }
+
+  
+  return 'fr';
 }
 
 const mq = () => window.matchMedia('(prefers-color-scheme: dark)');
