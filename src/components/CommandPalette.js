@@ -31,18 +31,23 @@ export default function CommandPalette() {
   const input = useRef(null);
   const last = useRef(null);
 
-  const go = (hash) => () => { window.location.hash = hash; };
+  const go = (path) => () => {
+    if (path.startsWith('#/')) path = path.slice(1);
+    if (path.startsWith('#')) { window.location.hash = path; return; }
+    window.history.pushState({}, '', path);
+    window.dispatchEvent(new PopStateEvent('popstate'));
+  };
   const items = useMemo(() => [
-    { g: tx.go, label: tx.home, k: '↖', run: () => { window.location.hash = ''; window.scrollTo({ top: 0, behavior: 'smooth' }); } },
+    { g: tx.go, label: tx.home, k: '↖', run: () => { window.history.pushState({}, '', '/'); window.dispatchEvent(new PopStateEvent('popstate')); window.scrollTo({ top: 0, behavior: 'smooth' }); } },
     { g: tx.go, label: tx.svc, k: '01', run: go('#services') },
     { g: tx.go, label: tx.work, k: '02', run: go('#travaux') },
     { g: tx.go, label: tx.exp, k: '03', run: go('#expertise') },
     { g: tx.go, label: tx.path, k: '04', run: go('#parcours') },
-    { g: tx.cases, label: 'Leeral', k: 'IA', run: go('#/leeral') },
-    { g: tx.cases, label: 'SunuChat', k: 'IA', run: go('#/sunuchat') },
-    { g: tx.cases, label: 'Saaytu Mbay', k: 'IA', run: go('#/saaytu') },
-    { g: tx.cases, label: 'Waluma', k: 'Web', run: go('#/waluma') },
-    { g: tx.act, label: tx.contact, k: '✉', run: go('#/contact') },
+    { g: tx.cases, label: 'Leeral', k: 'IA', run: go('/leeral') },
+    { g: tx.cases, label: 'SunuChat', k: 'IA', run: go('/sunuchat') },
+    { g: tx.cases, label: 'Saaytu Mbay', k: 'IA', run: go('/saaytu') },
+    { g: tx.cases, label: 'Waluma', k: 'Web', run: go('/waluma') },
+    { g: tx.act, label: tx.contact, k: '✉', run: go('/contact') },
     { g: tx.act, label: tx.mail, k: '⧉', run: () => {
       const done = () => { setToast(tx.copied); setTimeout(() => setToast(''), 2200); };
       if (navigator.clipboard) navigator.clipboard.writeText(CONFIG.contactEmail).then(done, done); else done();

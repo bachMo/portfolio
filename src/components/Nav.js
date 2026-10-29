@@ -77,7 +77,7 @@ export default function Nav({ page }) {
           <div className="nav-right">
             <LangSwitch />
             <ThemeToggle />
-            <a className="pill dark magnetic" href="#/contact" dangerouslySetInnerHTML={{ __html: t('nav.cta') }} />
+            <a className="pill dark magnetic" href="/contact" dangerouslySetInnerHTML={{ __html: t('nav.cta') }} />
             <button ref={burgerRef} className="burger" type="button" aria-expanded={open} aria-controls="drawer"
                     aria-label={open ? t('aria.close') : t('aria.menu')} onClick={() => setOpen(!open)}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -95,7 +95,7 @@ export default function Nav({ page }) {
           {dlink('#travaux', 'nav.work', '02')}
           {dlink('#expertise', 'nav.expertise', '03')}
           {dlink('#parcours', 'nav.path', '04')}
-          {dlink('#/contact', 'nav.contact', '05')}
+          {dlink('/contact', 'nav.contact', '05')}
         </div>
         <div className="dfoot">
           <LangSwitch />

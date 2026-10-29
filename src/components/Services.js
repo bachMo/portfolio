@@ -148,7 +148,7 @@ export default function Services() {
                     </div>
                   </div>
                 </div>
-                <a className="pill solid magnetic svc-cta" href="#/contact" onClick={() => preselect(it.id)}>
+                <a className="pill solid magnetic svc-cta" href="/contact" onClick={() => preselect(it.id)}>
                   <span>{d.cta}</span>{ARROW}
                 </a>
               </div>
@@ -160,7 +160,7 @@ export default function Services() {
 
       <div className="svc-outro">
         <p className="serif" dangerouslySetInnerHTML={h(d.outro)} />
-        <a className="pill dark magnetic" href="#/contact"><span>{d.outroCta}</span>{ARROW}</a>
+        <a className="pill dark magnetic" href="/contact"><span>{d.outroCta}</span>{ARROW}</a>
       </div>
     </section>
   );

@@ -56,7 +56,7 @@ export default function Home() {
                 <path d="M12 5v14M5 12l7 7 7-7" />
               </svg>
             </a>
-            <a className="pill magnetic" href="#/contact" dangerouslySetInnerHTML={{__html:t('hero.cta2')}} />
+            <a className="pill magnetic" href="/contact" dangerouslySetInnerHTML={{__html:t('hero.cta2')}} />
           </div>
         </div>
         <div className="wave" aria-hidden="true">
@@ -192,7 +192,7 @@ export default function Home() {
         </div>
         <div className="solo">
           <article className="card">
-            <a className="shot" href="#/waluma" tabIndex="-1" aria-hidden="true">
+            <a className="shot" href="/waluma" tabIndex="-1" aria-hidden="true">
               <img src={img.waluma} alt="" loading="lazy" />
             </a>
             <div className="card-body">
@@ -221,7 +221,7 @@ export default function Home() {
                 </span>
               </div>
               <div className="links-row">
-                <a className="case-link" href="#/waluma">
+                <a className="case-link" href="/waluma">
                   <span dangerouslySetInnerHTML={{__html:t('case.read')}} />
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M5 12h14M12 5l7 7-7 7" />
@@ -306,7 +306,7 @@ export default function Home() {
             <span className="muted" dangerouslySetInnerHTML={{__html:t('lab.sub')}} />
           </div>
           <div className="lab">
-            <a className="lab-own" href="#/leeral">
+            <a className="lab-own" href="/leeral">
               <span className="mono acc" dangerouslySetInnerHTML={{__html:t('lab.0.tag')}} />
               <h3>
                 Leeral
@@ -501,7 +501,7 @@ export default function Home() {
           <span className="mono band-k">
             CONTACT
           </span>
-          <a className="round-badge" href="#/contact" aria-hidden="true" tabIndex="-1">
+          <a className="round-badge" href="/contact" aria-hidden="true" tabIndex="-1">
             <svg viewBox="0 0 200 200">
               <defs>
                 <path id="badgeCircle" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0" />
@@ -518,7 +518,7 @@ export default function Home() {
           </a>
           <h2 id="contactTitle" dangerouslySetInnerHTML={{__html:t('contact.title')}} />
           <div className="contact-row">
-            <a className="pill solid magnetic big-cta" href="#/contact">
+            <a className="pill solid magnetic big-cta" href="/contact">
               <span dangerouslySetInnerHTML={{__html:t('contact.cta')}} />
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M5 12h14M12 5l7 7-7 7" />

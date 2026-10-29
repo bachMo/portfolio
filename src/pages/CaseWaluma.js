@@ -102,7 +102,7 @@ export default function CaseWaluma() {
         </section>
         <div className="next">
           <span className="mono muted" dangerouslySetInnerHTML={{__html:t('case.next')}} />
-          <a href="#/leeral">
+          <a href="/leeral">
             {"Leeral "}
             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />

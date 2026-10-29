@@ -17,7 +17,7 @@ const services = {
         lede: 'Un site vitrine ou une boutique en ligne qui attire vos clients, inspire confiance et transforme les visites en demandes.',
         who: ['Entreprises', 'Commerces', 'Associations', 'Indépendants'],
         get: ['Un site rapide, beau et bien référencé sur Google', 'Prise de rendez-vous, devis ou paiement en ligne (Wave, Orange Money)', 'Un lien qui s’affiche bien quand on le partage sur WhatsApp'],
-        seen: [['SPOT Énergie', 'https://spot-sc46.vercel.app/'], ['Meli Micro', 'https://melimicro.com'], ['Waluma', '#/waluma']],
+        seen: [['SPOT Énergie', 'https://spot-sc46.vercel.app/'], ['Meli Micro', 'https://melimicro.com'], ['Waluma', '/waluma']],
       },
       {
         id: 'platform', n: '02', short: 'Gestion',
@@ -33,7 +33,7 @@ const services = {
         lede: 'Des tableaux de bord pour décider, des chatbots et agents IA qui répondent à vos clients et travaillent pour vous, même la nuit.',
         who: ['Services clients', 'Santé', 'Agriculture', 'Particuliers'],
         get: ['Un assistant sur WhatsApp ou sur votre site, qui répond 24 h/24', 'Les tâches répétitives qui se font toutes seules', 'Vos chiffres clés en un coup d’œil, et même en wolof si besoin'],
-        seen: [['SunuChat', '#/sunuchat'], ['Saaytu Mbay', '#/saaytu'], ['Leeral', '#/leeral']],
+        seen: [['SunuChat', '/sunuchat'], ['Saaytu Mbay', '/saaytu'], ['Leeral', '/leeral']],
       },
     ],
     mock: {
@@ -61,7 +61,7 @@ const services = {
         lede: 'A business website or an online shop that attracts customers, builds trust and turns visits into requests.',
         who: ['Companies', 'Shops', 'Associations', 'Freelancers'],
         get: ['A fast, beautiful website that ranks on Google', 'Online booking, quotes or payment (Wave, Orange Money)', 'A link that looks great when shared on WhatsApp'],
-        seen: [['SPOT Énergie', 'https://spot-sc46.vercel.app/'], ['Meli Micro', 'https://melimicro.com'], ['Waluma', '#/waluma']],
+        seen: [['SPOT Énergie', 'https://spot-sc46.vercel.app/'], ['Meli Micro', 'https://melimicro.com'], ['Waluma', '/waluma']],
       },
       {
         id: 'platform', n: '02', short: 'Operations',
@@ -77,7 +77,7 @@ const services = {
         lede: 'Dashboards to decide, chatbots and AI agents that answer your customers and work for you, even at night.',
         who: ['Customer service', 'Health', 'Farming', 'Individuals'],
         get: ['An assistant on WhatsApp or your website that answers 24/7', 'Repetitive tasks that run on their own', 'Your key figures at a glance, even in Wolof if needed'],
-        seen: [['SunuChat', '#/sunuchat'], ['Saaytu Mbay', '#/saaytu'], ['Leeral', '#/leeral']],
+        seen: [['SunuChat', '/sunuchat'], ['Saaytu Mbay', '/saaytu'], ['Leeral', '/leeral']],
       },
     ],
     mock: {

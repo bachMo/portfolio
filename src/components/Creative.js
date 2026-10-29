@@ -263,10 +263,10 @@ export default function Creative({ page }) {
     let busy = false;
     const onClick = (e) => {
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || busy) return;
-      const a = e.target.closest && e.target.closest('a[href^="#/"]');
+      const a = e.target.closest && e.target.closest('a[href^="/"]');
       if (!a) return;
-      const target = a.getAttribute('href').slice(2);
-      if (!NAMES[target] || window.location.hash === '#/' + target) return;
+      const target = a.getAttribute('href').replace(/^\/+/, '');
+      if (!NAMES[target] || window.location.pathname.replace(/^\/+|\/+$/g, '') === target) return;
       e.preventDefault();
       busy = true;
       const en = document.documentElement.lang === 'en';
@@ -274,7 +274,8 @@ export default function Creative({ page }) {
       cur.querySelector('.curtain-t').textContent = NAMES[target];
       cur.className = 'curtain in';
       setTimeout(() => {
-        window.location.hash = '#/' + target;
+        window.history.pushState({}, '', '/' + target);
+        window.dispatchEvent(new PopStateEvent('popstate'));
         setTimeout(() => {
           cur.className = 'curtain out';
           setTimeout(() => { cur.className = 'curtain'; busy = false; }, 800);

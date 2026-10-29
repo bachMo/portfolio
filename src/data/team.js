@@ -7,7 +7,7 @@ const team = {
       "role": "Lead technique",
       "desc": "Chatbot de santé publique qui répond automatiquement sur le paludisme et la dengue, aussi en wolof. Financé par Grand Challenges Canada.",
       "foot": "sunuchat.com",
-      "href": "#/sunuchat"
+      "href": "/sunuchat"
     },
     {
       "org": "JOKALANTE",
@@ -15,7 +15,7 @@ const team = {
       "role": "Dev · Chef de projet",
       "desc": "Chatbot agricole sur WhatsApp qui répond aux questions des agriculteurs, à l'écrit comme à la voix, aussi en wolof. Modèles NLP et LLM.",
       "foot": "Étude de cas",
-      "href": "#/saaytu"
+      "href": "/saaytu"
     },
     {
       "org": "JOKALANTE · MYAGRO",
@@ -73,7 +73,7 @@ const team = {
       "role": "Tech lead",
       "desc": "Public health chatbot that automatically answers questions about malaria and dengue, in Wolof too. Funded by Grand Challenges Canada.",
       "foot": "sunuchat.com",
-      "href": "#/sunuchat"
+      "href": "/sunuchat"
     },
     {
       "org": "JOKALANTE",
@@ -81,7 +81,7 @@ const team = {
       "role": "Dev · Project manager",
       "desc": "Farming chatbot on WhatsApp that answers farmers' questions, typed or spoken, in Wolof too. NLP models and an LLM.",
       "foot": "Case study",
-      "href": "#/saaytu"
+      "href": "/saaytu"
     },
     {
       "org": "JOKALANTE · MYAGRO",
