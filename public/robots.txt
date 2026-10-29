@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.bachirsy.com/sitemap.xml
+Sitemap: https://bachirsy.com/sitemap.xml

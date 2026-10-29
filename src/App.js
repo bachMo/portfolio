@@ -15,6 +15,7 @@ import CaseSaaytu from './pages/CaseSaaytu';
 import CaseWaluma from './pages/CaseWaluma';
 import Contact from './pages/Contact';
 import { Analytics } from '@vercel/analytics/react';
+import SEO_DATA from './seo/pages.json';
 
 const PAGES = {
   home: Home,
@@ -25,32 +26,9 @@ const PAGES = {
   contact: Contact,
 };
 
-const SEO = {
-  home: {
-    title: 'Bachir Sy | Développeur freelance Full-Stack & IA à Dakar',
-    description: 'Mamadou Bachir Sy, développeur freelance Full-Stack et IA à Dakar, Sénégal. Applications web et mobiles, chatbots IA, assistants multilingues et automatisation.'
-  },
-  leeral: {
-    title: 'Leeral | Assistant IA multilingue en français, wolof et pulaar — Bachir Sy',
-    description: 'Découvrez Leeral, un assistant intelligent qui aide à comprendre les documents du quotidien grâce à l’IA, au texte et à la voix, en français, wolof et pulaar.'
-  },
-  sunuchat: {
-    title: 'SunuChat | Assistant conversationnel de santé par IA — Bachir Sy',
-    description: 'Étude de cas SunuChat : assistant conversationnel de santé combinant IA générative, recherche documentaire et expérience multilingue texte et voix.'
-  },
-  saaytu: {
-    title: 'Saaytu Mbay | Assistant IA pour l’agriculture — Bachir Sy',
-    description: 'Découvrez Saaytu Mbay, un assistant numérique agricole qui aide les producteurs à accéder à des informations pratiques grâce à l’intelligence artificielle.'
-  },
-  waluma: {
-    title: 'Waluma | Plateforme numérique de mise en relation santé — Bachir Sy',
-    description: 'Étude de cas Waluma : plateforme web et mobile pour faciliter la gestion des praticiens, des missions et des services de santé.'
-  },
-  contact: {
-    title: 'Contacter Bachir Sy | Développeur freelance Full-Stack & IA à Dakar',
-    description: 'Vous avez un projet web, mobile ou IA ? Contactez Bachir Sy, développeur freelance Full-Stack et IA basé à Dakar, Sénégal.'
-  }
-};
+// Titres et descriptions partagés avec le script de génération (scripts/generate-seo-pages.js)
+const SITE_URL = SEO_DATA.site;
+const SEO_PAGES = SEO_DATA.pages;
 
 function setMeta(selector, attribute, value) {
   let element = document.head.querySelector(selector);
@@ -64,19 +42,26 @@ function setMeta(selector, attribute, value) {
 }
 
 export default function App() {
-  const { t } = usePrefs();
+  const { t, lang } = usePrefs();
   const { page } = useHashRoute();
   const Page = PAGES[page] || Home;
 
   useEffect(() => {
-    const metadata = SEO[page] || SEO.home;
-    const path = page === 'home' ? '/' : `/${page}`;
-    const canonical = `https://www.bachirsy.com${path}`;
+    // La langue suit l'URL (/en/...) pour que le titre et l'URL canonique
+    // restent ceux de la page affichée, comme dans le HTML généré au build.
+    const isEn = /^\/en(\/|$)/.test(window.location.pathname);
+    const base = page === 'home' ? '/' : `/${page}`;
+    const route = isEn ? (base === '/' ? '/en/' : `/en${base}`) : base;
+    const metadata = SEO_PAGES[route] || SEO_PAGES[isEn ? '/en/' : '/'];
+    const canonical = `${SITE_URL}${route}`;
     document.title = metadata.title;
     setMeta('meta[name="description"]', 'content', metadata.description);
     setMeta('meta[property="og:title"]', 'content', metadata.title);
     setMeta('meta[property="og:description"]', 'content', metadata.description);
     setMeta('meta[property="og:url"]', 'content', canonical);
+    setMeta('meta[property="og:locale"]', 'content', isEn ? 'en_US' : 'fr_FR');
+    setMeta('meta[name="twitter:title"]', 'content', metadata.title);
+    setMeta('meta[name="twitter:description"]', 'content', metadata.description);
     let canonicalLink = document.head.querySelector('link[rel="canonical"]');
     if (!canonicalLink) {
       canonicalLink = document.createElement('link');
@@ -84,7 +69,7 @@ export default function App() {
       document.head.appendChild(canonicalLink);
     }
     canonicalLink.href = canonical;
-  }, [page]);
+  }, [page, lang]);
 
   return (
     <>

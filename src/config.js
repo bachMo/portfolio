@@ -7,7 +7,7 @@ export const CONFIG = {
     templateId: env.REACT_APP_EMAILJS_TEMPLATE_ID || '',
     publicKey: env.REACT_APP_EMAILJS_PUBLIC_KEY || '',
   },
-  contactEmail: env.REACT_APP_CONTACT_EMAIL || 'contact.bachirsy@gmail.com',
+  contactEmail: env.REACT_APP_CONTACT_EMAIL || 'contact@bachirsy.com',
   links: {
     linkedin: env.REACT_APP_LINKEDIN_URL || 'https://linkedin.com/in/bachirsy',
     github: env.REACT_APP_GITHUB_URL || '',

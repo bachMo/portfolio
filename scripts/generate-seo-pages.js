@@ -4,85 +4,14 @@ const path = require('path');
 
 const BUILD_DIR = path.resolve(__dirname, '../build');
 
-// URL de référence du site.
-// Pour un déploiement de test, remplace cette valeur par l'URL du projet de test.
-const SITE_URL = (process.env.SEO_SITE_URL || 'https://www.bachirsy.com')
-  .replace(/\/+$/, '');
+// Métadonnées partagées avec l'application React (src/seo/pages.json) :
+// une seule source de vérité pour les titres, descriptions et l'URL du site.
+const SEO = require('../src/seo/pages.json');
 
-const pages = {
-  '/': {
-    lang: 'fr',
-    title: 'Bachir Sy | Développeur freelance Full-Stack & IA à Dakar',
-    description:
-      'Mamadou Bachir Sy, développeur freelance Full-Stack et IA à Dakar, Sénégal. Applications web et mobiles, chatbots IA, assistants multilingues et automatisation.',
-  },
-  '/en/': {
-    lang: 'en',
-    title: 'Bachir Sy | Freelance Full-Stack Developer & AI in Dakar',
-    description:
-      'Mamadou Bachir Sy is a freelance full-stack developer and AI specialist in Dakar, Senegal. Web and mobile apps, AI chatbots, multilingual assistants and automation.',
-  },
-  '/leeral': {
-    lang: 'fr',
-    title: 'Leeral | Assistant IA multilingue en français, wolof et pulaar — Bachir Sy',
-    description:
-      'Découvrez Leeral, un assistant intelligent qui aide à comprendre les documents du quotidien grâce à l’IA, au texte et à la voix, en français, wolof et pulaar.',
-  },
-  '/en/leeral': {
-    lang: 'en',
-    title: 'Leeral | Multilingual AI assistant — Bachir Sy',
-    description:
-      'Discover Leeral, an intelligent assistant that makes everyday documents easier to understand using AI, text and voice in French, Wolof and Pulaar.',
-  },
-  '/sunuchat': {
-    lang: 'fr',
-    title: 'SunuChat | Assistant conversationnel de santé par IA — Bachir Sy',
-    description:
-      'Étude de cas SunuChat : assistant conversationnel de santé combinant IA générative, recherche documentaire et expérience multilingue texte et voix.',
-  },
-  '/en/sunuchat': {
-    lang: 'en',
-    title: 'SunuChat | AI-powered health conversational assistant — Bachir Sy',
-    description:
-      'SunuChat case study: a health conversational assistant combining generative AI, knowledge retrieval and a multilingual text and voice experience.',
-  },
-  '/saaytu': {
-    lang: 'fr',
-    title: 'Saaytu Mbay | Assistant IA pour l’agriculture — Bachir Sy',
-    description:
-      'Découvrez Saaytu Mbay, un assistant numérique agricole qui aide les producteurs à accéder à des informations pratiques grâce à l’intelligence artificielle.',
-  },
-  '/en/saaytu': {
-    lang: 'en',
-    title: 'Saaytu Mbay | AI assistant for agriculture — Bachir Sy',
-    description:
-      'Discover Saaytu Mbay, a digital agriculture assistant that helps farmers access practical information using artificial intelligence.',
-  },
-  '/waluma': {
-    lang: 'fr',
-    title: 'Waluma | Plateforme numérique de mise en relation santé — Bachir Sy',
-    description:
-      'Étude de cas Waluma : plateforme web et mobile pour faciliter la gestion des praticiens, des missions et des services de santé.',
-  },
-  '/en/waluma': {
-    lang: 'en',
-    title: 'Waluma | Digital healthcare platform — Bachir Sy',
-    description:
-      'Waluma case study: a web and mobile platform that simplifies the management of healthcare professionals, assignments and services.',
-  },
-  '/contact': {
-    lang: 'fr',
-    title: 'Contacter Bachir Sy | Développeur freelance Full-Stack & IA à Dakar',
-    description:
-      'Vous avez un projet web, mobile ou IA ? Contactez Bachir Sy, développeur freelance Full-Stack et IA basé à Dakar, Sénégal.',
-  },
-  '/en/contact': {
-    lang: 'en',
-    title: 'Contact Bachir Sy | Freelance Full-Stack Developer & AI in Dakar',
-    description:
-      'Have a web, mobile or AI project? Contact Bachir Sy, a freelance full-stack developer and AI specialist based in Dakar, Senegal.',
-  },
-};
+// URL de référence du site (domaine principal, sans www).
+// Pour un déploiement de test : SEO_SITE_URL=https://mon-test.vercel.app npm run build
+const SITE_URL = (process.env.SEO_SITE_URL || SEO.site).replace(/\/+$/, '');
+const pages = SEO.pages;
 
 function escapeHtml(value) {
   return value
@@ -165,6 +94,9 @@ function generatePage(route, metadata, template) {
   html = setLink(html, 'canonical', canonical);
   html = setLink(html, 'alternate', `${SITE_URL}${frenchRoute}`, 'fr');
   html = setLink(html, 'alternate', `${SITE_URL}${englishRoute}`, 'en');
+  html = setLink(html, 'alternate', `${SITE_URL}${frenchRoute}`, 'x-default');
+  html = setMeta(html, 'property', 'og:image', `${SITE_URL}/og-image.jpg`);
+  html = setMeta(html, 'name', 'twitter:image', `${SITE_URL}/og-image.jpg`);
 
   // Les pages sont dans des sous-dossiers : les fichiers statiques
   // doivent donc être référencés depuis la racine du site.
@@ -175,6 +107,28 @@ function generatePage(route, metadata, template) {
 
   fs.writeFileSync(output, html, 'utf8');
   console.log(`SEO généré : ${route} -> ${path.relative(BUILD_DIR, output)}`);
+}
+
+// Sitemap avec les variantes FR/EN (hreflang) et la date de génération.
+function generateSitemap() {
+  const today = new Date().toISOString().slice(0, 10);
+  const pairs = Object.keys(pages).filter((route) => !route.startsWith('/en'));
+  const urls = [];
+  for (const fr of pairs) {
+    const en = fr === '/' ? '/en/' : `/en${fr}`;
+    const alternates = [
+      `    <xhtml:link rel="alternate" hreflang="fr" href="${SITE_URL}${fr}"/>`,
+      `    <xhtml:link rel="alternate" hreflang="en" href="${SITE_URL}${en}"/>`,
+      `    <xhtml:link rel="alternate" hreflang="x-default" href="${SITE_URL}${fr}"/>`,
+    ].join('\n');
+    for (const route of [fr, en]) {
+      urls.push(`  <url>\n    <loc>${SITE_URL}${route}</loc>\n    <lastmod>${today}</lastmod>\n${alternates}\n  </url>`);
+    }
+  }
+  const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">\n${urls.join('\n')}\n</urlset>\n`;
+  fs.writeFileSync(path.join(BUILD_DIR, 'sitemap.xml'), xml, 'utf8');
+  fs.writeFileSync(path.join(BUILD_DIR, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${SITE_URL}/sitemap.xml\n`, 'utf8');
+  console.log(`Sitemap généré : ${urls.length} URL`);
 }
 
 function main() {
@@ -190,7 +144,8 @@ function main() {
     generatePage(route, metadata, template);
   }
 
-  console.log(`\nTerminé : ${Object.keys(pages).length} pages HTML générées.`);
+  generateSitemap();
+  console.log(`\nTerminé : ${Object.keys(pages).length} pages HTML générées + sitemap.xml.`);
 }
 
 main();
