@@ -51,8 +51,12 @@ export default function Nav({ page }) {
   }, [open]);
 
   const link = (id, key) => (
-    <a href={'#' + id} aria-current={active === id ? 'true' : undefined} dangerouslySetInnerHTML={{ __html: t(key) }} />
-  );
+  <a
+    href={page === 'home' ? `#${id}` : `/#${id}`}
+    aria-current={active === id ? 'true' : undefined}
+    dangerouslySetInnerHTML={{ __html: t(key) }}
+  />
+);
   const dlink = (href, key, n) => (
     <a href={href} onClick={() => setOpen(false)}>
       <b style={{ fontWeight: 400 }} dangerouslySetInnerHTML={{ __html: t(key) }} />
@@ -64,7 +68,11 @@ export default function Nav({ page }) {
     <>
       <header className="nav">
         <div className="wrap">
-          <a className="brand" href="#top" aria-label={t('aria.home')}>
+          <a
+            className="brand"
+            href={page === 'home' ? '#top' : '/'}
+            aria-label={t('aria.home')}
+          >
             <b>Bachir Sy</b>
             <span>/ DKR</span>
           </a>
@@ -91,10 +99,10 @@ export default function Nav({ page }) {
       </header>
       <nav className="drawer" id="drawer" hidden={!open} aria-label={t('aria.mobilenav')}>
         <div className="dlinks">
-          {dlink('#services', 'nav.services', '01')}
-          {dlink('#travaux', 'nav.work', '02')}
-          {dlink('#expertise', 'nav.expertise', '03')}
-          {dlink('#parcours', 'nav.path', '04')}
+          {dlink(page === 'home' ? '#services' : '/#services', 'nav.services', '01')}
+          {dlink(page === 'home' ? '#travaux' : '/#travaux', 'nav.work', '02')} 
+{dlink(page === 'home' ? '#expertise' : '/#expertise', 'nav.expertise', '03')}
+{dlink(page === 'home' ? '#parcours' : '/#parcours', 'nav.path', '04')}
           {dlink('/contact', 'nav.contact', '05')}
         </div>
         <div className="dfoot">
