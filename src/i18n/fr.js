@@ -1,5 +1,6 @@
 // Textes français (langue par défaut). Les chaînes peuvent contenir <em>, <br> et des entités HTML.
 const fr = {
+  "cp.social": "Réseaux",
   "nav.services": "Services",
   "nav.work": "Travaux",
   "nav.expertise": "Expertise",

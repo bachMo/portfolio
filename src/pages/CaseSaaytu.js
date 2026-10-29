@@ -1,10 +1,12 @@
 import { usePrefs } from '../i18n/PrefsContext';
+import useLink from '../hooks/useLink';
 import Tx from '../components/Tx';
 import { useEffect, useRef, useState } from 'react';
 import MiniWave from '../components/MiniWave';
 
 export default function CaseSaaytu() {
   const { t } = usePrefs();
+  const L = useLink();
   // Lecture simulée des bulles vocales
   const [playing, setPlaying] = useState(null);
   const timer = useRef(null);
@@ -20,7 +22,7 @@ export default function CaseSaaytu() {
     <main id="case-saaytu">
       <div className="wrap">
         <div className="case-nav">
-          <a className="pill" href="#travaux">
+          <a className="pill" href={L('home', 'travaux')}>
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M19 12H5M12 19l-7-7 7-7" />
             </svg>
@@ -248,7 +250,7 @@ export default function CaseSaaytu() {
         </section>
         <div className="next">
           <span className="mono muted" dangerouslySetInnerHTML={{__html:t('case.next')}} />
-          <a href="/waluma">
+          <a href={L('waluma')}>
             {"Waluma "}
             <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7" />

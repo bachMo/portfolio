@@ -1,5 +1,6 @@
 // English texts. Keys must match fr.js.
 const en = {
+  "cp.social": "Social",
   "aria.home": "Bachir Sy, home",
   "aria.mainnav": "Main navigation",
   "aria.lang": "Language",

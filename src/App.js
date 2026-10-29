@@ -14,8 +14,9 @@ import CaseSunuChat from './pages/CaseSunuChat';
 import CaseSaaytu from './pages/CaseSaaytu';
 import CaseWaluma from './pages/CaseWaluma';
 import Contact from './pages/Contact';
+import ServicePage from './pages/ServicePage';
 import { Analytics } from '@vercel/analytics/react';
-import SEO_DATA from './seo/pages.json';
+import { SITE_URL, ROUTES, resolvePath, langFromPath } from './routes';
 
 const PAGES = {
   home: Home,
@@ -24,11 +25,11 @@ const PAGES = {
   saaytu: CaseSaaytu,
   waluma: CaseWaluma,
   contact: Contact,
+  'svc-site': ServicePage,
+  'svc-platform': ServicePage,
+  'svc-ai': ServicePage,
 };
 
-// Titres et descriptions partagés avec le script de génération (scripts/generate-seo-pages.js)
-const SITE_URL = SEO_DATA.site;
-const SEO_PAGES = SEO_DATA.pages;
 
 function setMeta(selector, attribute, value) {
   let element = document.head.querySelector(selector);
@@ -49,11 +50,9 @@ export default function App() {
   useEffect(() => {
     // La langue suit l'URL (/en/...) pour que le titre et l'URL canonique
     // restent ceux de la page affichée, comme dans le HTML généré au build.
-    const isEn = /^\/en(\/|$)/.test(window.location.pathname);
-    const base = page === 'home' ? '/' : `/${page}`;
-    const route = isEn ? (base === '/' ? '/en/' : `/en${base}`) : base;
-    const metadata = SEO_PAGES[route] || SEO_PAGES[isEn ? '/en/' : '/'];
-    const canonical = `${SITE_URL}${route}`;
+    const isEn = langFromPath() === 'en';
+    const metadata = (ROUTES[page] || ROUTES.home)[isEn ? 'en' : 'fr'];
+    const canonical = `${SITE_URL}${metadata.path}`;
     document.title = metadata.title;
     setMeta('meta[name="description"]', 'content', metadata.description);
     setMeta('meta[property="og:title"]', 'content', metadata.title);
@@ -71,12 +70,29 @@ export default function App() {
     canonicalLink.href = canonical;
   }, [page, lang]);
 
+  // Navigation interne sans rechargement : tous les liens « /… » (et « /…#ancre »)
+  // passent par l'historique du navigateur. Le rideau animé (Creative) passe en premier.
+  useEffect(() => {
+    const onClick = (e) => {
+      if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      const a = e.target.closest && e.target.closest('a[href^="/"]');
+      if (!a || a.target === '_blank' || a.hasAttribute('download')) return;
+      const href = a.getAttribute('href');
+      if (!resolvePath(href.split('#')[0])) return;
+      e.preventDefault();
+      if (href !== window.location.pathname + window.location.hash) window.history.pushState({}, '', href);
+      window.dispatchEvent(new PopStateEvent('popstate'));
+    };
+    document.addEventListener('click', onClick);
+    return () => document.removeEventListener('click', onClick);
+  }, []);
+
   return (
     <>
       <a className="skip" href="#main">{t('skip')}</a>
       <Nav page={page} />
       <div id="main">
-        <Page key={page} />
+        <Page key={page} page={page} />
       </div>
       <Footer />
       <Interactions />

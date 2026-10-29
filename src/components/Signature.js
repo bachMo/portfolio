@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { usePrefs } from '../i18n/PrefsContext';
 import { prefersReducedMotion } from '../hooks/motion';
 import signature from '../data/signature';
+import { localize } from '../routes';
 
 const TABS = [['docs', 'sig.tab0'], ['sante', 'sig.tab1'], ['agri', 'sig.tab2']];
 
@@ -63,7 +64,7 @@ export default function Signature() {
             <span className="name">{s.name}</span>
             <h2 id="sig-title">{s.h1} <em>{s.h2}</em></h2>
           </div>
-          <a className="pill dark" href={s.href} style={{ height: '56px', padding: '0 28px', fontSize: '16px', flexShrink: 0 }}>
+          <a className="pill dark" href={localize(s.href, lang)} style={{ height: '56px', padding: '0 28px', fontSize: '16px', flexShrink: 0 }}>
             <span dangerouslySetInnerHTML={{ __html: t('case.read') }} />
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14M12 5l7 7-7 7" /></svg>
           </a>

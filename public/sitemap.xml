@@ -1,15 +1,129 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://bachirsy.com/</loc></url>
-  <url><loc>https://bachirsy.com/en/</loc></url>
-  <url><loc>https://bachirsy.com/leeral</loc></url>
-  <url><loc>https://bachirsy.com/en/leeral</loc></url>
-  <url><loc>https://bachirsy.com/sunuchat</loc></url>
-  <url><loc>https://bachirsy.com/en/sunuchat</loc></url>
-  <url><loc>https://bachirsy.com/saaytu</loc></url>
-  <url><loc>https://bachirsy.com/en/saaytu</loc></url>
-  <url><loc>https://bachirsy.com/waluma</loc></url>
-  <url><loc>https://bachirsy.com/en/waluma</loc></url>
-  <url><loc>https://bachirsy.com/contact</loc></url>
-  <url><loc>https://bachirsy.com/en/contact</loc></url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://bachirsy.com/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/en/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/services/creation-site-web</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/services/creation-site-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/services/website-development"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/services/creation-site-web"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/en/services/website-development</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/services/creation-site-web"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/services/website-development"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/services/creation-site-web"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/services/plateforme-de-gestion</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/services/plateforme-de-gestion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/services/business-platform"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/services/plateforme-de-gestion"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/en/services/business-platform</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/services/plateforme-de-gestion"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/services/business-platform"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/services/plateforme-de-gestion"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/services/chatbot-ia-automatisation</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/services/chatbot-ia-automatisation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/services/ai-chatbot-automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/services/chatbot-ia-automatisation"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/en/services/ai-chatbot-automation</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/services/chatbot-ia-automatisation"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/services/ai-chatbot-automation"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/services/chatbot-ia-automatisation"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/leeral</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/leeral"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/leeral"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/leeral"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/en/leeral</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/leeral"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/leeral"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/leeral"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/sunuchat</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/sunuchat"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/sunuchat"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/sunuchat"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/en/sunuchat</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/sunuchat"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/sunuchat"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/sunuchat"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/saaytu</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/saaytu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/saaytu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/saaytu"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/en/saaytu</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/saaytu"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/saaytu"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/saaytu"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/waluma</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/waluma"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/waluma"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/waluma"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/en/waluma</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/waluma"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/waluma"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/waluma"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/contact</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/contact"/>
+  </url>
+  <url>
+    <loc>https://bachirsy.com/en/contact</loc>
+    <lastmod>2026-10-29</lastmod>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://bachirsy.com/contact"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bachirsy.com/en/contact"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bachirsy.com/contact"/>
+  </url>
 </urlset>

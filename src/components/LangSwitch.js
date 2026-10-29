@@ -1,6 +1,7 @@
 
 import { usePrefs } from '../i18n/PrefsContext';
 import { useCallback } from 'react';
+import { resolvePath, pathFor } from '../routes';
 
 export default function LangSwitch() {
   const { lang, setLang, t } = usePrefs();
@@ -8,15 +9,9 @@ export default function LangSwitch() {
   const changeLanguage = useCallback((nextLang) => {
     if (lang === nextLang) return;
 
-    const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
-    const isEnglish = pathname === '/en' || pathname.startsWith('/en/');
-    const currentPath = isEnglish
-      ? pathname.replace(/^\/en(?=\/|$)/, '') || '/'
-      : pathname;
-
-    const nextPath = nextLang === 'en'
-      ? (currentPath === '/' ? '/en/' : `/en${currentPath}`)
-      : currentPath;
+    // Même page, dans l'autre langue (les slugs peuvent différer : /services/creation-site-web ⇄ /en/services/website-development).
+    const hit = resolvePath(window.location.pathname);
+    const nextPath = pathFor(hit ? hit.page : 'home', nextLang);
 
     setLang(nextLang);
     window.history.pushState({}, '', nextPath);

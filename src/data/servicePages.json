@@ -1,0 +1,606 @@
+{
+ "ui": {
+  "fr": {
+   "back": "Tous les services",
+   "label": "Service",
+   "facts": [
+    "POUR",
+    "LIVRABLES",
+    "PAIEMENTS",
+    "LANGUES"
+   ],
+   "problems": "Ce que ça règle",
+   "get": "Ce que vous obtenez",
+   "process": "Comment on travaille",
+   "uses": "Exemples concrets",
+   "work": "Déjà réalisé",
+   "faq": "Questions fréquentes",
+   "others": "Les autres services",
+   "read": "Voir l’étude de cas",
+   "visit": "Voir le site",
+   "start": "Démarrer ce projet",
+   "talk": "Voir les réalisations"
+  },
+  "en": {
+   "back": "All services",
+   "label": "Service",
+   "facts": [
+    "FOR",
+    "DELIVERABLES",
+    "PAYMENTS",
+    "LANGUAGES"
+   ],
+   "problems": "What it solves",
+   "get": "What you get",
+   "process": "How we work",
+   "uses": "Real examples",
+   "work": "Already built",
+   "faq": "Frequently asked questions",
+   "others": "Other services",
+   "read": "Read the case study",
+   "visit": "Visit the site",
+   "start": "Start this project",
+   "talk": "See past work"
+  }
+ },
+ "process": {
+  "fr": [
+   {
+    "t": "Échange",
+    "d": "On parle de votre activité, de vos clients et du problème à régler. Gratuit et sans engagement."
+   },
+   {
+    "t": "Maquette",
+    "d": "Je vous montre à quoi la solution va ressembler avant d’écrire une ligne de code."
+   },
+   {
+    "t": "Construction",
+    "d": "Je développe par étapes, avec une version à tester régulièrement."
+   },
+   {
+    "t": "Mise en ligne et suivi",
+    "d": "Je mets en ligne, je forme votre équipe et je reste disponible pour faire évoluer l’outil."
+   }
+  ],
+  "en": [
+   {
+    "t": "Discovery call",
+    "d": "We talk about your business, your customers and the problem to solve. Free, no strings attached."
+   },
+   {
+    "t": "Mockup",
+    "d": "I show you what the solution will look like before writing a single line of code."
+   },
+   {
+    "t": "Build",
+    "d": "I build in stages, with a version you can test along the way."
+   },
+   {
+    "t": "Launch and support",
+    "d": "I put it live, train your team and stay available to improve it."
+   }
+  ]
+ },
+ "services": {
+  "svc-site": {
+   "mock": "site",
+   "n": "01",
+   "fr": {
+    "kicker": "SERVICE 01 · CRÉATION DE SITE WEB À DAKAR",
+    "h1": "Un site web qui vous <em>apporte des clients.</em>",
+    "lede": "Je crée des sites vitrines et des boutiques en ligne rapides, beaux et bien référencés sur Google, pour que vos clients vous trouvent, vous fassent confiance et vous contactent.",
+    "facts": [
+     "Entreprises, commerces, associations, indépendants",
+     "Site vitrine, boutique en ligne, prise de rendez-vous",
+     "Wave, Orange Money, carte bancaire",
+     "Français, anglais, et plus si besoin"
+    ],
+    "problems": [
+     {
+      "t": "Vos clients ne vous trouvent pas sur Google",
+      "d": "Sans site, ou avec un site lent et mal référencé, ce sont vos concurrents qui récupèrent les recherches."
+     },
+     {
+      "t": "Tout passe par le téléphone",
+      "d": "Rendez-vous, devis et commandes se perdent entre les appels manqués et les messages WhatsApp."
+     },
+     {
+      "t": "Votre image en ligne ne reflète pas votre travail",
+      "d": "Un site daté ou des liens qui ne mènent nulle part font douter les clients avant même le premier contact."
+     }
+    ],
+    "get": [
+     "Un site rapide sur mobile, pensé pour convertir les visites en demandes",
+     "Un bon référencement sur Google : titres, descriptions, pages bien structurées",
+     "Prise de rendez-vous, demande de devis ou paiement en ligne (Wave, Orange Money)",
+     "Un lien qui s’affiche joliment quand on le partage sur WhatsApp et les réseaux",
+     "Un espace simple pour modifier vos textes, photos et prix",
+     "Nom de domaine, hébergement et adresse e-mail professionnelle configurés"
+    ],
+    "uses": [
+     {
+      "t": "Une clinique",
+      "d": "Les patients choisissent leur créneau en ligne et reçoivent un rappel la veille."
+     },
+     {
+      "t": "Une boutique",
+      "d": "Le catalogue est en ligne, le client paie par Wave et suit sa livraison."
+     },
+     {
+      "t": "Une agence ou un cabinet",
+      "d": "Les réalisations sont mises en valeur et les demandes de devis arrivent qualifiées."
+     }
+    ],
+    "work": [
+     {
+      "name": "SPOT Énergie",
+      "desc": "Site vitrine conçu et développé de A à Z.",
+      "href": "https://spot-sc46.vercel.app/"
+     },
+     {
+      "name": "Meli Micro",
+      "desc": "Site conçu et développé de A à Z.",
+      "href": "https://melimicro.com"
+     },
+     {
+      "name": "Waluma",
+      "desc": "Plateforme web et mobile de soins à domicile.",
+      "href": "/waluma"
+     }
+    ],
+    "faq": [
+     {
+      "q": "Combien coûte un site web ?",
+      "a": "Le prix dépend du nombre de pages et des fonctionnalités (rendez-vous, paiement, boutique). J’estime chaque module en heures de travail et je vous envoie un devis détaillé, sans surprise."
+     },
+     {
+      "q": "Combien de temps faut-il ?",
+      "a": "Un site vitrine simple se fait en quelques semaines. Une boutique ou un site avec réservation demande un peu plus. Le planning est fixé ensemble dès le départ."
+     },
+     {
+      "q": "Est-ce que mon site sera bien référencé sur Google ?",
+      "a": "Oui : chaque page a son titre, sa description et une structure propre, le site est rapide sur mobile et déclaré à Google. Le référencement prend ensuite quelques semaines à porter ses fruits."
+     },
+     {
+      "q": "Puis-je modifier le site moi-même ?",
+      "a": "Oui. Je vous livre un espace simple pour changer vos textes, photos et prix, et je vous forme à son utilisation."
+     }
+    ],
+    "final": "Parlons de <em>votre site.</em>"
+   },
+   "en": {
+    "kicker": "SERVICE 01 · WEBSITE DEVELOPMENT IN DAKAR",
+    "h1": "A website that <em>brings you customers.</em>",
+    "lede": "I build fast, beautiful, Google-friendly business websites and online stores, so your customers find you, trust you and get in touch.",
+    "facts": [
+     "Companies, shops, associations, freelancers",
+     "Business site, online store, online booking",
+     "Wave, Orange Money, card payments",
+     "French, English, and more if needed"
+    ],
+    "problems": [
+     {
+      "t": "Customers can’t find you on Google",
+      "d": "Without a website, or with a slow and poorly indexed one, your competitors get the searches."
+     },
+     {
+      "t": "Everything goes through the phone",
+      "d": "Bookings, quotes and orders get lost between missed calls and WhatsApp messages."
+     },
+     {
+      "t": "Your online image doesn’t match your work",
+      "d": "An outdated site or broken links make customers hesitate before they even reach out."
+     }
+    ],
+    "get": [
+     "A fast, mobile-first website designed to turn visits into requests",
+     "Solid Google SEO: titles, descriptions, well-structured pages",
+     "Online booking, quote requests or payments (Wave, Orange Money)",
+     "A link that looks great when shared on WhatsApp and social media",
+     "A simple space to edit your texts, photos and prices",
+     "Domain name, hosting and professional email set up"
+    ],
+    "uses": [
+     {
+      "t": "A clinic",
+      "d": "Patients pick a time slot online and get a reminder the day before."
+     },
+     {
+      "t": "A shop",
+      "d": "The catalogue is online, customers pay with Wave and track their delivery."
+     },
+     {
+      "t": "An agency or firm",
+      "d": "Past work is showcased and quote requests arrive already qualified."
+     }
+    ],
+    "work": [
+     {
+      "name": "SPOT Énergie",
+      "desc": "Business website designed and built end to end.",
+      "href": "https://spot-sc46.vercel.app/"
+     },
+     {
+      "name": "Meli Micro",
+      "desc": "Website designed and built end to end.",
+      "href": "https://melimicro.com"
+     },
+     {
+      "name": "Waluma",
+      "desc": "Home healthcare web and mobile platform.",
+      "href": "/waluma"
+     }
+    ],
+    "faq": [
+     {
+      "q": "How much does a website cost?",
+      "a": "It depends on the number of pages and features (booking, payment, store). I estimate each module in hours and send you a detailed quote, with no surprises."
+     },
+     {
+      "q": "How long does it take?",
+      "a": "A simple business site takes a few weeks. A store or a booking site takes a bit longer. We set the schedule together from day one."
+     },
+     {
+      "q": "Will my site rank on Google?",
+      "a": "Yes: every page has its own title, description and clean structure, the site is fast on mobile and submitted to Google. SEO then takes a few weeks to show results."
+     },
+     {
+      "q": "Can I edit the site myself?",
+      "a": "Yes. You get a simple space to change your texts, photos and prices, and I train you to use it."
+     }
+    ],
+    "final": "Let’s talk about <em>your website.</em>"
+   }
+  },
+  "svc-platform": {
+   "mock": "platform",
+   "n": "02",
+   "fr": {
+    "kicker": "SERVICE 02 · PLATEFORME DE GESTION SUR MESURE",
+    "h1": "Toute votre activité, <em>au même endroit.</em>",
+    "lede": "Je construis des plateformes web et mobiles sur mesure pour piloter votre activité au quotidien : clients, commandes, stocks, équipes et paiements, sans fichiers Excel éparpillés.",
+    "facts": [
+     "PME, ONG et projets, cliniques, écoles",
+     "Application web, appli mobile, back-office",
+     "Wave, Orange Money, facturation",
+     "Interface en français, anglais ou wolof"
+    ],
+    "problems": [
+     {
+      "t": "L’information est éparpillée",
+      "d": "Excel, cahiers, groupes WhatsApp : personne n’a la même version des chiffres."
+     },
+     {
+      "t": "Vos équipes perdent du temps",
+      "d": "Saisies en double, relances manuelles, recherches de documents : autant d’heures qui ne servent pas vos clients."
+     },
+     {
+      "t": "Vous pilotez à l’aveugle",
+      "d": "Sans tableau de bord, difficile de savoir ce qui marche, ce qui bloque et où agir."
+     }
+    ],
+    "get": [
+     "Une plateforme pensée pour votre métier, pas un logiciel générique",
+     "Gestion des clients, commandes, stocks, équipes ou bénéficiaires",
+     "Une application mobile pour le terrain, même avec une connexion faible",
+     "Des rôles et des accès selon chaque profil",
+     "Des tableaux de bord pour suivre l’activité en temps réel",
+     "La formation de vos équipes et une documentation claire"
+    ],
+    "uses": [
+     {
+      "t": "Une ONG ou un projet",
+      "d": "Les agents collectent les données sur le terrain et le siège suit les indicateurs en direct."
+     },
+     {
+      "t": "Une PME",
+      "d": "Les commandes, les stocks et les paiements sont suivis au même endroit."
+     },
+     {
+      "t": "Une clinique ou une école",
+      "d": "Les dossiers, les rendez-vous et la facturation sont centralisés."
+     }
+    ],
+    "work": [
+     {
+      "name": "Fidelia CRM",
+      "desc": "Outil de gestion de la relation client.",
+      "href": null
+     },
+     {
+      "name": "FlowAgri",
+      "desc": "Plateforme de collecte de données agricoles.",
+      "href": null
+     },
+     {
+      "name": "P3AFR",
+      "desc": "Plateforme de suivi d’entrepreneurs avicoles (CNCR / ASPRODEB).",
+      "href": null
+     },
+     {
+      "name": "Waluma",
+      "desc": "Gestion des praticiens, des patients et des missions de soins.",
+      "href": "/waluma"
+     }
+    ],
+    "faq": [
+     {
+      "q": "Pourquoi une plateforme sur mesure plutôt qu’un logiciel existant ?",
+      "a": "Un logiciel générique vous oblige à changer votre façon de travailler. Une plateforme sur mesure suit vos processus, parle votre langue et évolue avec vous."
+     },
+     {
+      "q": "Combien coûte une plateforme ?",
+      "a": "Je découpe le projet en modules (clients, stocks, paiements…) et j’estime chacun en heures. Vous pouvez commencer par l’essentiel et ajouter le reste ensuite."
+     },
+     {
+      "q": "Mes données sont-elles en sécurité ?",
+      "a": "Oui : accès par rôles, sauvegardes régulières et hébergement fiable. Vos données restent les vôtres."
+     },
+     {
+      "q": "Est-ce que ça marche sur mobile ?",
+      "a": "Oui. La plateforme est utilisable sur ordinateur et sur téléphone, avec une appli mobile si vos équipes travaillent sur le terrain."
+     }
+    ],
+    "final": "Parlons de <em>votre plateforme.</em>"
+   },
+   "en": {
+    "kicker": "SERVICE 02 · CUSTOM BUSINESS PLATFORM",
+    "h1": "Your whole business, <em>in one place.</em>",
+    "lede": "I build custom web and mobile platforms to run your business day to day: customers, orders, stock, teams and payments, without scattered spreadsheets.",
+    "facts": [
+     "SMEs, NGOs and projects, clinics, schools",
+     "Web app, mobile app, back office",
+     "Wave, Orange Money, invoicing",
+     "Interface in French, English or Wolof"
+    ],
+    "problems": [
+     {
+      "t": "Information is scattered",
+      "d": "Spreadsheets, notebooks, WhatsApp groups: nobody has the same version of the numbers."
+     },
+     {
+      "t": "Your teams waste time",
+      "d": "Double entry, manual follow-ups, hunting for documents: hours that don’t serve your customers."
+     },
+     {
+      "t": "You’re flying blind",
+      "d": "Without a dashboard, it’s hard to know what works, what’s stuck and where to act."
+     }
+    ],
+    "get": [
+     "A platform designed around your trade, not generic software",
+     "Management of customers, orders, stock, teams or beneficiaries",
+     "A mobile app for field work, even on a weak connection",
+     "Roles and permissions for every profile",
+     "Real-time dashboards to track your activity",
+     "Team training and clear documentation"
+    ],
+    "uses": [
+     {
+      "t": "An NGO or project",
+      "d": "Field agents collect data and headquarters follows the indicators live."
+     },
+     {
+      "t": "An SME",
+      "d": "Orders, stock and payments are tracked in one place."
+     },
+     {
+      "t": "A clinic or school",
+      "d": "Records, appointments and invoicing are centralised."
+     }
+    ],
+    "work": [
+     {
+      "name": "Fidelia CRM",
+      "desc": "Customer relationship management tool.",
+      "href": null
+     },
+     {
+      "name": "FlowAgri",
+      "desc": "Agricultural data collection platform.",
+      "href": null
+     },
+     {
+      "name": "P3AFR",
+      "desc": "Poultry entrepreneur tracking platform (CNCR / ASPRODEB).",
+      "href": null
+     },
+     {
+      "name": "Waluma",
+      "desc": "Management of practitioners, patients and care assignments.",
+      "href": "/waluma"
+     }
+    ],
+    "faq": [
+     {
+      "q": "Why a custom platform instead of existing software?",
+      "a": "Generic software forces you to change how you work. A custom platform follows your processes, speaks your language and grows with you."
+     },
+     {
+      "q": "How much does a platform cost?",
+      "a": "I split the project into modules (customers, stock, payments…) and estimate each one in hours. You can start with the essentials and add the rest later."
+     },
+     {
+      "q": "Is my data safe?",
+      "a": "Yes: role-based access, regular backups and reliable hosting. Your data stays yours."
+     },
+     {
+      "q": "Does it work on mobile?",
+      "a": "Yes. The platform works on desktop and phone, with a mobile app if your teams work in the field."
+     }
+    ],
+    "final": "Let’s talk about <em>your platform.</em>"
+   }
+  },
+  "svc-ai": {
+   "mock": "ai",
+   "n": "03",
+   "fr": {
+    "kicker": "SERVICE 03 · CHATBOT WHATSAPP, IA ET AUTOMATISATION",
+    "h1": "Un assistant qui répond <em>à votre place, même la nuit.</em>",
+    "lede": "Je conçois des chatbots WhatsApp et des assistants IA qui répondent à vos clients 24 h/24, des automatisations qui font le travail répétitif à votre place, et des tableaux de bord pour décider avec les bons chiffres.",
+    "facts": [
+     "Services clients, santé, agriculture, institutions",
+     "Chatbot WhatsApp, assistant IA, tableaux de bord",
+     "Réservations et paiements intégrés",
+     "Français, anglais, wolof, à l’écrit comme à la voix"
+    ],
+    "problems": [
+     {
+      "t": "Les mêmes questions, toute la journée",
+      "d": "Prix, horaires, disponibilités : vos équipes répètent les mêmes réponses au lieu de traiter les vraies demandes."
+     },
+     {
+      "t": "Des clients perdus le soir et le week-end",
+      "d": "Un message sans réponse, c’est souvent un client qui part chez le concurrent."
+     },
+     {
+      "t": "Des chiffres difficiles à lire",
+      "d": "Les données existent, mais personne n’a le temps de les rassembler pour décider."
+     }
+    ],
+    "get": [
+     "Un chatbot WhatsApp qui répond, réserve, prend les commandes et transfère à un humain si besoin",
+     "Un assistant IA formé sur vos propres documents, qui cite ses sources",
+     "Des réponses en français et en wolof, à l’écrit comme à la voix",
+     "Des tâches automatisées : factures, relances, rappels, rapports",
+     "Des tableaux de bord clairs pour suivre l’essentiel",
+     "Des garde-fous : l’assistant n’invente rien et sait dire quand il ne sait pas"
+    ],
+    "uses": [
+     {
+      "t": "Un restaurant ou une boutique",
+      "d": "Les clients commandent sur WhatsApp à toute heure, la commande arrive directement en cuisine."
+     },
+     {
+      "t": "Une structure de santé",
+      "d": "Les patients posent leurs questions et prennent rendez-vous, avec transfert vers un soignant si besoin."
+     },
+     {
+      "t": "Une institution ou une ONG",
+      "d": "Les usagers trouvent la bonne démarche et les bons documents en quelques messages."
+     }
+    ],
+    "work": [
+     {
+      "name": "SunuChat",
+      "desc": "Chatbot de santé publique sur le paludisme et la dengue, aussi en wolof.",
+      "href": "/sunuchat"
+     },
+     {
+      "name": "Saaytu Mbay",
+      "desc": "Chatbot agricole sur WhatsApp, à l’écrit comme à la voix.",
+      "href": "/saaytu"
+     },
+     {
+      "name": "Leeral",
+      "desc": "Assistant qui explique les documents du quotidien en français, wolof et pulaar.",
+      "href": "/leeral"
+     }
+    ],
+    "faq": [
+     {
+      "q": "Un chatbot WhatsApp, comment ça marche ?",
+      "a": "Vos clients écrivent sur votre numéro WhatsApp habituel. L’assistant répond automatiquement à partir de vos informations, et transfère à un membre de votre équipe quand c’est nécessaire."
+     },
+     {
+      "q": "L’IA peut-elle se tromper ?",
+      "a": "Je la limite à vos propres contenus validés, elle cite ses sources et elle passe la main à un humain quand elle n’est pas sûre. C’est ce qui la rend fiable."
+     },
+     {
+      "q": "Mes clients peuvent-ils lui parler en wolof ?",
+      "a": "Oui, à l’écrit et en message vocal. C’est ce que j’ai mis en place sur SunuChat, Saaytu Mbay et Leeral."
+     },
+     {
+      "q": "Combien ça coûte ?",
+      "a": "Le développement est estimé en heures selon les fonctionnalités. Les coûts de fonctionnement (WhatsApp, modèle d’IA) dépendent du volume de messages et sont expliqués dès le devis."
+     }
+    ],
+    "final": "Parlons de <em>votre assistant.</em>"
+   },
+   "en": {
+    "kicker": "SERVICE 03 · WHATSAPP CHATBOTS, AI AND AUTOMATION",
+    "h1": "An assistant that answers <em>for you, even at night.</em>",
+    "lede": "I design WhatsApp chatbots and AI assistants that answer your customers 24/7, automations that handle repetitive work for you, and dashboards to decide with the right numbers.",
+    "facts": [
+     "Customer service, health, farming, institutions",
+     "WhatsApp chatbot, AI assistant, dashboards",
+     "Built-in bookings and payments",
+     "French, English, Wolof, in text and voice"
+    ],
+    "problems": [
+     {
+      "t": "The same questions, all day long",
+      "d": "Prices, opening hours, availability: your teams repeat the same answers instead of handling real requests."
+     },
+     {
+      "t": "Customers lost in the evening and at weekends",
+      "d": "An unanswered message is often a customer gone to a competitor."
+     },
+     {
+      "t": "Numbers that are hard to read",
+      "d": "The data exists, but nobody has time to pull it together to make decisions."
+     }
+    ],
+    "get": [
+     "A WhatsApp chatbot that answers, books, takes orders and hands over to a human when needed",
+     "An AI assistant trained on your own documents, citing its sources",
+     "Answers in French and Wolof, in text and voice",
+     "Automated tasks: invoices, follow-ups, reminders, reports",
+     "Clear dashboards to track what matters",
+     "Guardrails: the assistant never makes things up and knows when it doesn’t know"
+    ],
+    "uses": [
+     {
+      "t": "A restaurant or shop",
+      "d": "Customers order on WhatsApp at any time, and the order goes straight to the kitchen."
+     },
+     {
+      "t": "A health facility",
+      "d": "Patients ask questions and book appointments, with handover to a caregiver when needed."
+     },
+     {
+      "t": "An institution or NGO",
+      "d": "Users find the right procedure and documents in a few messages."
+     }
+    ],
+    "work": [
+     {
+      "name": "SunuChat",
+      "desc": "Public health chatbot on malaria and dengue, also in Wolof.",
+      "href": "/sunuchat"
+     },
+     {
+      "name": "Saaytu Mbay",
+      "desc": "Farming chatbot on WhatsApp, in text and voice.",
+      "href": "/saaytu"
+     },
+     {
+      "name": "Leeral",
+      "desc": "Assistant that explains everyday documents in French, Wolof and Pulaar.",
+      "href": "/leeral"
+     }
+    ],
+    "faq": [
+     {
+      "q": "How does a WhatsApp chatbot work?",
+      "a": "Your customers message your usual WhatsApp number. The assistant answers automatically from your information and hands over to someone on your team when needed."
+     },
+     {
+      "q": "Can the AI get things wrong?",
+      "a": "I restrict it to your own validated content, it cites its sources and hands over to a human when unsure. That’s what makes it reliable."
+     },
+     {
+      "q": "Can my customers talk to it in Wolof?",
+      "a": "Yes, in text and voice messages. That’s what I built for SunuChat, Saaytu Mbay and Leeral."
+     },
+     {
+      "q": "How much does it cost?",
+      "a": "Development is estimated in hours based on features. Running costs (WhatsApp, AI model) depend on message volume and are explained in the quote."
+     }
+    ],
+    "final": "Let’s talk about <em>your assistant.</em>"
+   }
+  }
+ }
+}

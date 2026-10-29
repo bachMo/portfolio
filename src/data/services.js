@@ -8,6 +8,7 @@ const services = {
     get: 'CE QUE VOUS OBTENEZ',
     seen: 'DÉJÀ RÉALISÉ',
     cta: 'Démarrer ce projet',
+    more: 'Découvrir le service',
     outro: 'Pas sûr de ce qu’il vous faut ? <em>Décrivez votre problème,</em> je trouve la solution.',
     outroCta: 'En parler ensemble',
     items: [
@@ -52,6 +53,7 @@ const services = {
     get: 'WHAT YOU GET',
     seen: 'ALREADY BUILT',
     cta: 'Start this project',
+    more: 'Explore this service',
     outro: 'Not sure what you need? <em>Describe your problem,</em> I’ll find the solution.',
     outroCta: 'Let’s talk',
     items: [

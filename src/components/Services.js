@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { usePrefs } from '../i18n/PrefsContext';
 import DATA from '../data/services';
+import useLink from '../hooks/useLink';
 
 const h = (s) => ({ __html: s });
 const ARROW = (
@@ -10,7 +11,7 @@ const ARROW = (
 // Prépare le formulaire de contact avec le bon type de projet
 const preselect = (id) => { try { sessionStorage.setItem('svc-type', id); } catch (e) { /* stockage indisponible */ } };
 
-function MockSite({ m }) {
+export function MockSite({ m }) {
   return (
     <div className="svm svm-site" aria-hidden="true">
       <div className="svm-bar"><i /><i /><i /><span>{m.url}</span></div>
@@ -32,7 +33,7 @@ function MockSite({ m }) {
   );
 }
 
-function MockDash({ m }) {
+export function MockDash({ m }) {
   const bars = [38, 52, 44, 70, 62, 88];
   return (
     <div className="svm svm-dash" aria-hidden="true">
@@ -60,7 +61,7 @@ function MockDash({ m }) {
   );
 }
 
-function MockAI({ m }) {
+export function MockAI({ m }) {
   return (
     <div className="svm svm-ai" aria-hidden="true">
       <div className="sva-head"><b>✦</b><div><strong>{m.chatName}</strong><small>● {m.online} · {m.night}</small></div></div>
@@ -77,11 +78,12 @@ function MockAI({ m }) {
   );
 }
 
-const MOCKS = { site: MockSite, platform: MockDash, ai: MockAI };
+export const MOCKS = { site: MockSite, platform: MockDash, ai: MockAI };
 
 export default function Services() {
   const { lang } = usePrefs();
   const d = DATA[lang] || DATA.fr;
+  const L = useLink();
   const root = useRef(null);
 
   useEffect(() => {
@@ -117,7 +119,7 @@ export default function Services() {
           <p dangerouslySetInnerHTML={h(d.sub)} />
           <nav className="svc-index" aria-label={d.kicker}>
             {d.items.map((it) => (
-              <a key={it.id} href={'#svc-' + it.id}><span className="mono">{it.n}</span>{it.short}</a>
+              <a key={it.id} href={L('svc-' + it.id)}><span className="mono">{it.n}</span>{it.short}</a>
             ))}
           </nav>
         </div>
@@ -130,7 +132,7 @@ export default function Services() {
             <article key={it.id} className={'svc-card svc-' + it.id} id={'svc-' + it.id} style={{ '--i': i }}>
               <div className="svc-text">
                 <div className="svc-num serif" aria-hidden="true">{it.n}</div>
-                <h3 className="serif" dangerouslySetInnerHTML={h(it.title)} />
+                <h3 className="serif"><a href={L('svc-' + it.id)} dangerouslySetInnerHTML={h(it.title)} /></h3>
                 <p className="svc-lede" dangerouslySetInnerHTML={h(it.lede)} />
                 <div className="svc-meta">
                   <div>
@@ -143,14 +145,19 @@ export default function Services() {
                     <span className="mono muted svc-seen-k">{d.seen}</span>
                     <div className="svc-seen">
                       {it.seen.map(([name, href]) => (href
-                        ? <a key={name} href={href} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}>{name}<span aria-hidden="true">↗</span></a>
+                        ? <a key={name} href={L.loc(href)} target={href.startsWith('http') ? '_blank' : undefined} rel={href.startsWith('http') ? 'noreferrer' : undefined}>{name}<span aria-hidden="true">↗</span></a>
                         : <span key={name}>{name}</span>))}
                     </div>
                   </div>
                 </div>
-                <a className="pill solid magnetic svc-cta" href="/contact" onClick={() => preselect(it.id)}>
-                  <span>{d.cta}</span>{ARROW}
-                </a>
+                <div className="svc-ctas">
+                  <a className="pill solid magnetic svc-cta" href={L('contact')} onClick={() => preselect(it.id)}>
+                    <span>{d.cta}</span>{ARROW}
+                  </a>
+                  <a className="pill svc-more" href={L('svc-' + it.id)}>
+                    <span>{d.more}</span>{ARROW}
+                  </a>
+                </div>
               </div>
               <div className="svc-visual"><Mock m={d.mock} /></div>
             </article>
@@ -160,7 +167,7 @@ export default function Services() {
 
       <div className="svc-outro">
         <p className="serif" dangerouslySetInnerHTML={h(d.outro)} />
-        <a className="pill dark magnetic" href="/contact"><span>{d.outroCta}</span>{ARROW}</a>
+        <a className="pill dark magnetic" href={L('contact')}><span>{d.outroCta}</span>{ARROW}</a>
       </div>
     </section>
   );

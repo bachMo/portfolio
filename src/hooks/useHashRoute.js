@@ -1,33 +1,22 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { flushSync } from 'react-dom';
 import { prefersReducedMotion } from './motion';
-export const PAGES = ['leeral', 'sunuchat', 'saaytu', 'waluma', 'contact'];
+import { PAGE_IDS, resolvePath, langFromPath, pathFor } from '../routes';
+
+export const PAGES = PAGE_IDS.filter((id) => id !== 'home');
 
 
 function parseLocation() {
   const legacy = (window.location.hash || '').match(/^#\/([a-z]+)$/);
 
   if (legacy && PAGES.includes(legacy[1])) {
-    const prefix = window.location.pathname.startsWith('/en') ? '/en' : '';
-    window.history.replaceState(
-      {},
-      '',
-      `${prefix}/${legacy[1]}`
-    );
+    window.history.replaceState({}, '', pathFor(legacy[1], langFromPath()));
     return { page: legacy[1], anchor: null };
   }
 
- 
-  const rawPathname =
-    window.location.pathname.replace(/\/+$/, '') || '/';
-
-  const pathname =
-    rawPathname.replace(/^\/en(?=\/|$)/, '') || '/';
-
-  const segment = pathname === '/' ? '' : pathname.slice(1);
-
-  if (PAGES.includes(segment)) {
-    return { page: segment, anchor: null };
+  const hit = resolvePath(window.location.pathname);
+  if (hit && hit.page !== 'home') {
+    return { page: hit.page, anchor: null };
   }
 
   const hash = window.location.hash || '';
@@ -55,12 +44,17 @@ export default function useHashRoute() {
   const [route, setRoute] = useState(parseLocation);
   const current = useRef(route.page);
 
+  // Défile jusqu'à l'ancre (#travaux…) : on attend que la section existe,
+  // car en venant d'une autre page l'accueil est encore en train de s'afficher.
   const scrollToAnchor = useCallback((anchor, delay = 0) => {
     if (!anchor) return;
-    window.setTimeout(() => {
+    let tries = 0;
+    const attempt = () => {
       const el = document.getElementById(anchor);
-      if (el) el.scrollIntoView();
-    }, delay);
+      if (el) { el.scrollIntoView(); return; }
+      if (tries++ < 30) window.setTimeout(attempt, 50);
+    };
+    window.setTimeout(attempt, delay);
   }, []);
 
   useEffect(() => {

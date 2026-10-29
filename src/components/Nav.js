@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { usePrefs } from '../i18n/PrefsContext';
 import { CONFIG } from '../config';
 import LangSwitch from './LangSwitch';
+import useLink from '../hooks/useLink';
 import ThemeToggle from './ThemeToggle';
 
 const SECTIONS = ['services', 'travaux', 'expertise', 'parcours'];
@@ -9,6 +10,7 @@ const SECTIONS = ['services', 'travaux', 'expertise', 'parcours'];
 /** En-tête collant + barre de progression + menu mobile plein écran + scrollspy. */
 export default function Nav({ page }) {
   const { t } = usePrefs();
+  const L = useLink();
   const [open, setOpen] = useState(false);
   const [active, setActive] = useState(null);
   const progRef = useRef(null);
@@ -52,7 +54,7 @@ export default function Nav({ page }) {
 
   const link = (id, key) => (
   <a
-    href={page === 'home' ? `#${id}` : `/#${id}`}
+    href={page === 'home' ? `#${id}` : L('home', id)}
     aria-current={active === id ? 'true' : undefined}
     dangerouslySetInnerHTML={{ __html: t(key) }}
   />
@@ -70,7 +72,7 @@ export default function Nav({ page }) {
         <div className="wrap">
           <a
             className="brand"
-            href={page === 'home' ? '#top' : '/'}
+            href={page === 'home' ? '#top' : L('home')}
             aria-label={t('aria.home')}
           >
             <b>Bachir Sy</b>
@@ -85,7 +87,7 @@ export default function Nav({ page }) {
           <div className="nav-right">
             <LangSwitch />
             <ThemeToggle />
-            <a className="pill dark magnetic" href="/contact" dangerouslySetInnerHTML={{ __html: t('nav.cta') }} />
+            <a className="pill dark magnetic" href={L('contact')} dangerouslySetInnerHTML={{ __html: t('nav.cta') }} />
             <button ref={burgerRef} className="burger" type="button" aria-expanded={open} aria-controls="drawer"
                     aria-label={open ? t('aria.close') : t('aria.menu')} onClick={() => setOpen(!open)}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
@@ -99,11 +101,11 @@ export default function Nav({ page }) {
       </header>
       <nav className="drawer" id="drawer" hidden={!open} aria-label={t('aria.mobilenav')}>
         <div className="dlinks">
-          {dlink(page === 'home' ? '#services' : '/#services', 'nav.services', '01')}
-          {dlink(page === 'home' ? '#travaux' : '/#travaux', 'nav.work', '02')} 
-{dlink(page === 'home' ? '#expertise' : '/#expertise', 'nav.expertise', '03')}
-{dlink(page === 'home' ? '#parcours' : '/#parcours', 'nav.path', '04')}
-          {dlink('/contact', 'nav.contact', '05')}
+          {dlink(page === 'home' ? '#services' : L('home', 'services'), 'nav.services', '01')}
+          {dlink(page === 'home' ? '#travaux' : L('home', 'travaux'), 'nav.work', '02')} 
+{dlink(page === 'home' ? '#expertise' : L('home', 'expertise'), 'nav.expertise', '03')}
+{dlink(page === 'home' ? '#parcours' : L('home', 'parcours'), 'nav.path', '04')}
+          {dlink(L('contact'), 'nav.contact', '05')}
         </div>
         <div className="dfoot">
           <LangSwitch />

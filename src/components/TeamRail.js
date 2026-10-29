@@ -1,5 +1,6 @@
 import { usePrefs } from '../i18n/PrefsContext';
 import team from '../data/team';
+import { localize } from '../routes';
 
 /** Projets en équipe : grille sur desktop, carrousel à glisser sur mobile. */
 export default function TeamRail() {
@@ -19,7 +20,7 @@ export default function TeamRail() {
         if (!w.href) return <article key={w.title} className="tcard">{inner}</article>;
         const external = w.href.startsWith('http');
         return (
-          <a key={w.title} className="tcard" href={w.href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+          <a key={w.title} className="tcard" href={external ? w.href : localize(w.href, lang)} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
             {inner}
           </a>
         );

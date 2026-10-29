@@ -2,17 +2,18 @@ import { useEffect, useMemo, useRef, useState } from 'react';
 import { usePrefs } from '../i18n/PrefsContext';
 import { CONFIG } from '../config';
 import { CV } from '../data/cv';
+import { pathFor, resolvePath } from '../routes';
 
 const TXT = {
   fr: {
     ph: 'Où voulez-vous aller ?', go: 'Aller', act: 'Actions', cases: 'Études de cas', none: 'Aucun résultat',
-    home: 'Accueil', svc: 'Services', work: 'Travaux', exp: 'Expertise', path: 'Parcours', contact: 'Écrire un message',
+    home: 'Accueil', svc: 'Services', sv: 'Services', s1: 'Création de site web', s2: 'Plateforme de gestion', s3: 'Chatbots, IA et automatisation', work: 'Travaux', exp: 'Expertise', path: 'Parcours', contact: 'Écrire un message',
     mail: 'Copier mon adresse e-mail', copied: 'Adresse copiée !', cv: 'Télécharger mon CV', theme: 'Changer de thème',
     lang: 'Switch to English', li: 'Mon LinkedIn', hint: 'naviguer', enter: 'ouvrir', esc: 'fermer',
   },
   en: {
     ph: 'Where do you want to go?', go: 'Go to', act: 'Actions', cases: 'Case studies', none: 'No results',
-    home: 'Home', svc: 'Services', work: 'Work', exp: 'Expertise', path: 'Background', contact: 'Write me a message',
+    home: 'Home', svc: 'Services', sv: 'Services', s1: 'Website development', s2: 'Business platform', s3: 'Chatbots, AI & automation', work: 'Work', exp: 'Expertise', path: 'Background', contact: 'Write me a message',
     mail: 'Copy my email address', copied: 'Address copied!', cv: 'Download my résumé', theme: 'Toggle theme',
     lang: 'Passer en français', li: 'My LinkedIn', hint: 'navigate', enter: 'open', esc: 'close',
   },
@@ -38,16 +39,19 @@ export default function CommandPalette() {
     window.dispatchEvent(new PopStateEvent('popstate'));
   };
   const items = useMemo(() => [
-    { g: tx.go, label: tx.home, k: '↖', run: () => { window.history.pushState({}, '', '/'); window.dispatchEvent(new PopStateEvent('popstate')); window.scrollTo({ top: 0, behavior: 'smooth' }); } },
-    { g: tx.go, label: tx.svc, k: '01', run: go('#services') },
-    { g: tx.go, label: tx.work, k: '02', run: go('#travaux') },
-    { g: tx.go, label: tx.exp, k: '03', run: go('#expertise') },
-    { g: tx.go, label: tx.path, k: '04', run: go('#parcours') },
-    { g: tx.cases, label: 'Leeral', k: 'IA', run: go('/leeral') },
-    { g: tx.cases, label: 'SunuChat', k: 'IA', run: go('/sunuchat') },
-    { g: tx.cases, label: 'Saaytu Mbay', k: 'IA', run: go('/saaytu') },
-    { g: tx.cases, label: 'Waluma', k: 'Web', run: go('/waluma') },
-    { g: tx.act, label: tx.contact, k: '✉', run: go('/contact') },
+    { g: tx.go, label: tx.home, k: '↖', run: () => { window.history.pushState({}, '', pathFor('home', lang)); window.dispatchEvent(new PopStateEvent('popstate')); window.scrollTo({ top: 0, behavior: 'smooth' }); } },
+    { g: tx.go, label: tx.svc, k: '01', run: go(pathFor('home', lang, 'services')) },
+    { g: tx.go, label: tx.work, k: '02', run: go(pathFor('home', lang, 'travaux')) },
+    { g: tx.go, label: tx.exp, k: '03', run: go(pathFor('home', lang, 'expertise')) },
+    { g: tx.go, label: tx.path, k: '04', run: go(pathFor('home', lang, 'parcours')) },
+    { g: tx.sv, label: tx.s1, k: 'S1', run: go(pathFor('svc-site', lang)) },
+    { g: tx.sv, label: tx.s2, k: 'S2', run: go(pathFor('svc-platform', lang)) },
+    { g: tx.sv, label: tx.s3, k: 'S3', run: go(pathFor('svc-ai', lang)) },
+    { g: tx.cases, label: 'Leeral', k: 'IA', run: go(pathFor('leeral', lang)) },
+    { g: tx.cases, label: 'SunuChat', k: 'IA', run: go(pathFor('sunuchat', lang)) },
+    { g: tx.cases, label: 'Saaytu Mbay', k: 'IA', run: go(pathFor('saaytu', lang)) },
+    { g: tx.cases, label: 'Waluma', k: 'Web', run: go(pathFor('waluma', lang)) },
+    { g: tx.act, label: tx.contact, k: '✉', run: go(pathFor('contact', lang)) },
     { g: tx.act, label: tx.mail, k: '⧉', run: () => {
       const done = () => { setToast(tx.copied); setTimeout(() => setToast(''), 2200); };
       if (navigator.clipboard) navigator.clipboard.writeText(CONFIG.contactEmail).then(done, done); else done();
@@ -57,7 +61,7 @@ export default function CommandPalette() {
       const a = document.createElement('a'); a.href = cv.href; a.download = cv.file; document.body.appendChild(a); a.click(); a.remove();
     } },
     { g: tx.act, label: tx.theme, k: theme === 'dark' ? '☀' : '☾', run: () => applyTheme(theme === 'dark' ? 'light' : 'dark') },
-    { g: tx.act, label: tx.lang, k: lang === 'fr' ? 'EN' : 'FR', run: () => setLang(lang === 'fr' ? 'en' : 'fr') },
+    { g: tx.act, label: tx.lang, k: lang === 'fr' ? 'EN' : 'FR', run: () => { const next = lang === 'fr' ? 'en' : 'fr'; const hit = resolvePath(window.location.pathname); setLang(next); window.history.pushState({}, '', pathFor(hit ? hit.page : 'home', next)); window.dispatchEvent(new PopStateEvent('popstate')); } },
     { g: tx.act, label: tx.li, k: '↗', run: () => window.open(CONFIG.links.linkedin, '_blank', 'noopener') },
   // eslint-disable-next-line react-hooks/exhaustive-deps
   ], [lang, theme]);

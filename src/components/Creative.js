@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { hasFinePointer, prefersReducedMotion } from '../hooks/motion';
+import { resolvePath } from '../routes';
 
 /**
  * Couche « créative » (v5) — tout est ici, pour pouvoir l'activer ou la retirer d'un coup.
@@ -254,7 +255,8 @@ export default function Creative({ page }) {
   // Rideau de transition vers les études de cas et la page contact.
   useEffect(() => {
     if (prefersReducedMotion()) return undefined;
-    const NAMES = { leeral: 'Leeral', sunuchat: 'SunuChat', saaytu: 'Saaytu Mbay', waluma: 'Waluma', contact: 'Contact' };
+    const NAMES = { leeral: 'Leeral', sunuchat: 'SunuChat', saaytu: 'Saaytu Mbay', waluma: 'Waluma', contact: 'Contact',
+      'svc-site': { fr: 'Site web', en: 'Websites' }, 'svc-platform': { fr: 'Plateforme', en: 'Platforms' }, 'svc-ai': { fr: 'Chatbots & IA', en: 'Chatbots & AI' } };
     const cur = document.createElement('div');
     cur.className = 'curtain';
     cur.setAttribute('aria-hidden', 'true');
@@ -265,16 +267,21 @@ export default function Creative({ page }) {
       if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || busy) return;
       const a = e.target.closest && e.target.closest('a[href^="/"]');
       if (!a) return;
-      const target = a.getAttribute('href').replace(/^\/+/, '');
-      if (!NAMES[target] || window.location.pathname.replace(/^\/+|\/+$/g, '') === target) return;
+      const href = a.getAttribute('href');
+      if (href.includes('#')) return;
+      const hit = resolvePath(href);
+      const target = hit && hit.page;
+      if (!target || !NAMES[target] || (resolvePath(window.location.pathname) || {}).page === target) return;
       e.preventDefault();
       busy = true;
       const en = document.documentElement.lang === 'en';
-      cur.querySelector('.curtain-k').textContent = target === 'contact' ? (en ? 'Let’s talk' : 'On en parle') : (en ? 'Case study' : 'Étude de cas');
-      cur.querySelector('.curtain-t').textContent = NAMES[target];
+      const name = NAMES[target];
+      const kick = target === 'contact' ? (en ? 'Let’s talk' : 'On en parle') : target.startsWith('svc-') ? 'Service' : (en ? 'Case study' : 'Étude de cas');
+      cur.querySelector('.curtain-k').textContent = kick;
+      cur.querySelector('.curtain-t').textContent = typeof name === 'string' ? name : name[en ? 'en' : 'fr'];
       cur.className = 'curtain in';
       setTimeout(() => {
-        window.history.pushState({}, '', '/' + target);
+        window.history.pushState({}, '', href);
         window.dispatchEvent(new PopStateEvent('popstate'));
         setTimeout(() => {
           cur.className = 'curtain out';

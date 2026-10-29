@@ -1,6 +1,7 @@
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import fr from './fr';
 import en from './en';
+import { langFromPath } from '../routes';
 
 const DICTS = { fr, en };
 
@@ -16,15 +17,7 @@ export function store(key, value) {
 }
 
 function initialLang() {
-  const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
-
-
-  if (pathname === '/en' || pathname.startsWith('/en/')) {
-    return 'en';
-  }
-
-  
-  return 'fr';
+  return langFromPath();
 }
 
 const mq = () => window.matchMedia('(prefers-color-scheme: dark)');
@@ -58,9 +51,16 @@ export function PrefsProvider({ children }) {
     setThemeState(next);
   }, []);
 
- useEffect(() => {
-  document.documentElement.setAttribute('lang', lang);
-}, [lang]);
+  useEffect(() => {
+    document.documentElement.setAttribute('lang', lang);
+  }, [lang]);
+
+  // Boutons Précédent / Suivant du navigateur : la langue suit l'URL.
+  useEffect(() => {
+    const onPop = () => setLangState(langFromPath());
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
 
   useEffect(() => {
     const meta = document.querySelector('meta[name="theme-color"]');
