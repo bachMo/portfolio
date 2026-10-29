@@ -216,13 +216,13 @@ export default function CaseSaaytu() {
             <div className="nums">
               <div>
                 <strong>
-                  [X]
+                  78
                 </strong>
                 <span dangerouslySetInnerHTML={{__html:t('sm.n1')}} />
               </div>
               <div>
                 <strong>
-                  [X]
+                  1874
                 </strong>
                 <span dangerouslySetInnerHTML={{__html:t('sm.n2')}} />
               </div>

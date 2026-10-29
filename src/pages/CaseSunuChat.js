@@ -104,13 +104,13 @@ export default function CaseSunuChat() {
             <div className="nums">
               <div>
                 <strong>
-                  [X]
+                  108
                 </strong>
                 <span dangerouslySetInnerHTML={{__html:t('sc.n1')}} />
               </div>
               <div>
                 <strong>
-                  [X]
+                  2308
                 </strong>
                 <span dangerouslySetInnerHTML={{__html:t('sc.n2')}} />
               </div>
