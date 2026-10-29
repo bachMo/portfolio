@@ -1,5 +1,56 @@
-{
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
-  ]
+﻿{
+    "rewrites":  [
+                     {
+                         "destination":  "/en/index.html",
+                         "source":  "/en"
+                     },
+                     {
+                         "destination":  "/en/index.html",
+                         "source":  "/en/"
+                     },
+                     {
+                         "destination":  "/leeral/index.html",
+                         "source":  "/leeral"
+                     },
+                     {
+                         "destination":  "/en/leeral/index.html",
+                         "source":  "/en/leeral"
+                     },
+                     {
+                         "destination":  "/sunuchat/index.html",
+                         "source":  "/sunuchat"
+                     },
+                     {
+                         "destination":  "/en/sunuchat/index.html",
+                         "source":  "/en/sunuchat"
+                     },
+                     {
+                         "destination":  "/saaytu/index.html",
+                         "source":  "/saaytu"
+                     },
+                     {
+                         "destination":  "/en/saaytu/index.html",
+                         "source":  "/en/saaytu"
+                     },
+                     {
+                         "destination":  "/waluma/index.html",
+                         "source":  "/waluma"
+                     },
+                     {
+                         "destination":  "/en/waluma/index.html",
+                         "source":  "/en/waluma"
+                     },
+                     {
+                         "destination":  "/contact/index.html",
+                         "source":  "/contact"
+                     },
+                     {
+                         "destination":  "/en/contact/index.html",
+                         "source":  "/en/contact"
+                     },
+                     {
+                         "destination":  "/index.html",
+                         "source":  "/(.*)"
+                     }
+                 ]
 }

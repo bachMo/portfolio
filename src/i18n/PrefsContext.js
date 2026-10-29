@@ -3,10 +3,7 @@ import fr from './fr';
 import en from './en';
 
 const DICTS = { fr, en };
-const TITLES = {
-  fr: 'Bachir Sy — Développeur full-stack, IA & chef de projet digital à Dakar',
-  en: 'Bachir Sy — Full-stack developer, AI & digital project manager in Dakar',
-};
+
 
 export function store(key, value) {
   try {
@@ -56,10 +53,9 @@ export function PrefsProvider({ children }) {
     setThemeState(next);
   }, []);
 
-  useEffect(() => {
-    document.documentElement.setAttribute('lang', lang);
-    document.title = TITLES[lang];
-  }, [lang]);
+ useEffect(() => {
+  document.documentElement.setAttribute('lang', lang);
+}, [lang]);
 
   useEffect(() => {
     const meta = document.querySelector('meta[name="theme-color"]');
