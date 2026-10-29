@@ -234,7 +234,7 @@ a.sx-work-row:hover h3{color:var(--accent)}
 .sx-next-link:hover{color:var(--text)}
 .sx-next-track{display:flex;width:max-content;animation:sxMarq 30s linear infinite}
 .sx-next-track>span{display:flex}
-.sx-next-track span span{display:inline-flex;align-items:center;gap:.22em;padding-right:.22em;font-family:var(--serif);font-size:clamp(84px,13vw,210px);line-height:1;letter-spacing:-.035em;transition:color .4s,-webkit-text-stroke-color .4s}
+.sx-next-track span span{white-space:nowrap;display:inline-flex;align-items:center;gap:.22em;padding-right:.22em;font-family:var(--serif);font-size:clamp(84px,13vw,210px);line-height:1;letter-spacing:-.035em;transition:color .4s,-webkit-text-stroke-color .4s}
 .sx-next-track span span.o{color:transparent;-webkit-text-stroke:1.5px var(--text)}
 .sx-next-track i{font-style:normal;font-size:.55em;color:var(--proj,var(--accent))}
 .sx-next-link:hover .sx-next-track span span{color:var(--proj,var(--accent))}
@@ -262,7 +262,7 @@ a.sx-work-row:hover h3{color:var(--accent)}
   .sx-faq{grid-template-columns:1fr}
   .sx-faq-side{position:static}
 }
-@media (max-width:720px){
+@media (max-width:760px){
   .sx-bignum{font-size:56vw;top:10px;right:-4%}
   .sx-casenum{font-size:54vw}
   .sx-tickets{grid-template-columns:1fr}
@@ -285,6 +285,32 @@ a.sx-work-row:hover h3{color:var(--accent)}
   .sx-badge{width:112px;height:112px}
   .sx-badge-core{width:48px;height:48px}
 }
+
+/* ——— Ajustements de responsivité (v13) ——— */
+/* Pages existantes : colonnes trop étroites sur tablette */
+@media (max-width:1000px){
+  .cols,.path{grid-template-columns:1fr}
+  .cols>div{padding:32px 0;border-left:0;border-top:1px solid var(--line)}
+  .cols>div:first-child{border-top:0}
+  .sx-work-go{grid-column:2 / -1;justify-self:start}
+}
+.case-nav>.mono{white-space:nowrap}
+@media (max-width:760px){
+  .case-nav{flex-wrap:wrap;row-gap:12px}
+  .case-nav .pill{flex:none}
+  .sx-tabs a{padding:7px 11px}
+  .case-nav>.mono{font-size:11px;white-space:normal;text-align:right;min-width:0}
+  .social-links.sl-row{gap:6px}
+  .social-links.sl-row a{width:40px;height:40px}
+  .nums strong{font-size:clamp(38px,11vw,56px);white-space:nowrap}
+  /* Avant / Après : un seul panneau à la fois, sans hauteur vide */
+  .sx-ba-panel.after{display:none;clip-path:none}
+  .is-after .sx-ba-panel.after{display:grid;animation:sxFade .5s ease}
+  .is-after .sx-ba-panel.before{display:none}
+  .sx-work-go{grid-column:auto}
+}
+@media (max-width:400px){.case-nav>.mono{display:none}}
+@keyframes sxFade{from{opacity:0}to{opacity:1}}
 
 /* ——— Animations réduites : tout est posé, rien ne bouge ——— */
 @media (prefers-reduced-motion:reduce){

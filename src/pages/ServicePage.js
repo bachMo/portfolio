@@ -254,7 +254,7 @@ export default function ServicePage({ page }) {
                   <span className="mono sx-work-i">{String(i + 1).padStart(2, '0')}</span>
                   <h3 className="serif">{w.name}</h3>
                   <p>{w.desc}</p>
-                  <span className="mono sx-work-go">{w.href ? <>{w.href.startsWith('http') ? ui.visit : ui.read} ↗</> : '·'}</span>
+                  {w.href && <span className="mono sx-work-go">{w.href.startsWith('http') ? ui.visit : ui.read} ↗</span>}
                 </>
               );
               if (!w.href) return <article key={w.name} className="sx-work-row" {...handlers(i)}>{inner}</article>;

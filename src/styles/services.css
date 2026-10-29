@@ -110,7 +110,7 @@
 .svd-kanban div{display:flex;flex-direction:column;gap:6px}
 .svd-kanban small{font-size:10px;color:#8b7e6c}
 .svd-kanban i{height:24px;border-radius:7px;background:#fff;box-shadow:0 0 0 1px rgba(0,0,0,.05)}
-.svd-task{position:absolute;left:10px;top:60px;width:calc((100% - 32px)/3);font-size:9.5px;font-weight:700;line-height:1.2;background:#fff;border-radius:7px;padding:6px;box-shadow:0 10px 20px -8px rgba(40,20,5,.4),0 0 0 1.5px var(--a)}
+.svd-task{overflow-wrap:anywhere;position:absolute;left:10px;top:60px;width:calc((100% - 32px)/3);font-size:9.5px;font-weight:700;line-height:1.2;background:#fff;border-radius:7px;padding:6px;box-shadow:0 10px 20px -8px rgba(40,20,5,.4),0 0 0 1.5px var(--a)}
 .is-on .svd-task{animation:svTask 3.2s cubic-bezier(.6,0,.3,1) 1.4s forwards}
 @keyframes svTask{0%{transform:none}35%,50%{transform:translateX(calc(100% + 6px)) rotate(-3deg)}85%,100%{transform:translateX(calc(200% + 12px)) translateY(-28px) rotate(0);box-shadow:0 0 0 1.5px var(--g)}}
 

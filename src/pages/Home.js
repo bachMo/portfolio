@@ -534,7 +534,7 @@ export default function Home() {
                 LinkedIn
               </a>
               <CvLink />
-              <SocialLinks compact className="social-links row" />
+              <SocialLinks compact className="social-links sl-row" />
             </div>
           </div>
         </div>

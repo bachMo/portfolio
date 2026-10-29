@@ -55,7 +55,7 @@ export default function Contact() {
               </div>
               <div>
                 <dt dangerouslySetInnerHTML={{__html:t('cp.social')}} />
-                <dd><SocialLinks compact className="social-links row" /></dd>
+                <dd><SocialLinks compact className="social-links sl-row" /></dd>
               </div>
               <div>
                 <dt dangerouslySetInnerHTML={{__html:t('cp.base')}} />
