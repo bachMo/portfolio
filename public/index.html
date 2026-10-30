@@ -26,34 +26,70 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "@id": "https://bachirsy.com/#person",
-        "name": "Mamadou Bachir Sy",
-        "url": "https://bachirsy.com/",
-        "jobTitle": "Développeur freelance Full-Stack et IA",
-        "description": "Développeur Full-Stack et IA basé à Dakar, Sénégal, spécialisé dans les applications web et mobiles, les assistants conversationnels et l'intégration de l'intelligence artificielle.",
-        "email": "mailto:contact@bachirsy.com",
-        "address": {
-          "@type": "PostalAddress",
-          "addressLocality": "Dakar",
-          "addressCountry": "SN"
-        },
-        "knowsAbout": [
-          "Développement web",
-          "Développement mobile",
-          "Intelligence artificielle générative",
-          "Assistants conversationnels",
-          "Retrieval-Augmented Generation (RAG)",
-          "Data Science",
-          "Gestion de projets informatiques"
-        ],
-        "sameAs": [
-          "https://github.com/bachMo",
-          "https://www.linkedin.com/in/bachirsy/",
-          "https://instagram.com/goorgoorlu.digital",
-          "https://www.tiktok.com/@goorgoorlu.digital",
-          "https://www.facebook.com/goorgoorlu.digital",
-          "https://x.com/goorgoorlu_dgt"
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://bachirsy.com/#website",
+            "url": "https://bachirsy.com/",
+            "name": "Bachir Sy",
+            "alternateName": "Bachir Sy — Le goorgoorlu du digital",
+            "inLanguage": ["fr", "en"],
+            "publisher": { "@id": "https://bachirsy.com/#person" }
+          },
+          {
+            "@type": "Person",
+            "@id": "https://bachirsy.com/#person",
+            "name": "Mamadou Bachir Sy",
+            "alternateName": "Bachir Sy",
+            "url": "https://bachirsy.com/",
+            "image": "https://bachirsy.com/og-image.jpg",
+            "jobTitle": "Développeur freelance Full-Stack et IA",
+            "description": "Développeur Full-Stack et IA basé à Dakar, Sénégal : sites web, applications web et mobiles, plateformes de gestion, chatbots WhatsApp et assistants IA.",
+            "email": "mailto:contact@bachirsy.com",
+            "address": { "@type": "PostalAddress", "addressLocality": "Dakar", "addressCountry": "SN" },
+            "alumniOf": [{ "@type": "CollegeOrUniversity", "name": "ESMT" }, { "@type": "CollegeOrUniversity", "name": "Groupe 3IL" }],
+            "knowsLanguage": ["fr", "en", "wo"],
+            "knowsAbout": [
+              "Développement web",
+              "Développement mobile",
+              "Chatbots WhatsApp",
+              "Intelligence artificielle générative",
+              "Retrieval-Augmented Generation (RAG)",
+              "Reconnaissance et synthèse vocale en wolof",
+              "Data Science",
+              "Gestion de projets digitaux"
+            ],
+            "sameAs": [
+              "https://github.com/bachMo",
+              "https://www.linkedin.com/in/bachirsy/",
+              "https://instagram.com/goorgoorlu.digital",
+              "https://www.tiktok.com/@goorgoorlu.digital",
+              "https://www.facebook.com/goorgoorlu.digital",
+              "https://x.com/goorgoorlu_dgt"
+            ]
+          },
+          {
+            "@type": "ProfessionalService",
+            "@id": "https://bachirsy.com/#service",
+            "name": "Bachir Sy — Solutions digitales sur mesure",
+            "url": "https://bachirsy.com/",
+            "image": "https://bachirsy.com/og-image.jpg",
+            "email": "contact@bachirsy.com",
+            "telephone": "+221783727298",
+            "founder": { "@id": "https://bachirsy.com/#person" },
+            "address": { "@type": "PostalAddress", "addressLocality": "Dakar", "addressCountry": "SN" },
+            "areaServed": [{ "@type": "Country", "name": "Sénégal" }, { "@type": "Place", "name": "Afrique de l'Ouest" }],
+            "availableLanguage": ["fr", "en", "wo"],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Services",
+              "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Création de site web", "url": "https://bachirsy.com/services/creation-site-web" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Plateforme de gestion sur mesure", "url": "https://bachirsy.com/services/plateforme-de-gestion" } },
+                { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Chatbot WhatsApp, IA et automatisation", "url": "https://bachirsy.com/services/chatbot-ia-automatisation" } }
+              ]
+            }
+          }
         ]
       }
     </script>
@@ -70,8 +106,8 @@
         try {
           var th = localStorage.getItem('bs-theme');
           if (th === 'light' || th === 'dark') r.setAttribute('data-theme', th);
-          var l = localStorage.getItem('bs-lang');
-          if (l === 'fr' || l === 'en') r.setAttribute('lang', l);
+          // la langue suit l'adresse : /en/... en anglais, le reste en français
+          r.setAttribute('lang', /^\/en(\/|$)/.test(location.pathname) ? 'en' : 'fr');
         } catch (e) {}
       })();
     </script>

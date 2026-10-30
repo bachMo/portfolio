@@ -4,109 +4,109 @@
     "home": {
       "fr": {
         "path": "/",
-        "title": "Bachir Sy | Développeur freelance Full-Stack & IA à Dakar",
-        "description": "Mamadou Bachir Sy, développeur freelance Full-Stack et IA à Dakar, Sénégal. Applications web et mobiles, chatbots IA, assistants multilingues et automatisation."
+        "title": "Bachir Sy — Développeur freelance web, mobile & IA à Dakar",
+        "description": "Développeur freelance à Dakar : sites web, applications web et mobiles, plateformes de gestion, chatbots WhatsApp et IA pour entreprises et organisations."
       },
       "en": {
         "path": "/en/",
-        "title": "Bachir Sy | Freelance Full-Stack Developer & AI in Dakar",
-        "description": "Mamadou Bachir Sy is a freelance full-stack developer and AI specialist in Dakar, Senegal. Web and mobile apps, AI chatbots, multilingual assistants and automation."
+        "title": "Bachir Sy — Freelance web, mobile & AI developer in Dakar",
+        "description": "Freelance developer in Dakar, Senegal: websites, web and mobile apps, business platforms, WhatsApp chatbots and AI for companies and organisations."
       }
     },
     "svc-site": {
       "fr": {
         "path": "/services/creation-site-web",
-        "title": "Création de site web à Dakar | Site vitrine & boutique en ligne — Bachir Sy",
-        "description": "Création de sites vitrines et de boutiques en ligne à Dakar : rapides, bien référencés sur Google, avec prise de rendez-vous, devis ou paiement Wave et Orange Money."
+        "title": "Création de site web à Dakar : vitrine et e-commerce",
+        "description": "Création de sites vitrines et boutiques en ligne à Dakar : rapides, bien référencés sur Google, avec prise de rendez-vous et paiement Wave ou Orange Money."
       },
       "en": {
         "path": "/en/services/website-development",
-        "title": "Website development in Dakar | Business sites & online stores — Bachir Sy",
-        "description": "Fast, Google-friendly business websites and online stores built in Dakar, Senegal, with online booking, quotes or Wave and Orange Money payments."
+        "title": "Website development in Dakar: business sites & stores",
+        "description": "Business websites and online stores built in Dakar, Senegal: fast, Google-friendly, with online booking and Wave or Orange Money payments."
       }
     },
     "svc-platform": {
       "fr": {
         "path": "/services/plateforme-de-gestion",
-        "title": "Plateforme de gestion sur mesure | Application web et mobile — Bachir Sy",
-        "description": "Développement de plateformes de gestion sur mesure au Sénégal : clients, commandes, stocks, équipes et paiements réunis dans une application web et mobile."
+        "title": "Plateforme de gestion sur mesure au Sénégal | Web & mobile",
+        "description": "Plateformes de gestion sur mesure au Sénégal : clients, commandes, stocks, équipes et paiements réunis dans une application web et mobile."
       },
       "en": {
         "path": "/en/services/business-platform",
-        "title": "Custom business platform | Web & mobile apps — Bachir Sy",
+        "title": "Custom business platform in Senegal | Web & mobile apps",
         "description": "Custom management platforms built in Senegal: customers, orders, stock, teams and payments brought together in one web and mobile application."
       }
     },
     "svc-ai": {
       "fr": {
         "path": "/services/chatbot-ia-automatisation",
-        "title": "Chatbot WhatsApp & IA, automatisation et tableaux de bord — Bachir Sy",
-        "description": "Chatbots WhatsApp et assistants IA qui répondent à vos clients 24 h/24, même en wolof, automatisation des tâches répétitives et tableaux de bord à Dakar."
+        "title": "Chatbot WhatsApp, IA et automatisation à Dakar | Bachir Sy",
+        "description": "Chatbots WhatsApp et assistants IA qui répondent à vos clients 24 h/24, en français et en wolof, automatisation des tâches et tableaux de bord, à Dakar."
       },
       "en": {
         "path": "/en/services/ai-chatbot-automation",
-        "title": "WhatsApp & AI chatbots, automation and dashboards — Bachir Sy",
-        "description": "WhatsApp chatbots and AI assistants that answer your customers 24/7, even in Wolof, plus automation of repetitive tasks and dashboards, built in Dakar."
+        "title": "WhatsApp chatbots, AI & automation in Dakar | Bachir Sy",
+        "description": "WhatsApp chatbots and AI assistants that answer your customers 24/7, in French and Wolof, plus task automation and dashboards, built in Dakar."
       }
     },
     "leeral": {
       "fr": {
         "path": "/leeral",
-        "title": "Leeral | Assistant IA multilingue en français, wolof et pulaar — Bachir Sy",
-        "description": "Découvrez Leeral, un assistant intelligent qui aide à comprendre les documents du quotidien grâce à l’IA, au texte et à la voix, en français, wolof et pulaar."
+        "title": "Leeral : l’IA qui explique vos documents, en wolof aussi",
+        "description": "Étude de cas Leeral : on photographie un document, l’IA l’explique simplement, à l’écrit ou à voix haute, en français, wolof et pulaar. WhatsApp, Android, web."
       },
       "en": {
         "path": "/en/leeral",
-        "title": "Leeral | Multilingual AI assistant — Bachir Sy",
-        "description": "Discover Leeral, an intelligent assistant that makes everyday documents easier to understand using AI, text and voice in French, Wolof and Pulaar."
+        "title": "Leeral: the AI that explains your documents, in Wolof too",
+        "description": "Leeral case study: snap a document and the AI explains it simply, in text or out loud, in French, Wolof and Pulaar. On WhatsApp, Android and the web."
       }
     },
     "sunuchat": {
       "fr": {
         "path": "/sunuchat",
-        "title": "SunuChat | Assistant conversationnel de santé par IA — Bachir Sy",
-        "description": "Étude de cas SunuChat : assistant conversationnel de santé combinant IA générative, recherche documentaire et expérience multilingue texte et voix."
+        "title": "SunuChat : chatbot santé IA en wolof et français | Bachir Sy",
+        "description": "Étude de cas SunuChat : chatbot de santé publique sur le paludisme et la dengue, par texte et audio, en wolof et en français. Lead technique full-stack."
       },
       "en": {
         "path": "/en/sunuchat",
-        "title": "SunuChat | AI-powered health conversational assistant — Bachir Sy",
-        "description": "SunuChat case study: a health conversational assistant combining generative AI, knowledge retrieval and a multilingual text and voice experience."
+        "title": "SunuChat: AI health chatbot in Wolof and French | Bachir Sy",
+        "description": "SunuChat case study: a public health chatbot answering questions on malaria and dengue, by text and audio, in Wolof and French. Full-stack tech lead."
       }
     },
     "saaytu": {
       "fr": {
         "path": "/saaytu",
-        "title": "Saaytu Mbay | Assistant IA pour l’agriculture — Bachir Sy",
-        "description": "Découvrez Saaytu Mbay, un assistant numérique agricole qui aide les producteurs à accéder à des informations pratiques grâce à l’intelligence artificielle."
+        "title": "Saaytu Mbay : conseiller agricole IA sur WhatsApp",
+        "description": "Étude de cas Saaytu Mbay : conseiller agricole automatique sur WhatsApp qui répond aux agriculteurs à l’écrit comme à la voix, y compris en wolof."
       },
       "en": {
         "path": "/en/saaytu",
-        "title": "Saaytu Mbay | AI assistant for agriculture — Bachir Sy",
-        "description": "Discover Saaytu Mbay, a digital agriculture assistant that helps farmers access practical information using artificial intelligence."
+        "title": "Saaytu Mbay: AI farming advisor on WhatsApp | Bachir Sy",
+        "description": "Saaytu Mbay case study: an automated farming advisor on WhatsApp that answers farmers by text or voice, Wolof included."
       }
     },
     "waluma": {
       "fr": {
         "path": "/waluma",
-        "title": "Waluma | Plateforme numérique de mise en relation santé — Bachir Sy",
-        "description": "Étude de cas Waluma : plateforme web et mobile pour faciliter la gestion des praticiens, des missions et des services de santé."
+        "title": "Waluma : plateforme de soins à domicile à Dakar | Bachir Sy",
+        "description": "Étude de cas Waluma : soins à domicile à Dakar, mise en relation patients et soignants vérifiés, carte des praticiens et suivi d’arrivée. Web et mobile."
       },
       "en": {
         "path": "/en/waluma",
-        "title": "Waluma | Digital healthcare platform — Bachir Sy",
-        "description": "Waluma case study: a web and mobile platform that simplifies the management of healthcare professionals, assignments and services."
+        "title": "Waluma: home healthcare platform in Dakar | Bachir Sy",
+        "description": "Waluma case study: home healthcare in Dakar, connecting patients with verified practitioners, with a live map and arrival tracking. Web and mobile."
       }
     },
     "contact": {
       "fr": {
         "path": "/contact",
-        "title": "Contacter Bachir Sy | Développeur freelance Full-Stack & IA à Dakar",
-        "description": "Vous avez un projet web, mobile ou IA ? Contactez Bachir Sy, développeur freelance Full-Stack et IA basé à Dakar, Sénégal."
+        "title": "Contact — Bachir Sy, développeur freelance à Dakar",
+        "description": "Un site, une plateforme, un chatbot ou un tableau de bord à créer ? Décrivez votre projet à Bachir Sy, développeur freelance à Dakar. Réponse rapide."
       },
       "en": {
         "path": "/en/contact",
-        "title": "Contact Bachir Sy | Freelance Full-Stack Developer & AI in Dakar",
-        "description": "Have a web, mobile or AI project? Contact Bachir Sy, a freelance full-stack developer and AI specialist based in Dakar, Senegal."
+        "title": "Contact — Bachir Sy, freelance developer in Dakar",
+        "description": "A website, platform, chatbot or dashboard to build? Tell Bachir Sy, freelance developer in Dakar, about your project. Quick reply."
       }
     }
   }

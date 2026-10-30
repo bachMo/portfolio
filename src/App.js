@@ -68,6 +68,19 @@ export default function App() {
       document.head.appendChild(canonicalLink);
     }
     canonicalLink.href = canonical;
+    // Image de partage propre à la page, et alternates hreflang de la page affichée
+    const ogImage = page === 'home' ? `${SITE_URL}/og-image.jpg` : `${SITE_URL}/og/${page}-${isEn ? 'en' : 'fr'}.jpg`;
+    setMeta('meta[property="og:image"]', 'content', ogImage);
+    setMeta('meta[name="twitter:image"]', 'content', ogImage);
+    const routes = ROUTES[page] || ROUTES.home;
+    [['fr', routes.fr.path], ['en', routes.en.path], ['x-default', routes.fr.path]].forEach(([hl, p]) => {
+      const el = document.head.querySelector(`link[rel="alternate"][hreflang="${hl}"]`);
+      if (el) el.href = `${SITE_URL}${p}`;
+    });
+    // Données structurées générées pour la page d'arrivée : retirées si l'on change de page
+    const ld = document.getElementById('ld-page');
+    if (ld && ld.dataset.page && ld.dataset.page !== page) ld.remove();
+    else if (ld && !ld.dataset.page) ld.dataset.page = page;
   }, [page, lang]);
 
   // Navigation interne sans rechargement : tous les liens « /… » (et « /…#ancre »)
