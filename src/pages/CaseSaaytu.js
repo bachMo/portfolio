@@ -4,6 +4,7 @@ import Tx from '../components/Tx';
 import { useEffect, useRef, useState } from 'react';
 import MiniWave from '../components/MiniWave';
 import { ScrollFX, Band, NextCase } from '../components/Showcase';
+import Reel from '../components/Reel';
 import img from '../assets';
 
 export default function CaseSaaytu() {
@@ -69,6 +70,7 @@ export default function CaseSaaytu() {
           </div>
         </section>
         <Band items={[...t('sm.k').split('·'), 'WhatsApp', 'Whisper', 'RAG', 'FastAPI', 'React'].map((w) => w.trim())} caps />
+        <div className="case-reel" data-scrub=""><Reel id="saaytu" label="Saaytu Mbay" /></div>
         <div className="phone-stage" data-scrub="">
           <div className="phone">
             <div className="chat-head">

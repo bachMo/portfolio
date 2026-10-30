@@ -1,0 +1,68 @@
+/* v14 — Creative dev : champ d'ondes WebGL du hero, vidéos des études de cas,
+   showreel 3D de l'accueil. Même direction artistique (papier, terracotta, serif). */
+
+/* ——— Champ d'ondes (WebGL) ——— */
+.hero-field{position:absolute;z-index:-1;top:0;bottom:0;left:calc(50% - 50vw);width:100vw;height:100%;pointer-events:none;opacity:0;transition:opacity 1.8s ease}
+.hero-field.on{opacity:1}
+
+/* ——— Vidéo courte ——— */
+.reel{position:relative;aspect-ratio:16/10;border-radius:24px;overflow:hidden;isolation:isolate;background:var(--surface-2)}
+.reel video{display:block;width:100%;height:100%;object-fit:cover}
+.reel-btn{position:absolute;z-index:2;right:14px;bottom:14px;width:40px;height:40px;border:0;border-radius:50%;display:grid;place-items:center;cursor:pointer;
+  background:rgba(26,22,18,.62);color:#FFF8EF;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);opacity:0;transform:scale(.85);transition:opacity .3s,transform .3s,background .3s}
+.reel:hover .reel-btn,.reel-btn:focus-visible,.reel:not(.is-playing) .reel-btn{opacity:1;transform:none}
+.reel-btn:hover{background:var(--accent)}
+@media (hover:none){.reel-btn{opacity:.9;transform:none}}
+
+/* ——— Études de cas : la vidéo s'ouvre au défilement ——— */
+.case-reel{max-width:1120px;margin:0 auto clamp(40px,5vw,72px)}
+.case-reel .reel{border-radius:clamp(20px,2.4vw,32px);box-shadow:0 60px 110px -60px rgba(34,22,15,.55);transform-origin:50% 0;
+  transform:scale(calc(.86 + var(--p,1) * .14));clip-path:inset(0 round clamp(20px,2.4vw,32px))}
+
+/* ——— Showreel 3D ——— */
+.sr{position:relative;margin-top:clamp(96px,11vw,160px)}
+.sr-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.62fr);gap:clamp(24px,4vw,64px);align-items:end;margin-bottom:clamp(24px,3.5vh,44px)}
+.sr-head p{margin:0;font-size:17px;line-height:1.55;color:var(--muted);max-width:30em}
+.sr-head .h2 em{color:var(--accent)}
+.sr-stage{position:relative;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px var(--pad) 18px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.sr-stage::-webkit-scrollbar{display:none}
+.sr-card{position:relative;flex:none;display:block;width:min(84vw,600px);scroll-snap-align:center;border-radius:24px;color:inherit;box-shadow:0 40px 80px -48px rgba(34,22,15,.55)}
+.sr-card .reel{border-radius:24px}
+.sr-shade{position:absolute;inset:0;z-index:3;border-radius:inherit;background:var(--bg);opacity:0;pointer-events:none}
+.sr-foot{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:clamp(16px,2.4vw,32px);align-items:center;margin-top:clamp(16px,3vh,32px)}
+.sr-count{font-size:12px;color:var(--faint);letter-spacing:.08em}
+.sr-name{display:flex;align-items:baseline;gap:18px;flex-wrap:wrap;animation:srIn .7s cubic-bezier(.2,.8,.2,1)}
+.sr-name b{font-weight:400;font-size:clamp(36px,3.8vw,60px);line-height:1;letter-spacing:-.02em}
+.sr-name b em{color:var(--accent)}
+.sr-name span{font-size:12px;letter-spacing:.06em;color:var(--muted);text-transform:uppercase}
+.sr-meter{display:none;align-items:center;gap:14px;grid-column:1 / -1}
+.sr-meter b{display:block;width:140px;height:3px;border-radius:3px;background:var(--line);overflow:hidden}
+.sr-meter b i{display:block;height:100%;background:var(--accent);transform-origin:0 50%;transform:scaleX(var(--sr,0))}
+@keyframes srIn{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+/* Grand écran : section épinglée, arc en 3D piloté par le défilement */
+.sr.is-pinned{height:330vh}
+.sr.is-pinned .sr-sticky{position:sticky;top:0;height:100vh;padding-top:76px;display:flex;flex-direction:column;justify-content:center;overflow:hidden}
+.sr.is-pinned .sr-stage{overflow:visible;padding:0;display:block;height:min(46vh,calc(60vw / 1.6),520px);perspective:2200px;perspective-origin:50% 45%;transform-style:preserve-3d}
+.sr.is-pinned .sr-card{position:absolute;left:50%;top:0;width:calc(min(46vh,calc(60vw / 1.6),520px) * 1.6);margin-left:calc(min(46vh,calc(60vw / 1.6),520px) * -.8);
+  will-change:transform,opacity;transform-style:preserve-3d;box-shadow:0 60px 110px -50px rgba(34,22,15,.6)}
+.sr.is-pinned .sr-shade{opacity:calc(var(--dim,0) * .5)}
+.sr.is-pinned .sr-card.is-active{cursor:pointer}
+.sr.is-pinned .sr-card:not(.is-active) .reel-btn{display:none}
+.sr.is-pinned .sr-meter{display:flex;grid-column:auto}
+.sr.is-pinned .sr-foot{grid-template-columns:auto minmax(0,1fr) auto auto}
+.sr-card.is-active .reel{outline:1px solid color-mix(in srgb,var(--accent) 40%,transparent);outline-offset:-1px}
+
+@media (max-width:1000px){
+  .sr-head{grid-template-columns:1fr}
+  .sr-foot .sr-open{grid-column:1 / -1;justify-self:start}
+}
+@media (max-width:760px){
+  .sr-foot{grid-template-columns:auto minmax(0,1fr)}
+  .sr-name{gap:6px 14px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-field{transition:none}
+  .sr-name{animation:none}
+  .case-reel .reel{transform:none}
+}

@@ -3,6 +3,7 @@ import useLink from '../hooks/useLink';
 import Tx from '../components/Tx';
 import img from '../assets';
 import { ScrollFX, Band, NextCase } from '../components/Showcase';
+import Reel from '../components/Reel';
 
 export default function CaseWaluma() {
   const { t } = usePrefs();
@@ -52,6 +53,7 @@ export default function CaseWaluma() {
           </div>
         </section>
         <Band items={[...t('wl.k').split('·'), 'Expo', 'Next.js', 'Express', 'Prisma'].map((w) => w.trim())} caps />
+        <div className="case-reel" data-scrub=""><Reel id="waluma" label="Waluma" /></div>
         <div className="browser" data-scrub="">
           <div className="frame">
             <div className="bar">

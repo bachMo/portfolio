@@ -3,6 +3,7 @@ import useLink from '../hooks/useLink';
 import Tx from '../components/Tx';
 import img from '../assets';
 import { ScrollFX, Band, NextCase } from '../components/Showcase';
+import Reel from '../components/Reel';
 
 export default function CaseSunuChat() {
   const { t } = usePrefs();
@@ -50,6 +51,7 @@ export default function CaseSunuChat() {
           </div>
         </section>
         <Band items={[...t('sc.k').split('·'), ...t('sc.org').split('×'), 'Grand Challenges Canada'].map((w) => w.trim())} caps />
+        <div className="case-reel" data-scrub=""><Reel id="sunuchat" label="SunuChat" /></div>
         <div className="browser" data-scrub="">
           <div className="frame">
             <div className="bar">

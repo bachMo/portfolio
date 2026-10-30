@@ -1,6 +1,8 @@
 import { usePrefs } from '../i18n/PrefsContext';
 import useLink from '../hooks/useLink';
 import SocialLinks from '../components/SocialLinks';
+import HeroField from '../components/HeroField';
+import Showreel from '../components/Showreel';
 import { CONFIG } from '../config';
 import Tx from '../components/Tx';
 import { useEffect, useRef, useState } from 'react';
@@ -35,6 +37,7 @@ export default function Home() {
           <i />
           <i />
         </div>
+        <HeroField />
         <div className="meta mono">
           <span>
             <span dangerouslySetInnerHTML={{__html:t('hero.loc')}} />
@@ -183,6 +186,7 @@ export default function Home() {
       </div>
       <Services />
       <Goorgoorlu />
+      <Showreel />
       <Signature />
       <section className="block wrap" id="travaux">
         <div className="intro">

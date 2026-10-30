@@ -3,6 +3,7 @@ import useLink from '../hooks/useLink';
 import Tx from '../components/Tx';
 import img from '../assets';
 import { ScrollFX, Band, NextCase } from '../components/Showcase';
+import Reel from '../components/Reel';
 
 const html = (s) => ({ __html: s });
 const ITEMS = ['01', '02', '03', '04'];
@@ -58,6 +59,7 @@ export default function CaseLeeral() {
           </div>
         </section>
         <Band items={[...t('le.k').split('·'), 'WhatsApp Cloud API', 'FastAPI', 'PostgreSQL', 'Redis', 'Expo'].map((w) => w.trim())} caps />
+        <div className="case-reel" data-scrub=""><Reel id="leeral" label="Leeral" /></div>
 
         <div className="phone-stage" data-scrub="">
           <div className="app-shots">
