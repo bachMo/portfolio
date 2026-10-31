@@ -280,7 +280,7 @@ function generatePage(id, lang, template) {
   // Les pages sont dans des sous-dossiers : les fichiers statiques
   // doivent donc être référencés depuis la racine du site.
   html = html.replace(/(["'])\.\/static\//g, '$1/static/');
-  html = html.replace(/(["'])\.\/favicon\.svg/g, '$1/favicon.svg');
+  html = html.replace(/(["'])\.\/(favicon[\w.-]*|icon-192\.png)/g, '$1/$2');
   html = html.replace(/(["'])\.\/manifest\.json/g, '$1/manifest.json');
   html = html.replace(/(["'])\.\/apple-touch-icon\.png/g, '$1/apple-touch-icon.png');
 
@@ -332,7 +332,7 @@ function generate404() {
     const isEn = lang === 'en';
     return `<section lang="${lang}"><p class="k">${isEn ? 'ERROR 404' : 'ERREUR 404'}</p><h1>${isEn ? 'This page <em>does not exist.</em>' : 'Cette page <em>n’existe pas.</em>'}</h1><p>${isEn ? 'The link may be old or mistyped. Here is where to go instead:' : 'Le lien est peut-être ancien ou mal saisi. Voici où aller :'}</p><nav><a class="solid" href="${L('home')}">${isEn ? 'Home' : 'Accueil'}</a>${SERVICE_IDS.map((sid) => `<a href="${L(sid)}">${escapeHtml(plain(SERVICES.services[sid][lang].h1))}</a>`).join('')}<a href="${L('contact')}">Contact</a></nav></section>`;
   };
-  const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Page introuvable · Page not found — Bachir Sy</title><link rel="icon" href="/favicon.svg" type="image/svg+xml"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=JetBrains+Mono&display=swap" rel="stylesheet"><style>
+  const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Page introuvable · Page not found — Bachir Sy</title><link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/favicon-96x96.png" type="image/png" sizes="96x96"><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=JetBrains+Mono&display=swap" rel="stylesheet"><style>
 :root{--bg:#F7F0E5;--ink:#1A1612;--muted:#6B5F50;--line:#DDD1BE;--acc:#C4552B}
 @media (prefers-color-scheme:dark){:root{--bg:#15120F;--ink:#F2EBDF;--muted:#A89C8B;--line:#2E2822;--acc:#E0703F}}
 *{box-sizing:border-box}body{margin:0;min-height:100vh;background:var(--bg);color:var(--ink);font-family:'Bricolage Grotesque',system-ui,sans-serif;display:flex;flex-direction:column;justify-content:center;padding:48px clamp(20px,6vw,96px);gap:56px;background-image:radial-gradient(color-mix(in srgb,var(--ink) 10%,transparent) 1px,transparent 1.3px);background-size:24px 24px}

@@ -1,1 +1,15 @@
-{}
+{
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.bachirsy.com"
+        }
+      ],
+      "destination": "https://bachirsy.com/:path*",
+      "permanent": true
+    }
+  ]
+}
