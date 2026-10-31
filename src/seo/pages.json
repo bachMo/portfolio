@@ -17,36 +17,36 @@
       "fr": {
         "path": "/services/creation-site-web",
         "title": "Création de site web à Dakar : vitrine et e-commerce",
-        "description": "Création de sites vitrines et boutiques en ligne à Dakar : rapides, bien référencés sur Google, avec prise de rendez-vous et paiement Wave ou Orange Money."
+        "description": "Création de sites vitrines et boutiques en ligne à Dakar, dès 400 000 FCFA : rapides, bien référencés sur Google, paiement Wave ou Orange Money."
       },
       "en": {
         "path": "/en/services/website-development",
         "title": "Website development in Dakar: business sites & stores",
-        "description": "Business websites and online stores built in Dakar, Senegal: fast, Google-friendly, with online booking and Wave or Orange Money payments."
+        "description": "Business websites and online stores built in Dakar, from €1,200: fast, Google-friendly, with online booking and Wave or Orange Money payments."
       }
     },
     "svc-platform": {
       "fr": {
         "path": "/services/plateforme-de-gestion",
         "title": "Plateforme de gestion sur mesure au Sénégal | Web & mobile",
-        "description": "Plateformes de gestion sur mesure au Sénégal : clients, commandes, stocks, équipes et paiements réunis dans une application web et mobile."
+        "description": "Plateformes de gestion sur mesure au Sénégal, dès 750 000 FCFA : clients, commandes, stocks, équipes et paiements dans une application web et mobile."
       },
       "en": {
         "path": "/en/services/business-platform",
         "title": "Custom business platform in Senegal | Web & mobile apps",
-        "description": "Custom management platforms built in Senegal: customers, orders, stock, teams and payments brought together in one web and mobile application."
+        "description": "Custom management platforms built in Senegal, from €2,000: customers, orders, stock, teams and payments in one web and mobile application."
       }
     },
     "svc-ai": {
       "fr": {
         "path": "/services/chatbot-ia-automatisation",
         "title": "Chatbot WhatsApp, IA et automatisation à Dakar | Bachir Sy",
-        "description": "Chatbots WhatsApp et assistants IA qui répondent à vos clients 24 h/24, en français et en wolof, automatisation des tâches et tableaux de bord, à Dakar."
+        "description": "Chatbots WhatsApp dès 350 000 FCFA, assistants IA en français et en wolof, automatisations et tableaux de bord, conçus à Dakar."
       },
       "en": {
         "path": "/en/services/ai-chatbot-automation",
         "title": "WhatsApp chatbots, AI & automation in Dakar | Bachir Sy",
-        "description": "WhatsApp chatbots and AI assistants that answer your customers 24/7, in French and Wolof, plus task automation and dashboards, built in Dakar."
+        "description": "WhatsApp chatbots from €900, AI assistants in French and Wolof, task automation and dashboards, built in Dakar."
       }
     },
     "leeral": {

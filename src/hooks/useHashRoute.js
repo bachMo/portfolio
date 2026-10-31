@@ -14,16 +14,17 @@ function parseLocation() {
     return { page: legacy[1], anchor: null };
   }
 
-  const hit = resolvePath(window.location.pathname);
-  if (hit && hit.page !== 'home') {
-    return { page: hit.page, anchor: null };
-  }
-
   const hash = window.location.hash || '';
   const anchor =
     hash.length > 1 && !hash.startsWith('#/')
       ? hash.slice(1)
       : null;
+
+  // Les pages internes acceptent aussi une ancre (ex. /services/creation-site-web#tarifs).
+  const hit = resolvePath(window.location.pathname);
+  if (hit && hit.page !== 'home') {
+    return { page: hit.page, anchor };
+  }
 
   return { page: 'home', anchor };
 }
@@ -58,20 +59,20 @@ export default function useHashRoute() {
   }, []);
 
   useEffect(() => {
-    if (route.page === 'home' && route.anchor) scrollToAnchor(route.anchor, 60);
+    if (route.anchor) scrollToAnchor(route.anchor, route.page === 'home' ? 60 : 300);
     const onNavigate = () => {
       const next = parseLocation();
       const swap = () => {
         flushSync(() => setRoute(next));
         current.current = next.page;
-        if (next.page !== 'home') window.scrollTo(0, 0);
+        if (next.page !== 'home' && !next.anchor) window.scrollTo(0, 0);
       };
       if (next.page !== current.current && document.startViewTransition && !prefersReducedMotion()) {
         document.startViewTransition(swap);
       } else {
         swap();
       }
-      if (next.page === 'home') scrollToAnchor(next.anchor, 80);
+      scrollToAnchor(next.anchor, next.page === 'home' ? 80 : 120);
     };
     window.addEventListener('popstate', onNavigate);
     window.addEventListener('hashchange', onNavigate);

@@ -58,6 +58,19 @@ function useBeforeAfter(page) {
 // Prépare le formulaire de contact avec le bon type de projet
 const preselect = (id) => { try { sessionStorage.setItem('svc-type', id); } catch (e) { /* stockage indisponible */ } };
 
+/** Prix « à partir de » au format schema.org (FCFA en français, euros en anglais). */
+export function offersLd(pricing = [], lang = 'fr', url) {
+  const currency = lang === 'en' ? 'EUR' : 'XOF';
+  return pricing.map((o) => ({
+    '@type': 'Offer',
+    name: o.name,
+    description: o.desc,
+    url,
+    priceCurrency: currency,
+    priceSpecification: { '@type': 'PriceSpecification', minPrice: Number(String(o.price).replace(/[^0-9]/g, '')), priceCurrency: currency },
+  }));
+}
+
 /** Données structurées (Service + FAQ) pour Google, mises à jour à chaque page. */
 function useStructuredData(page, lang, svc) {
   useEffect(() => {
@@ -72,6 +85,7 @@ function useStructuredData(page, lang, svc) {
         areaServed: [{ '@type': 'Country', name: 'Senegal' }, { '@type': 'Place', name: 'West Africa' }],
         provider: { '@id': `${SITE_URL}/#person` },
         inLanguage: lang,
+        offers: offersLd(svc.pricing, lang, `${SITE_URL}${meta.path}`),
       },
       {
         '@context': 'https://schema.org',
@@ -268,6 +282,36 @@ export default function ServicePage({ page }) {
           </div>
           <CursorPreview box={box} cur={cur} previews={svc.work.map((w) => ({ img: PREVIEW[w.href], name: w.name }))} />
         </section>
+
+        {svc.pricing && (
+          <section className="svcp-block sx-price" id="tarifs" aria-labelledby="tarifs-title">
+            <div className="sx-price-head">
+              <h2 className="svcp-h2" id="tarifs-title">{ui.pricing}</h2>
+              <p className="muted">{ui.pricingSub}</p>
+            </div>
+            <div className="sx-price-grid">
+              {svc.pricing.map((o, i) => (
+                <article key={o.name} className={'sx-price-card' + (o.pick ? ' is-pick' : '')} style={{ '--i': i }}>
+                  {o.pick && <span className="mono sx-price-pick">{ui.pick}</span>}
+                  <span className="mono sx-price-n">{String(i + 1).padStart(2, '0')}</span>
+                  <h3 className="serif">{o.name}</h3>
+                  <p className="sx-price-desc">{o.desc}</p>
+                  <div className="sx-price-amt">
+                    <small className="mono">{ui.from}</small>
+                    <b className="serif">{o.price}</b>
+                    {o.unit && <span className="sx-price-unit">{o.unit}</span>}
+                    {o.monthly && <span className="mono sx-price-month">{o.monthly}</span>}
+                  </div>
+                  <ul>{o.inc.map((x) => <li key={x}><i>{CHECK}</i><span>{x}</span></li>)}</ul>
+                  <a className={'pill' + (o.pick ? ' solid' : '')} href={L('contact')} onClick={() => preselect(entry.mock)}><span>{ui.choose}</span>{ARROW}</a>
+                </article>
+              ))}
+            </div>
+            <ul className="sx-price-terms">
+              {ui.terms.map((x) => <li key={x}><i>{CHECK}</i><span>{x}</span></li>)}
+            </ul>
+          </section>
+        )}
 
         <section className="svcp-block sx-faq">
           <div className="sx-faq-side">

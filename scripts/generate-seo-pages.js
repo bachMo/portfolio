@@ -102,6 +102,7 @@ function staticContent(id, lang, meta) {
       `<h2>${escapeHtml(ui.process)}</h2><ol>${steps.map((p) => `<li><strong>${escapeHtml(p.t)}</strong> ${escapeHtml(p.d)}</li>`).join('')}</ol>`,
       `<h2>${escapeHtml(ui.uses)}</h2><ul>${s.uses.map((p) => `<li><strong>${escapeHtml(p.t)}</strong> ${escapeHtml(p.d)}</li>`).join('')}</ul>`,
       `<h2>${escapeHtml(ui.work)}</h2><ul>${s.work.map((w) => `<li><strong>${escapeHtml(w.name)}</strong> ${escapeHtml(w.desc)}</li>`).join('')}</ul>`,
+      s.pricing ? `<h2>${escapeHtml(ui.pricing)}</h2><ul>${s.pricing.map((o) => `<li><strong>${escapeHtml(o.name)} : ${escapeHtml(ui.from.toLowerCase())} ${escapeHtml(o.price)}${o.unit ? ` ${escapeHtml(o.unit)}` : ''}${o.monthly ? ` ${escapeHtml(o.monthly)}` : ''}</strong> ${escapeHtml(o.desc)}</li>`).join('')}</ul><p>${ui.terms.map(escapeHtml).join(' · ')}</p>` : '',
       `<h2>${escapeHtml(ui.faq)}</h2>${s.faq.map((f) => `<h3>${escapeHtml(f.q)}</h3><p>${escapeHtml(f.a)}</p>`).join('')}`,
       nav,
       '</main>',
@@ -219,6 +220,14 @@ function serviceJsonLd(id, lang, meta) {
       areaServed: [{ '@type': 'Country', name: 'Senegal' }, { '@type': 'Place', name: 'West Africa' }],
       provider: { '@id': `${SITE_URL}/#person` },
       inLanguage: lang,
+      offers: (svc[lang].pricing || []).map((o) => ({
+        '@type': 'Offer',
+        name: o.name,
+        description: o.desc,
+        url: `${SITE_URL}${meta.path}`,
+        priceCurrency: lang === 'en' ? 'EUR' : 'XOF',
+        priceSpecification: { '@type': 'PriceSpecification', minPrice: Number(String(o.price).replace(/[^0-9]/g, '')), priceCurrency: lang === 'en' ? 'EUR' : 'XOF' },
+      })),
     },
     {
       '@context': 'https://schema.org',

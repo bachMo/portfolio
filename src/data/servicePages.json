@@ -28,7 +28,18 @@
    "askcta": "Me poser la question",
    "badge": "PARLONS DE VOTRE PROJET · BACHIR SY · DAKAR · ",
    "case": "Cas",
-   "step": "Étape"
+   "step": "Étape",
+   "pricing": "Tarifs",
+   "pricingSub": "Des prix clairs pour démarrer. Chaque projet reçoit ensuite un devis détaillé, gratuit et sans engagement.",
+   "from": "À partir de",
+   "pick": "Le plus demandé",
+   "choose": "Demander un devis",
+   "terms": [
+    "Devis gratuit après un premier échange",
+    "Acompte de 50 % au démarrage, solde à la livraison",
+    "Paiement en plusieurs fois possible",
+    "Nom de domaine et hébergement offerts la première année"
+   ]
   },
   "en": {
    "back": "All services",
@@ -58,7 +69,18 @@
    "askcta": "Ask me",
    "badge": "LET’S TALK ABOUT YOUR PROJECT · BACHIR SY · DAKAR · ",
    "case": "Case",
-   "step": "Step"
+   "step": "Step",
+   "pricing": "Pricing",
+   "pricingSub": "Clear starting prices. Every project then gets a detailed quote, free and with no commitment.",
+   "from": "From",
+   "pick": "Most requested",
+   "choose": "Request a quote",
+   "terms": [
+    "Free quote after a first call",
+    "50% deposit to start, balance on delivery",
+    "Instalments available",
+    "Domain and hosting included for the first year"
+   ]
   }
  },
  "process": {
@@ -169,7 +191,7 @@
     "faq": [
      {
       "q": "Combien coûte un site web ?",
-      "a": "Le prix dépend du nombre de pages et des fonctionnalités (rendez-vous, paiement, boutique). J’estime chaque module en heures de travail et je vous envoie un devis détaillé, sans surprise."
+      "a": "Un site vitrine démarre à 400 000 F, une landing page à 200 000 F et une boutique en ligne à 1 000 000 F. Le prix final dépend du nombre de pages et des fonctionnalités (rendez-vous, paiement, boutique) : je vous envoie un devis détaillé, sans surprise."
      },
      {
       "q": "Combien de temps faut-il ?",
@@ -184,7 +206,53 @@
       "a": "Oui. Je vous livre un espace simple pour changer vos textes, photos et prix, et je vous forme à son utilisation."
      }
     ],
-    "final": "Parlons de <em>votre site.</em>"
+    "final": "Parlons de <em>votre site.</em>",
+    "pricing": [
+     {
+      "name": "Landing page",
+      "price": "200 000 F",
+      "desc": "Une page unique et percutante pour présenter une offre, un événement ou un lancement.",
+      "inc": [
+       "Design sur mesure, parfait sur mobile",
+       "Bouton WhatsApp et formulaire de contact",
+       "Référencement Google de base"
+      ]
+     },
+     {
+      "name": "Site vitrine",
+      "price": "400 000 F",
+      "pick": true,
+      "desc": "Le site professionnel qui présente votre activité et vous apporte des demandes.",
+      "inc": [
+       "Jusqu’à 5 pages",
+       "Google Maps, formulaire et WhatsApp",
+       "Bien référencé sur Google",
+       "Espace pour modifier vos textes et photos"
+      ]
+     },
+     {
+      "name": "Site premium",
+      "price": "750 000 F",
+      "desc": "Pour marquer les esprits : un design haut de gamme et une expérience soignée.",
+      "inc": [
+       "Design haut de gamme et animations",
+       "Bilingue français / anglais",
+       "Blog ou actualités modifiables",
+       "Prise de rendez-vous en ligne"
+      ]
+     },
+     {
+      "name": "Boutique en ligne",
+      "price": "1 000 000 F",
+      "desc": "Vendez en ligne, encaissez par Wave ou Orange Money et suivez vos commandes.",
+      "inc": [
+       "Catalogue, panier et paiement en ligne",
+       "Wave, Orange Money, carte bancaire",
+       "Commandes reçues aussi sur WhatsApp",
+       "Back-office pour vos produits et stocks"
+      ]
+     }
+    ]
    },
    "en": {
     "kicker": "SERVICE 01 · WEBSITE DEVELOPMENT IN DAKAR",
@@ -252,7 +320,7 @@
     "faq": [
      {
       "q": "How much does a website cost?",
-      "a": "It depends on the number of pages and features (booking, payment, store). I estimate each module in hours and send you a detailed quote, with no surprises."
+      "a": "A landing page starts at €600, a business website at €1,200 and an online store at €2,500. The final price depends on the number of pages and features (booking, payment, store): I send you a detailed quote, with no surprises."
      },
      {
       "q": "How long does it take?",
@@ -267,7 +335,53 @@
       "a": "Yes. You get a simple space to change your texts, photos and prices, and I train you to use it."
      }
     ],
-    "final": "Let’s talk about <em>your website.</em>"
+    "final": "Let’s talk about <em>your website.</em>",
+    "pricing": [
+     {
+      "name": "Landing page",
+      "price": "€600",
+      "desc": "A single, striking page to present an offer, an event or a launch.",
+      "inc": [
+       "Custom design, perfect on mobile",
+       "WhatsApp button and contact form",
+       "Basic Google SEO"
+      ]
+     },
+     {
+      "name": "Business website",
+      "price": "€1,200",
+      "pick": true,
+      "desc": "The professional site that presents your business and brings in requests.",
+      "inc": [
+       "Up to 5 pages",
+       "Google Maps, form and WhatsApp",
+       "Google-friendly",
+       "Edit your own texts and photos"
+      ]
+     },
+     {
+      "name": "Premium website",
+      "price": "€2,200",
+      "desc": "Make an impression: high-end design and a polished experience.",
+      "inc": [
+       "High-end design and animations",
+       "Bilingual French / English",
+       "Editable blog or news",
+       "Online booking"
+      ]
+     },
+     {
+      "name": "Online store",
+      "price": "€2,500",
+      "desc": "Sell online, take payments and track your orders.",
+      "inc": [
+       "Catalogue, cart and online payment",
+       "Card, Wave, Orange Money",
+       "Orders also received on WhatsApp",
+       "Back office for products and stock"
+      ]
+     }
+    ]
    }
   },
   "svc-platform": {
@@ -348,7 +462,7 @@
      },
      {
       "q": "Combien coûte une plateforme ?",
-      "a": "Je découpe le projet en modules (clients, stocks, paiements…) et j’estime chacun en heures. Vous pouvez commencer par l’essentiel et ajouter le reste ensuite."
+      "a": "Un outil métier ciblé démarre à 750 000 F et une plateforme complète à 1 500 000 F. Je découpe le projet en modules (clients, stocks, paiements…) : vous pouvez commencer par l’essentiel et ajouter le reste ensuite."
      },
      {
       "q": "Mes données sont-elles en sécurité ?",
@@ -359,7 +473,54 @@
       "a": "Oui. La plateforme est utilisable sur ordinateur et sur téléphone, avec une appli mobile si vos équipes travaillent sur le terrain."
      }
     ],
-    "final": "Parlons de <em>votre plateforme.</em>"
+    "final": "Parlons de <em>votre plateforme.</em>",
+    "pricing": [
+     {
+      "name": "Outil métier",
+      "price": "750 000 F",
+      "desc": "Un outil ciblé pour régler un problème précis : stock, devis, rendez-vous ou suivi clients.",
+      "inc": [
+       "Un module sur mesure",
+       "Accès web, sur ordinateur et téléphone",
+       "Formation de votre équipe"
+      ]
+     },
+     {
+      "name": "Plateforme de gestion",
+      "price": "1 500 000 F",
+      "pick": true,
+      "desc": "Toute votre activité au même endroit : clients, commandes, stocks, équipes et paiements.",
+      "inc": [
+       "Plusieurs modules connectés",
+       "Rôles et accès par utilisateur",
+       "Tableau de bord de vos chiffres",
+       "Documentation et formation"
+      ]
+     },
+     {
+      "name": "Application mobile",
+      "price": "3 000 000 F",
+      "desc": "Une application Android et iOS pour vos clients ou vos équipes sur le terrain.",
+      "inc": [
+       "Android et iOS",
+       "Notifications et mode hors ligne",
+       "Reliée à votre plateforme",
+       "Publication sur les stores"
+      ]
+     },
+     {
+      "name": "Maintenance",
+      "price": "25 000 F",
+      "unit": "/ mois",
+      "desc": "Votre outil reste à jour, sauvegardé et évolue avec vous.",
+      "inc": [
+       "Mises à jour et sauvegardes",
+       "Petites modifications incluses",
+       "Assistance rapide",
+       "Formules à 50 000 F et 100 000 F"
+      ]
+     }
+    ]
    },
    "en": {
     "kicker": "SERVICE 02 · CUSTOM BUSINESS PLATFORM",
@@ -436,7 +597,7 @@
      },
      {
       "q": "How much does a platform cost?",
-      "a": "I split the project into modules (customers, stock, payments…) and estimate each one in hours. You can start with the essentials and add the rest later."
+      "a": "A focused business tool starts at €2,000 and a full platform at €4,000. I split the project into modules (customers, stock, payments…): you can start with the essentials and add the rest later."
      },
      {
       "q": "Is my data safe?",
@@ -447,7 +608,54 @@
       "a": "Yes. The platform works on desktop and phone, with a mobile app if your teams work in the field."
      }
     ],
-    "final": "Let’s talk about <em>your platform.</em>"
+    "final": "Let’s talk about <em>your platform.</em>",
+    "pricing": [
+     {
+      "name": "Business tool",
+      "price": "€2,000",
+      "desc": "A focused tool for one specific need: stock, quotes, bookings or customer follow-up.",
+      "inc": [
+       "One custom module",
+       "Web access on computer and phone",
+       "Team training"
+      ]
+     },
+     {
+      "name": "Management platform",
+      "price": "€4,000",
+      "pick": true,
+      "desc": "Your whole business in one place: customers, orders, stock, teams and payments.",
+      "inc": [
+       "Several connected modules",
+       "Roles and per-user access",
+       "Dashboard of your key figures",
+       "Documentation and training"
+      ]
+     },
+     {
+      "name": "Mobile app",
+      "price": "€7,000",
+      "desc": "An Android and iOS app for your customers or field teams.",
+      "inc": [
+       "Android and iOS",
+       "Notifications and offline mode",
+       "Connected to your platform",
+       "Store publishing"
+      ]
+     },
+     {
+      "name": "Maintenance",
+      "price": "€150",
+      "unit": "/ month",
+      "desc": "Your tool stays up to date, backed up and keeps evolving.",
+      "inc": [
+       "Updates and backups",
+       "Small changes included",
+       "Fast support",
+       "Larger plans available"
+      ]
+     }
+    ]
    }
   },
   "svc-ai": {
@@ -534,7 +742,53 @@
       "a": "Le développement est estimé en heures selon les fonctionnalités. Les coûts de fonctionnement (WhatsApp, modèle d’IA) dépendent du volume de messages et sont expliqués dès le devis."
      }
     ],
-    "final": "Parlons de <em>votre assistant.</em>"
+    "final": "Parlons de <em>votre assistant.</em>",
+    "pricing": [
+     {
+      "name": "Automatisation",
+      "price": "150 000 F",
+      "unit": "/ workflow",
+      "desc": "Une tâche répétitive qui se fait toute seule : relances, rapports, synchronisations.",
+      "inc": [
+       "Relances et rappels automatiques",
+       "Rapports envoyés chaque semaine",
+       "Connexion entre vos outils"
+      ]
+     },
+     {
+      "name": "Bot WhatsApp",
+      "price": "350 000 F",
+      "monthly": "+ 25 000 F / mois",
+      "pick": true,
+      "desc": "Un assistant sur votre numéro WhatsApp qui répond, oriente et prend les commandes.",
+      "inc": [
+       "Menus, FAQ et prise de commande",
+       "Transfert vers votre équipe si besoin",
+       "Hébergement et suivi inclus dans le mensuel"
+      ]
+     },
+     {
+      "name": "Tableau de bord",
+      "price": "500 000 F",
+      "desc": "Vos chiffres clés en un coup d’œil, mis à jour automatiquement.",
+      "inc": [
+       "Ventes, clients et indicateurs clés",
+       "Connecté à vos fichiers ou outils",
+       "Lisible sur téléphone"
+      ]
+     },
+     {
+      "name": "Chatbot IA",
+      "price": "900 000 F",
+      "monthly": "+ 50 000 F / mois",
+      "desc": "Une IA qui répond à partir de vos propres documents, en français et en wolof, 24 h/24.",
+      "inc": [
+       "Réponses basées sur vos contenus",
+       "Texte et messages vocaux, wolof inclus",
+       "Sur WhatsApp ou sur votre site"
+      ]
+     }
+    ]
    },
    "en": {
     "kicker": "SERVICE 03 · WHATSAPP CHATBOTS, AI AND AUTOMATION",
@@ -614,10 +868,56 @@
      },
      {
       "q": "How much does it cost?",
-      "a": "Development is estimated in hours based on features. Running costs (WhatsApp, AI model) depend on message volume and are explained in the quote."
+      "a": "An automation starts at €400, a WhatsApp bot at €900 (+ €60/month) and an AI chatbot at €2,000 (+ €120/month). The monthly fee covers hosting and support; WhatsApp and AI costs depend on message volume and are explained in the quote."
      }
     ],
-    "final": "Let’s talk about <em>your assistant.</em>"
+    "final": "Let’s talk about <em>your assistant.</em>",
+    "pricing": [
+     {
+      "name": "Automation",
+      "price": "€400",
+      "unit": "/ workflow",
+      "desc": "A repetitive task that runs on its own: follow-ups, reports, syncs.",
+      "inc": [
+       "Automatic follow-ups and reminders",
+       "Weekly reports sent automatically",
+       "Your tools connected together"
+      ]
+     },
+     {
+      "name": "WhatsApp bot",
+      "price": "€900",
+      "monthly": "+ €60 / month",
+      "pick": true,
+      "desc": "An assistant on your WhatsApp number that answers, routes and takes orders.",
+      "inc": [
+       "Menus, FAQ and order taking",
+       "Hand-off to your team when needed",
+       "Hosting and support in the monthly fee"
+      ]
+     },
+     {
+      "name": "Dashboard",
+      "price": "€1,500",
+      "desc": "Your key figures at a glance, updated automatically.",
+      "inc": [
+       "Sales, customers and KPIs",
+       "Connected to your files or tools",
+       "Readable on mobile"
+      ]
+     },
+     {
+      "name": "AI chatbot",
+      "price": "€2,000",
+      "monthly": "+ €120 / month",
+      "desc": "An AI that answers from your own documents, in French and Wolof, 24/7.",
+      "inc": [
+       "Answers grounded in your content",
+       "Text and voice notes, Wolof included",
+       "On WhatsApp or your website"
+      ]
+     }
+    ]
    }
   }
  }

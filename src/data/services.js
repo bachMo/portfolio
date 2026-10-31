@@ -11,9 +11,11 @@ const services = {
     more: 'Découvrir le service',
     outro: 'Pas sûr de ce qu’il vous faut ? <em>Décrivez votre problème,</em> je trouve la solution.',
     outroCta: 'En parler ensemble',
+    from: 'À PARTIR DE',
+    rates: 'Voir les tarifs',
     items: [
       {
-        id: 'site', n: '01', short: 'Visibilité',
+        id: 'site', n: '01', short: 'Visibilité', price: '200 000 F',
         title: 'Vous rendre <em>visible en ligne</em>',
         lede: 'Un site vitrine ou une boutique en ligne qui attire vos clients, inspire confiance et transforme les visites en demandes.',
         who: ['Entreprises', 'Commerces', 'Associations', 'Indépendants'],
@@ -21,7 +23,7 @@ const services = {
         seen: [['SPOT Énergie', 'https://spot-sc46.vercel.app/'], ['Meli Micro', 'https://melimicro.com'], ['Waluma', '/waluma']],
       },
       {
-        id: 'platform', n: '02', short: 'Gestion',
+        id: 'platform', n: '02', short: 'Gestion', price: '750 000 F',
         title: 'Simplifier <em>votre gestion</em>',
         lede: 'Une plateforme sur mesure pour piloter votre activité au quotidien : clients, commandes, stocks, équipes, tout au même endroit.',
         who: ['PME', 'ONG et projets', 'Cliniques', 'Écoles'],
@@ -29,7 +31,7 @@ const services = {
         seen: [['Fidelia CRM', null], ['FlowAgri', null], ['P3AFR', null]],
       },
       {
-        id: 'ai', n: '03', short: 'Données & IA',
+        id: 'ai', n: '03', short: 'Données & IA', price: '150 000 F',
         title: 'Faire parler vos données <em>et automatiser</em>',
         lede: 'Des tableaux de bord pour décider, des chatbots et agents IA qui répondent à vos clients et travaillent pour vous, même la nuit.',
         who: ['Services clients', 'Santé', 'Agriculture', 'Particuliers'],
@@ -56,9 +58,11 @@ const services = {
     more: 'Explore this service',
     outro: 'Not sure what you need? <em>Describe your problem,</em> I’ll find the solution.',
     outroCta: 'Let’s talk',
+    from: 'FROM',
+    rates: 'See pricing',
     items: [
       {
-        id: 'site', n: '01', short: 'Visibility',
+        id: 'site', n: '01', short: 'Visibility', price: '€600',
         title: 'Make you <em>visible online</em>',
         lede: 'A business website or an online shop that attracts customers, builds trust and turns visits into requests.',
         who: ['Companies', 'Shops', 'Associations', 'Freelancers'],
@@ -66,7 +70,7 @@ const services = {
         seen: [['SPOT Énergie', 'https://spot-sc46.vercel.app/'], ['Meli Micro', 'https://melimicro.com'], ['Waluma', '/waluma']],
       },
       {
-        id: 'platform', n: '02', short: 'Operations',
+        id: 'platform', n: '02', short: 'Operations', price: '€2,000',
         title: 'Simplify <em>your operations</em>',
         lede: 'A custom platform to run your business day to day: customers, orders, stock, teams, all in one place.',
         who: ['SMEs', 'NGOs and projects', 'Clinics', 'Schools'],
@@ -74,7 +78,7 @@ const services = {
         seen: [['Fidelia CRM', null], ['FlowAgri', null], ['P3AFR', null]],
       },
       {
-        id: 'ai', n: '03', short: 'Data & AI',
+        id: 'ai', n: '03', short: 'Data & AI', price: '€400',
         title: 'Make your data talk <em>and automate</em>',
         lede: 'Dashboards to decide, chatbots and AI agents that answer your customers and work for you, even at night.',
         who: ['Customer service', 'Health', 'Farming', 'Individuals'],

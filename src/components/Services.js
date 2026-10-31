@@ -150,6 +150,13 @@ export default function Services() {
                     </div>
                   </div>
                 </div>
+                {it.price && (
+                  <p className="svc-from">
+                    <small className="mono">{d.from}</small>
+                    <b className="serif">{it.price}</b>
+                    <a href={L('svc-' + it.id, 'tarifs')}>{d.rates}</a>
+                  </p>
+                )}
                 <div className="svc-ctas">
                   <a className="pill solid magnetic svc-cta" href={L('contact')} onClick={() => preselect(it.id)}>
                     <span>{d.cta}</span>{ARROW}
